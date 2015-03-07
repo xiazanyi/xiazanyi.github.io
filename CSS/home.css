@@ -2,13 +2,6 @@ body{
 	background-image:url(../sources/bodyIMG.png);
 	/*background-color: grey;*/
 }
-pre{
-		border-top: 1px solid #f5f5f5;
-		border-right: 1px solid #f5f5f5;
-        border-bottom: 1px solid #f5f5f5;
-        border-left: 6px solid #558abb;
-
-	}
 img{
 	border-radius:5px;
 }
