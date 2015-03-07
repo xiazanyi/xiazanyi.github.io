@@ -5,6 +5,8 @@ var time =[];//滚动标题栏的定时器数组
 var rightDIVBeginLeft =196;
 var rightDIVEndLeft =1049;
 window.onload =function(){
+  //代码高亮
+  prettyPrint();
 	//子菜单的缩放
 	 var menuDIV = document.getElementById('menuDIV');
 	 var sonMenus =menuDIV.getElementsByTagName('li');
@@ -33,7 +35,7 @@ window.onload =function(){
      		event.stopPropagation();
      	}else{
      		event.cancelBubble =true;
-     	}   	
+     	}   
      }
 	//tabs 
   var containers =document.getElementsByClassName('container');
@@ -274,4 +276,5 @@ function updownZoom(obj,end){
            break;   
        }
        return value ;
-   }      
+   }   
+   //

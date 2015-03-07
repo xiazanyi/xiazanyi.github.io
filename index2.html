@@ -5,6 +5,7 @@
 	<title>我的JavaScript学习之路</title>
 	<link rel="stylesheet" href="CSS/bootstrap-3.3.1-dist/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="CSS/home.css">
+  <link rel="stylesheet" href="CSS/prettify.css">
 <script src="JS/jQuery/jquery-2.1.1.min.js"></script>
 </head>
 <body>
@@ -117,7 +118,7 @@
               		</li>
               	</ul>
               	<p>为了实现跨浏览器的事件处理程序,我们可以使用下面的代码来实现:</p>
-              	<pre>
+              	<pre class="prettyprint linenums">
 var EventUtil = {
   addHander : function(element,type,hander){
      if(element.addEventListener){
@@ -186,7 +187,7 @@ var EventUtil = {
                  	<td>被触发的事件的类型</td></tr>
                  </table>
                  <p><strong>跨浏览器的事件对象</strong>,我们可以对上面提到的EventUtil对象加以增强,如下:</p>
-                 <pre>
+                 <pre class="prettyprint linenums">
 var EventUtil = {
   addHander : function(element,type,hander){
      //略,前面已经说了
@@ -395,7 +396,7 @@ var EventUtil = {
                         	</tr>
                         </table>
                        <p>如下面的代码,来模拟对按钮的单击事件:</p>
-                       <pre>
+                       <pre class="prettyprint linenums">
 var btn = document.getElementById('myBtn');
 var event = document.createEvent("MouseEvents");
 event,initMouseEvent("click",true,true,document.defaultView,0,0,0,0,0,false,false,false,fasle,0,null);
@@ -479,7 +480,7 @@ btn.dispatchEvent(event);
                           <code>2|  var field = form.elements[0];//取得表单中的第一个字段</code><br>
                           <code>3|  var field2 = form.elements["textbox"];//取得name为textbox的字段</code>
                           <p>如果有多个表单控件都在使用一个name(如:单选),那么就会返回以该name命名的一个NodeList,不过如果访问elements[0]则只会返回第一个元素...</p>
-                          <pre>
+                          <pre class="prettyprint linenums">
 &lt;form method="post" id="myForm"&gt;
    &lt;ul&gt;
      &lt;li&gt;&lt;input type="radio" name="color" value="red"&gt;red&lt;/input&gt;&lt;/li&gt;
@@ -536,6 +537,36 @@ alert(colorFields[0] ===form.elements[0]);//true
                           </ul>
 		              </div> <!-- 基础知识 -->
 		              <div class="noneDisplay contentDiv">
+                      <p>在HTML中，有两种方法来表现文本：一种是使用&lt;input&gt;的单行文本，另一种就是使用&lt;textarea&gt;多行文本...</p>
+                      <ul class="publicLiStyle">
+                        <li><strong>单行文本</strong>
+                            <p>要表现文本框，必须将&lt;input&gt;元素的type特性设置为"text",而通过设置size特性，可以指定文本框能够显示的字符数；通过设置"value"特性，可以设置文本框的初始值；"maxlength"可以指定文本框可以接受的最大字符数...</p>
+                        </li>
+                        <li><strong>多行文本</strong>
+                            <p>&lt;textarea&gt;元素则始终会呈现多行文本框，要指定文本框的大小，可以使用<b>rows特性</b><small>(指定的是文本框的字符行数)</small>,以及<b>cols特性</b><small>(指定的是文本框的字符列数)</small>，如：</p>
+                            <code>&lt;textarea name="test" id="test" cols="30" rows="10"&gt;hello&lt;/textarea&gt;</code>
+                        </li>
+                      </ul>
+                      <p><strong>选择文本</strong></p>
+                      <p>上述的两种方法都支持<strong>select()方法</strong>，这个方法用于选择文本框中的所有文本。在调用此方法后，大多数浏览器<small>(opera好像不行)</small>都会将焦点设置到文本框中，其不接收参数，无返回值...</p>
+                      <ol>
+                        <li><strong>选择(select)事件</strong>
+                            <p>其是与select()方法对应的,在选择文本框文本时，就会触发select事件;当然在调用select()方法时也会触发select事件...</p>
+                        </li>
+                        <li><strong>取得选择的文本</strong>
+                            <p>HTML5通过一些扩展方案解决了顺利取得选择的文本内容，该规范采取的是添加两个属性:<strong>selectionStart,selectionEnd</strong>,这两个属性保存着是基于0的数值，表示所选择文本的范围，所以为了获取用户在文本框中选择的文本.而IE8之前的版本是使用的<b>document.selection对象</b>来获取文本内容，但是必须首先创一个范围后才能提取文本；可以使用如下代码：</p>
+                            <pre class="prettyprint linenums">
+function getSelectedText(textbox){
+   if(typeof(textbox.selectionStart == "number")){
+      return textbox.value.substring(textbox.selectionStart,textbox.selectionEnd);         
+   }else{
+      return document.selection。createRange().text;
+   }                       
+}       
+                          </pre>
+                        </li>
+                        <li><strong></strong></li>
+                      </ol>
 		              </div> <!-- 文本框脚本 -->
 		              <div class="noneDisplay contentDiv">
 		              </div> <!-- 选择框脚本 -->
@@ -582,5 +613,6 @@ alert(colorFields[0] ===form.elements[0]);//true
 </div>
 <script src="JS/homejQuery.js"></script>
 <script src="JS/homeJS.js"></script>
+<script src="JS/prettify.js"></script>
 </body>
 </html>

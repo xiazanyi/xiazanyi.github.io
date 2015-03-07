@@ -5,6 +5,7 @@
 	<title>我的JavaScript学习之路</title>
 	<link rel="stylesheet" href="CSS/bootstrap-3.3.1-dist/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="CSS/home.css">
+  <link rel="stylesheet" href="CSS/prettify.css">
 <script src="JS/jQuery/jquery-2.1.1.min.js"></script>
 </head>
 <body>
@@ -503,7 +504,7 @@
                         <code>1|  var values = [0,1,5,10,15]; </code><br>
                         <code>2|  values.sort(); //0,1,10,15,5</code>
                         <p>对于其对字符串的排序,我们很多情况下不需要这样,因此<em>sort()</em>方法可以接收一个比较函数作为参数,来指定哪个值位于哪个值的前面...下面就是一个简单的比较函数:</p>
-                        <pre>
+                        <pre class="prettyprint linenums">
   function compare(value1,value2){
      if(value1 &lt; value2){
           return -1;
@@ -595,7 +596,7 @@
                      <div class="Intro">
                          <p>ECMAScript5 新增了两个缩小数组的方法:<em>reduce(),reduceRight()</em>方法,这两个方法都会迭代数组的所有项,然后构建一个最终的返回值,其中<em>reduce()</em>从数组的第一项开始,逐个遍历到最后,<em>reduceRight()</em>从数组最后一项开始,向前遍历到第一项...</p>
                          <p>这两个方法都接收两个参数:<strong>一个在每一项上调用的函数,作为缩小基础的初始值(可选)</strong>,其中函数部分都接收四个参数:<strong>前一个值,当前值,项的索引,数组对象</strong>,这个函数的返回值会作为第一个参数自动传给下一项.如:</p>
-                         <pre>
+                         <pre class="prettyprint linenums">
    var values =[1,2,3,4,5];
    var sum = values.reduce(function(pre,cur,index,array){
        return pre + cur;
@@ -689,7 +690,7 @@
                    <p><strong>函数名</strong>实际上也是一个指向函数对象的指针而已,不会与某个函数绑定...</p>
                    <p>既然函数名是指针了,那就很容易清楚前面说的<strong>ECMAScript的函数为什么没有重载</strong>了...</p>
                    <p>还有一个需要知道的是<strong>函数声明和函数表达式</strong>,前面说了这是定义函数的两种方法,但也有它们的区别:解析器在向执行环境中加载数据时,对函数声明和函数表达式并非一视同仁.解析器会率先读取函数声明,并使其在执行任何代码之前可用;至于函数表达式,则必须等到解析器执行到它所在的代码行,才会真正被解释执行...如:</p>
-                   <pre>
+                   <pre class="prettyprint linenums">
    //这个是用的函数声明,在alert()语句中能够正确执行...
      alert(sum(10,10));
      function sum(a,b){
@@ -703,7 +704,7 @@
                    </pre>
                    <p>既然函数名本来就是变量,那么函数也就可以作为值来使用.也就是说,不仅可以像传递参数一样把一个函数传递给另一个函数,还可以将一个函数作为另一个函数的结果返回.</p>
                    <p>函数有<strong>内部属性</strong>,在其内部,有两个特殊的对象:一个是前面提到的<strong>arguments</strong>,还有一个就是我们熟悉的<strong>this</strong>了,虽然<em>arguments</em>主要是用来保存函数参数,但其也有一个<em>callee</em>的属性,此属性是一个指针,指向拥有这个<em>arguments</em>对象的函数.如下面这个经典的阶乘运算,就用到了这个属性:</p>
-                   <pre>
+                   <pre class="prettyprint linenums">
    function factorial(num){
       if(num &lt;=1){
           return 1;
@@ -718,7 +719,7 @@
                    <p>另一个属性<em>prototype</em>是最耐人寻味了,对于所有引用而言,<em>prototype</em>是保存它们所有实例方法的真正所在,关于其更多的内容,在<strong>JavaScript面向对象的程序设计</strong>一章中有更详细的描述...</p>
                    <p>除了属性外,函数还有两个非继承而来的方法:<strong>apply() 和 call()</strong>,这两个方法的用途都是在特定的作用域中调用函数,实际上等于设置函数体内<em>this</em>对象的值</p>
                    <p>其中<em>apply()</em>方法接收两个参数:一个是在其中运行函数的作用域,另一个是参数数组(<small>可以是Array的实例,也可以是arguments对象</small>)</p>
-                   <pre>
+                   <pre class="prettyprint linenums">
    function sum(num1,num2){
       return num1+num2;
    }
@@ -729,7 +730,7 @@
                    </pre>
                    <p><em>call</em>方法与<em>apply()</em>方法作用相同,其第一个参数与<em>apply()</em>的相同,而传递给函数的其余参数都必须逐个列举出来...</p>
                    <p>而这两种方法的用武之地并非传递参数,而是能够扩充函数的作用域,如:</p>
-                   <pre>
+                   <pre class="prettyprint linenums">
   window.color ='red';
   var o ={ color : 'blue'};
   function saColor(){
@@ -846,7 +847,7 @@
            <li><a href="#" class="IntroBtn"><strong>闭包</strong><span class="caret"></span></a>
            <div class="Intro">
              <p>提到这儿,就不能不提<strong>闭包</strong>这个概念了,所谓闭包就是指有权访问另一个函数作用域中变量的函数.所以创建闭包的常见方式就是在一个函数内部创建另一个函数...如:</p>
-            <pre>
+            <pre class="prettyprint linenums">
   function createComparisonFunction(propertyName){
       return function(object1,object2){
           var value1 =object1[propertyName];
@@ -863,7 +864,7 @@
             </pre>
            <p>在这个函数中,内部函数访问了外部函数的变量,即使这个内部函数被返回了,而且在其他地方被调用了,但其依然可以访问<em>propertyName</em>,因为内部函数的作用域链内包含了外部函数的作用域.
            <small>(这里有了一个新的概念,那就是<strong>作用域链</strong>,关于如何创建作用域链以及作用域链有什么作用对彻底理解闭包至关重要,当函数第一次被调用时,会创建一个执行环境及相应的作用域链,并把作用域链赋值给一个特殊的内部属性:<strong>[[Scope]]</strong>,然后使用<em>this,arguments</em>,以及其他的命名参数来初始化函数的活动对象,但在作用域链中,外部函数的活动对象始终处于第二位,外部函数的外部函数活动对象处于第三位...直至作为作用域链终点的全局执行环境)</small></p>
-           <pre>
+           <pre class="prettyprint linenums">
   function compare(value1,value2){
      if(value1 &lt; value2){
          return -1;
@@ -882,7 +883,7 @@
           <p>就拿前面刚刚创建的那个闭包来说,当匿名函数从<em>createComparisonFunction()</em>中被返回后,其作用域链被初始化包含了createComparisonFunction()函数的活动对象和全局变量对象,当createComparisonFunction()函数在执行完毕后,其活动对象也不会被销毁,因为匿名函数的作用域链仍然在引用这个活动对象,但其执行环境的作用域链会被销毁,直到匿名函数被销毁后,createComparisonFunction()函数的活动对象才会被销毁..</p>
           <p>由于闭包会携带包含它的函数作用域,所以会占用更多内存,使用时也要注意...</p>
           <p>作用域链的这种配置机制引出了一个值得注意的副作用,即<strong>闭包只能取得包含函数中任何变量的最后一个值</strong>如:</p>
-          <pre>
+          <pre class="prettyprint linenums">
   function createFunctions(){
    var result =new Array();
    for(var i=0;i &lt; 10;i++){
@@ -899,7 +900,7 @@
           </pre>
           <p>在上面的代码中,对于createFunctions()函数返回的函数数组的每个函数的返回结果是10,而不是0..9</p>
           <p>为了使每个函数返回的是相应的数字而不是统一返回10,则可以向下面这样子来修改:</p>
-          <pre>
+          <pre class="prettyprint linenums">
   function createFunctions(){
     var result =new Array();
     for(var i=0;i &lt; 10;i++){
@@ -977,7 +978,7 @@ for(var j=0;j &lt; 10;j++){
                     <p>跨浏览器确定一个窗口的大小不是一件简单的事.IE9,Firefox,Safari,Opera,Chrome均为此提供了4个属性: <strong>innerwidth,innerHeight,outerWidth,outerHeight</strong>.在IE9,Safari,Firefox中,<em>outerWidth,outerHeight</em>返回浏览器窗口本身的尺寸<small>(无论是从最外层的window对象还是从某个框架访问)</small>而在Opera中,这两个属性表示页面视图容器多大的大小,<em>innerWidth,innerHeight</em>表示该容器中页面视图的大小<small>(减去边框宽度)</small>,在Chrome中,<em>outerWidth,outerHeight与innerWidth,innerHeight</em>返回相同值,即视口大小...</p>
                     <p>在IE9,Firefox,Safari,Opera,Chrome中,<em>document.documentElement,clientWidth</em>和<em>document.documentElement.clientHeight</em>中保存了页面视口的大小,在混杂模式下通过<em>document.body.clientWidth</em>和<em>document.body.clientHeight</em>取得相同信息...</p>
                     <p>最终跨浏览器取得页面视口的大小可以通过如下的代码来实现:</p>
-                    <pre>
+                    <pre class="prettyprint linenums">
     var pageWidth = window.innerWidth;
     var pageHeight =window.innerHeight;
     if(typeof pageWidth != "number"){
@@ -1293,7 +1294,7 @@ for(var j=0;j &lt; 10;j++){
                            <li>
                              <p><strong>writeln()</strong>其与<em>write()</em>方法一样,不过在字符串末尾添加了一个换行符</p>
                              <p>在页面被加载的过程中,可以使用这两个方法向页面中动态的加入内容.包括动态地包含外部资源,不过得注意不能直接包含字符串"&lt;/script&gt;",因为这会导致该字符串被解释为脚本块的结束,所以得向下面的一样,如:</p>
-                             <pre>
+                             <pre class="prettyprint linenums">
    &lt;html&gt;
    &lt;head&gt;
       &lt;title&gt; document&lt;/title&gt;
@@ -1514,7 +1515,7 @@ for(var j=0;j &lt; 10;j++){
                             </li>
                           </ul> 
                           <p>虽然不能把文档片段直接添加到文档中,但可以将它作为一个"仓库"来使用即在里面保存将来可能会添加到文档中的节点,要创建文档片段,可以使用<strong>document.createDocumentFragment()</strong>方法,具体可以向下面一样,给一个id为"mtList"的ul添加3个列表项:</p>
-                          <pre>
+                          <pre class="prettyprint linenums">
   var fragment =document.createDocumentFragment();
   var ul = document.getElementById("myList");
   var li =null;
@@ -1555,7 +1556,7 @@ for(var j=0;j &lt; 10;j++){
                     <p><strong>动态脚本</strong></p>
                     <p>这里讨论的动态脚本,指的是页面加载时不存在,但将来的某一时刻通过修改DOM动态添加的脚本创建动态脚本有两种方式:插入外部文件,直接插入JavaScript代码.</p>
                     <p>我们可以向下面这样通过一个函数动态的加载外部脚本...</p>
-                    <pre>
+                    <pre class="prettyprint linenums">
   function loadScript(url){
      var script = document.createElement("script");
      script.type = "text/javascript";
@@ -1567,7 +1568,7 @@ for(var j=0;j &lt; 10;j++){
                     </pre>
                     <p>这样就可以在页面中的其他地方使用这个脚本了,不过得判断脚本是否加载完,在后面的事件中,将会有所介绍..</p>
                     <p>当然也可以直接插入代码到script标签中,向下面这样...</p>
-                    <pre>
+                    <pre class="prettyprint linenums">
   function loadScriptString(code){
     var script = document.createElement("script");
     script.type = "javascript";
@@ -1586,7 +1587,7 @@ for(var j=0;j &lt; 10;j++){
                     <p><strong>动态样式</strong></p>
                     <p>与动态脚本类似,所谓动态样式是指在页面刚加载时不存在的样式,动态样式是在页面加载完成后添加到页面中的...</p>
                     <p>也与动态脚本一样,动态样式也可以动态加载外部样式,不过得把样式添加到&lt;head&gt;,才能表现得和人意.</p>
-                    <pre>
+                    <pre class="prettyprint linenums">
   function loadStyles(url){
     var link = document.createElement("link");
     link.rel ="stylesheet";
@@ -1596,7 +1597,7 @@ for(var j=0;j &lt; 10;j++){
   }
                     </pre>
                     <p>而与script一样的结果,当用style来包含嵌入式CSS时,又得将IE与其他浏览器区别处理,如:</p>
-                    <pre>
+                    <pre class="prettyprint linenums">
   function loadStyleString(css){
      var style = document.createElement('style');
      style.type = "text/css";
@@ -1612,7 +1613,7 @@ for(var j=0;j &lt; 10;j++){
                   </li>
                 </ul>
                 <p>再一次说明一下前面提到的<em>NodeList</em>及其"近亲"<em>NamedNodeItem和HTMLCollection</em>这三个集合都是"动态"的每当文档发生变化时,它们都会更新,所以它们始终保存着最新,最准确的信息,如下面的代码将导致无限循环:</p>
-                <pre>
+                <pre class="prettyprint linenums">
     var divs = document.getElementsByTagName('div'),
         i,
         div;
@@ -1714,7 +1715,7 @@ for(var j=0;j &lt; 10;j++){
                               <p><strong>焦点管理</strong>,HTML5添加了辅助管理的DOM焦点管理,首先就是<strong>document.activeElement</strong>属性,这个属性始终会引用DOM中当前获得了焦点的元素</p>
                               <p>默认情况下,在文档刚刚加载完成时,<em>document.activeElement</em>中保存的是<em>document.body</em>元素,文档加载期间,始终为null...</p>
                               <p>另外一个新增了一个方法: <strong>document.hasFocus()</strong>,用于确定<strong>文档</strong>是否获得了焦点</p>
-                              <pre>
+                              <pre class="prettyprint linenums">
   var button =document.querySelector("#button");
   button.focus();
   alert(document.activeElement == button); //true
@@ -1916,7 +1917,7 @@ for(var j=0;j &lt; 10;j++){
                             </li>
                           </ul>
                          <p>如下面的例子,只需要遍历某个DIV元素中的&lt;li&gt;元素,我们可以这样:</p>
-                         <pre>
+                         <pre class="prettyprint linenums">
  var div =document.querySelector('div');
  var filter = function(node){
     return node.tagName.toLowerCase() == 'li' ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
@@ -1975,7 +1976,7 @@ for(var j=0;j &lt; 10;j++){
                           <p>这样创建好范围后,就可以使用各种方法对范围的内容进行操作了.其中有一个方法: <strong>deleteContents()</strong>,这个方法能够从文档中删除范围所包含的内容...</p>
                           <p>还有一个方法是<strong>extractContents()</strong>也会从文档中移除范围选区,但其可以返回范围文本片段,利用这个返回值可以将范围内容插入到文档的其它地方...</p>
                           <p>说了这么多,通过下面这个例子来进一步理解吧!</p>
-                          <pre>
+                          <pre class="prettyprint linenums">
 //假如有这样一个文档:
 &lt;!doctype html&gt;
 &lt;html&gt;
@@ -2021,5 +2022,6 @@ range.deleteContents();
 </div>  <!-- main -->
 <script src="JS/homejQuery.js"></script>
 <script src="JS/homeJS.js"></script>
+<script src="JS/prettify.js"></script>
 </body>
 </html>
