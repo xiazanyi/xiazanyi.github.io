@@ -565,7 +565,15 @@ function getSelectedText(textbox){
 }       
                           </pre>
                         </li>
-                        <li><strong></strong></li>
+                        <li><strong>选择部分文本</strong>
+                            <p>除了select()方法外，所有文本框都有一个<strong>setSelectionRange()方法</strong>，其接收两个方法：要选择的第一个字符的索引，以及要选择的最后一个字符之后的字符的索引...如：</p>
+                            <pre class="prettyprint linenums">
+textbox.value = "Hello world";
+textbox.setSelectionRange(0,textbox.value.length);// "Hello world"
+textbox.setSelectionRange(0,3); //"Hel"
+                            </pre>
+                            <p>要看到选择的文本，必须在调用setSelectionRange()之前或之后立即将焦点设置到文本框。</p>
+                        </li>
                       </ol>
 		              </div> <!-- 文本框脚本 -->
 		              <div class="noneDisplay contentDiv">
