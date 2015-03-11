@@ -106,6 +106,8 @@ window.onload =function(){
                   updownZoom(leftTitles[that],locationHeight);
               }
         }
+      //给全文字的P元素开头时添加空格
+      addBlankFour('p');
 }  
 //菜单图标的左右移动	          
  function start(obj1,obj2,end){//parseInt(getComputedStyle(obj2,false).left)
@@ -277,4 +279,14 @@ function updownZoom(obj,end){
        }
        return value ;
    }   
-   //
+   //给给定元素开头添加空格
+   function addBlankFour(element){
+       var elements = document.getElementsByTagName(element);
+       console.log(elements.length);
+       for(var i=0,len=elements.length;i<len;i++){
+          var span = document.createElement('span');
+          span.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+          elements[i].insertBefore(span,elements[i].firstChild);
+       }
+
+   }
