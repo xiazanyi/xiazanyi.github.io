@@ -140,7 +140,7 @@ img{
 	top:100px;
 }
 .publicLiStyle{
-	list-style-type:square;
+	list-style-type:none;
 }
 .noneLiStyle{
 	list-style: none;
@@ -200,6 +200,9 @@ td:hover{
 .titleFour{
    width:760px;
 }
+.titleThree{
+	width:780px;
+}
 .titleLi{
 	float: left;
     text-align: center;
@@ -207,6 +210,9 @@ td:hover{
 	border-top-right-radius: 5px;
 	border-top-left-radius: 5px;
 	cursor: pointer;
+}
+.threeCrack{
+	width:260px;
 }
 .fourCrack{
 	width:190px;
@@ -231,6 +237,9 @@ td:hover{
  /*tabs 的内容框width*/
 .contentFive{
 	width:650px;
+}
+.contentThree{
+	width:780px;
 }
 .contentFour{
 	width:760px;

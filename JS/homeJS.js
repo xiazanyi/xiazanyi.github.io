@@ -108,6 +108,8 @@ window.onload =function(){
         }
       //给全文字的P元素开头时添加空格
       addBlankFour('p');
+      //给全文含有publicLiStyle类的ul元素中的li元素添加一个图标
+     addIcon('publicLiStyle');
 }  
 //菜单图标的左右移动	          
  function start(obj1,obj2,end){//parseInt(getComputedStyle(obj2,false).left)
@@ -282,11 +284,27 @@ function updownZoom(obj,end){
    //给给定元素开头添加空格
    function addBlankFour(element){
        var elements = document.getElementsByTagName(element);
-       console.log(elements.length);
+     //  console.log(elements.length);
        for(var i=0,len=elements.length;i<len;i++){
           var span = document.createElement('span');
           span.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
           elements[i].insertBefore(span,elements[i].firstChild);
        }
 
+   }
+   //
+   function addIcon(ul){
+     var uls = document.getElementsByClassName(ul);
+     for(var i=0,len=uls.length;i<len;i++){
+        var lis = uls[i].getElementsByTagName('li');
+        for(var j=0,l=lis.length;j<l;j++){
+          if(lis[j].parentNode ==uls[i]){   
+              var span = document.createElement('span');
+              span.className = 'glyphicon glyphicon-paperclip';
+              span.style.cssText = 'color:green';
+              span.innerHTML = '&nbsp;'
+              lis[j].insertBefore(span,lis[j].firstChild);
+          }
+        }
+     }
    }

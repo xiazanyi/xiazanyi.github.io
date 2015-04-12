@@ -37,7 +37,7 @@
    <li><a href="#section-9"><button class="btn btn-default" type="button" data-number="2">面向对象程序设计</button></a></li>
    <li><a href="#section-10"><button class="btn btn-default" type="button" data-number="3">浏览器检测</button></a></li>
    <li><a href="#section-11"><button class="btn btn-default" type="button" data-number="4">错误处理与调试</button></a></li>
-   <li><a href="#section-12"><button class="btn btn-default" type="button" data-number="5">JSON</button></a></li>
+   <li><a href="#section-12"><button class="btn btn-default" type="button" data-number="5">离线应用与客户端存储</button></a></li>
    <li><a href="./index.html"><button class="btn btn-default" type="button">简介</button></a></li>
    <li><a href="./index.html"><button class="btn btn-default" type="button">基本概念</button></a></li>
    <li><a href="./index.html"><button class="btn btn-default" type="button">引用类型</button></a></li>
@@ -635,9 +635,238 @@ textbox.setSelectionRange(0,3); //"Hel"
 		</li> <!-- id="sections-11" -->
 		<li id="sections-12">
 			<div class="sections">
-			  <h3>JSON<small><a href="#" class="beginStudy">开始学习</a></small></h3>
+			  <h3>离线应用与客户端存储<small><a href="#" class="beginStudy">开始学习</a></small></h3>
 			  <div id="section11" class="section">
+            <p>所谓离线Web应用，就是在设备不能上网的情况下仍然可以运行的应用，开发离线Web应用需要几个步骤:</p>
+            <ul class="publicLiStyle">
+              <li>确保应用知道设备是否能上网，以便下一步执行正确的操作...</li>
+              <li>应用必须能访问一定的资源<small>(图像，CSS,JS...),只有这样才能正确工作...</small></li>
+              <li>必须有一块本地空间用于保存数据...</li>
+            </ul>
+            <h4><strong>离线检测</strong></h4>
+            <p>开发离线应用的第一步就是要知道设备在线还是离线，为此HTML5定义了一个<code>navigator.onLine</code>属性，该属性为<var>true</var>表示设备能上网，为<var>false</var>表示不能上网...</p>
+            <p>除了上面提到的这个属性外，HTML5还定义了两个事件：</p>
+            <ul class="publicLiStyle">
+              <li><strong>online</strong>:当网络从离线变为在线时触发...</li>
+              <li><strong>offline</strong>:当网络从在线变成离线时触发...</li>
+            </ul>
+            <h4><strong>应用缓存</strong></h4>
+            <p>HTML5的应用缓存<small>(简称为appcache)</small>是专门为开发离线Web应用设计的，其从浏览器的缓存中分出来一块缓存区，要想在这片缓存区中保存数据，可以使用一个<b>描述文件<small>(manifest file)</small></b>列出要下载和缓存的文件，如下：</p>
+            <pre class="prettyprint linenums">
+  CACHE MANIFEST
+  #Comment
+  file.js
+  file.css              
+            </pre>
+          <p>要将描述文件与页面关联起来，可以在&lthtml&gt中的<b>manifest</b>属性中指定这个文件的路径，如：</p>
+          <pre class="prettyprint linenums">
+ &lt;html manifest="/offline.manifest"&gt; 
+          </pre> 
+          <p>以上代码告诉页面，/offline.manifest中包含着描述文件，这个文件的MIME类型必须为<b>text/cache-manifest <small>(描述文件的扩展名以前推荐为manifest，但现在推荐为appcache)</small></b></p>
+          <p>虽然应用缓存的意图是确保离线时资源可用，但也有相应的JS API可以来获取其在干什么，这个API的核心是<b>applicationCache</b>对象，该对象有一个常量属性<b>status</b>，表示应用缓存的当前状态...</p>
+          <ul class="publicLiStyle">
+            <li>0 ： 无缓存，即没有与页面相关的应用缓存</li>
+            <li>1 ： 闲置，即应用缓存未得到更新</li>
+            <li>2 ： 检查中，即正在下载描述文件并检查更新</li>
+            <li>3 ： 下载中，即应用缓存正在下载描述文件中指定的资源</li>
+            <li>4 ： 更新完成，即应用缓存已经更新了资源，而且所有资源都已经下载完毕，可以通过<b>swapCache()</b>来使用了</li>
+            <li>5 ： 废弃，即应用缓存的描述文件已经不存在了...</li>
+          </ul>
+          <h4><strong>数据存储</strong></h4>
+             <div class="container" id="dataCookie">
+              <div class="title titleThree">
+                <ul>
+                  <li class="threeCrack selectedTitle titleLi" data-number="0"><strong>Cookie</strong><span class="caret"></span></li>
+                  <li class="threeCrack notSelectTitle titleLi" data-number="1"><strong>Web存储机制</strong><span class="caret"></span></li>
+                  <li class="threeCrack notSelectTitle titleLi" data-number="2"><strong>IndexedDB</strong><span class="caret"></span></li>
+                </ul>
+              </div> <!-- title -->
+              <div class="content contentThree">
+                  <div class="blockDisplay contentDiv">
+                    <p>cookie 以name为名称，value为值，名称和值都要在传送时必须是URL编码的，通过为每个请求添加Cookie HTTP 头将信息发回给服务器，如下：</p>
+                    <pre class="prettyprint linenums">
+GET .index.html HTTP/1.1
+Cookie:name=value
+Other-header:other-header-value
+                    </pre>
+                    <p>大多浏览器都对cookie有许多的限制，对于其尺寸来说，大约为4096B...</p>
+                    <h5><b>cookie的构成</b></h5>
+                    <ul class="publicLiStyle">
+                      <li><strong>名称</strong>：一个唯一确定cookie的名称，cookie名称是不区分大小写的<small>(所以myCookie与MyCookie是同一个cookie)</small>，但最好把其看作区分大小写,cookie的名称必须经过URL编码.</li>
+                      <li><strong>值</strong>：存储在cookie中的字符串值，值必须被URL编码</li>
+                      <li><strong>域</strong>： cookie对于那个域是有效的，所有向该域发送请求中都包含这个cookie信息，可以包含子域...</li>
+                      <li><strong>路径</strong>：对于域中的那个路径，应该向服务器发送cookie</li>
+                      <li><strong>失效时间</strong>：表示cookie何时应该被删除默认情况下，浏览器会话结束会删除所有的cookie，但可以自己设置时间，这个值是GMT格式日期...如果设置失效的时间为一个以前的时间，则cookie会立刻删除...</li>
+                      <li><strong>安全标记</strong>：指定后，cookie只有在使用SSL连接时才发送到服务器.</li>
+                    </ul>
+                    <p>如下面发送的一段Cookie：</p>
+                    <pre class="prettyprint linenums">
+ HTTP/1.1 200 OK
+ Content-type:text/html
+ Set-Cookie:name=value;domain=.xiazanyi.com;path=/ ;secure
+ Other-header: other-header-value                     
+                    </pre>
+                    <p>在上面的代码中，创建了一个对于所有的xiazanyi.com的子域和域名下（由path参数指定）所有页面都有效的cookie。由于设置了secure，所有只能通过SSL连接才能传输...</p>
+                    <p>尤其要注意，域，路径，失效时间和secure标记都是服务器给浏览器的提示，以指定何时应该发送cookie，这些参数不会作为发送到服务器的cookie信息的一部分，只有名值对才会被发送...</p>
+                    <p>在JS中处理cookie，使用BOM的<b>document.cookie</b>属性，其返回的是当前页面可用的所有cookie的字符串，一系列由分号名值对...</p>
+                    <p>所有名字和值经过URL编码，所以必须使用<b>decodeURIComponent()来解码<small>(encodeURIComponent()设置编码)</small></b></p>
+                    <p>我们可以使用下面这个函数来包装基本cookie的：读取，写入，删除：</p>
+                    <pre class="prettyprint linenums">
+var CookieUtil ={
+   get : function(name){
+       var cookieName = encodeURIComponent(name) + "=",
+           cookieStart = document.cookie.indexOf(cookieName),
+           cookieValue =null;
 
+        if(cookieStart >-1){
+            var cookieEnd = document.cookie.indexOf(";",cookieStart);
+            if(cookieEnd  = -1){
+               cookieEnd = document.cookie.length;
+            }
+            cookieValue = decodeURIComponent(document.cookie.subString(cookieStart+cookieName.length,cookieEnd));
+        } 
+       return cookieValue;   
+   },
+
+   set : function(name,value,expires,path,domain,secure){
+         var cookieText = encodeURIComponent(name) + "=" + encodeURIComponent(value) ;
+         if(expires instanceof Date){
+             cookieText += "; expires="+ expires.toGMTString();
+         }
+
+         if(path){
+            cookieText +="; path="+ path;
+         }
+
+         if(domain){
+            cookieText +="; domain=" + domain;
+         }
+
+         if(secure){
+            cookieText +="; secure";
+         }
+         document.cookie = cookieText;
+   },
+
+   unset : function(name,path,domain,secure){
+       this.set(name,"",new Date(0),path,domain,secure);
+   }
+
+};                      
+                    </pre>
+                    <p>而在很多的时候，由于存在coookie数的限制，所以使用cookie值来存储多个名称值对儿，也就是<b>子cookie</b>，如下面的格式：</p>
+                    <pre class="prettyprint linenums">
+ name=name1=value1&name2=value2&name3=value3&name4=value4                     
+                    </pre>
+                    <p>为了更好的操作子cookie，当然上面提到的基本的cookie操作方法是不能满足的，因此必须有一套新的设置，获取，删除方法：<a class="IntroBtn" href="#"><strong>点击查看<span class="caret"></span></strong></a></p>
+                    <div class="Intro">
+                     <pre class="prettyprint linenums">
+var SubCookieUtil = {
+  get: function(name,subName){ //获取单个子cookie
+       var subCookies = this.getAll(name);
+       if(subCookies){
+          return subCookies[subName];
+       }else{
+          return null;
+       }
+  },
+  getAll : function(name){ //获取所有子cookie并将它们放入到一个对象中返回
+      var cookieName = encodeURIComponent(name)+"=",
+          cookieStart = document.cookie.indexOf(cookieName),
+          cookieValue = null,
+          cookieEnd,
+          subCookies,
+          i,
+          parts,
+          result = {};
+      if(cookieStart >-1){
+          cookieEnd = document.cookie.indexOf(";",cookieStart);
+          if(cookieEnd = -1){
+             cookieEnd = document.cookie.length;
+          }
+          cookieValue = document.cookie.subString(cookieStart+cookieName.length,cookieEnd);
+          if(cookieValue.length >0){
+              subCookies = cookValue.spilt("&");
+              for(i=0,len=subCookies.length;i &lt;len;i++){
+                 parts =subCookies[i].spilt("=");
+                 result[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1]);
+              }
+              retuen result;
+          }
+      }  
+      return null;  
+  },
+
+  set : function(name,subName,value,expires,path,domain,secure){
+     var subCookies = this.getAll(name) || {};
+     subCookies[subName] =value;
+     this.setAll(name,subCookies,expires,path,domain.secure);
+  },
+  setAll : function(name,subCookies,expires,path,domain,secure){
+     var cookieText = encodeURLComponent(name) + "=",
+         subcookieParts = new Array(),
+         subName;
+     for(subName in subCookies){
+         if(subName.length >0 && subCookies.hasOwnProperty(subName)){
+             subcookieParts.push(encodeURIComponent(subName)+ "="+ encodeURIComponent(subCookies[subName]));
+         }
+     }    
+     if(subcookieParts.length &gt;0){
+        cookieText +=subcookieParts.join("&");
+        if(expires instanceof Date){
+            cookieText += "; expires="+ expires.toGMTString();
+        }
+        if(path){
+           cookieText += "; path=" + path;
+        }
+        if(domain){
+           cookieText +="; domain="+ domain;
+        }
+        if(secure){
+          cookieText += "; secure";
+        }
+     }else{
+       cookieText += "; expires="+ (new Date(0)).toGMTString();
+     }
+     document.cookie = cookieText;
+  },
+  unset : function(name,subName,path,domain,secure){
+      var subCookies =this.getAll(name);
+      if(subCookies){
+         delete subCookies[subName];
+         this.setAll(name,subCookies,null,path,domain,secure);
+      }
+  },
+  unsetAll : function(name,path,domain,secure){
+     this.setAll(name,null,new Date(0),path,domain,secure);
+  }
+};
+                     </pre>
+                    </div><!-- class="Intro" -->
+                     <p>由于所有的cookie都会由浏览器作为请求头发送，所以在cookie中存储大量信息会影响到特定域的请求性能，cookie信息越大，完成对服务器的请求时间也越长...</p>
+                     <p>一定不要在cookie中存储重要和敏感的数据，cookie数据并非存储在一个安全的环境中，其中包含任何数据都可以被他人访问...</p>
+                  </div>
+                  <div class="noneDisplay contentDiv">
+                  <p>Web Storage 的目的是克服由cookie带来的一些限制，当数据需要被严格控制在客户端时，无须持续的将数据发回服务器，Web Storage 的两个目标是：</p>
+                  <ul class="publicLiStyle">
+                     <li>提供一种在cookie之外存储会话数据的途径</li>
+                     <li>提供一种存储大量可以跨会话存在的数据机制</li>
+                   </ul> 
+                   <h5><strong>Storage类型</strong></h5>
+                   <p>Storage类型提供最大的存储空间来存储名值对儿，其有如下的方法：</p>
+                   <ul class="publicLiStyle">
+                     <li><strong>clear()</strong>:删除所有值</li>
+                     <li><strong>getItem()</strong>:根据指定的名字name获取对应的值</li>
+                     <li><strong>key(index)</strong>:获取index位置处值的名字</li>
+                     <li><strong>removeItem(name)</strong>:删除由name指定的名值对儿</li>
+                     <li><strong>setItem(name,value)</strong>:为指定的name设置一个对应的值</li>
+                   </ul>
+                  </div>
+                  <div class="noneDisplay contentDiv">
+                   <p><span class="glyphicon glyphicon-grain"></span>1111</p>
+                  </div>      
+              </div> <!-- content contentThree -->
+           </div> <!-- container" id="iterationArray -->
 			  </div> <!--JSON class is section -->	
 			</div> <!-- JSON class="sections" -->
 		</li> <!-- li id="sections-12" -->
