@@ -4,14 +4,15 @@
 	<meta charset="UTF-8">
 	<title>我的JavaScript学习之路</title>
 	<link rel="stylesheet" href="CSS/bootstrap-3.3.1-dist/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="CSS/home.css">
+	<link rel="stylesheet" href="CSS/home.css" media="only screen and (min-width:900px)">
+  <link rel="stylesheet" href="CSS/iphoneHome.css" media="only screen and (max-width:900px)">
   <link rel="stylesheet" href="CSS/prettify.css">
 <script src="JS/jQuery/jquery-2.1.1.min.js"></script>
 </head>
 <body>
 <div id="menu">
   <div id="imgDIV"><img src="sources/main.png" height="63" width="256" alt="loading"/></div>
-  <div id="leftDIV"><img src="sources/left.png" height="60" width="100" alt="loading" style="border-top-left-radius:10px; border-bottom-left-radius:10px"></div>
+  <div id="leftDIV"><img class="moveDIV" src="sources/left.png" height="60" width="100" alt="loading" style="border-top-left-radius:10px; border-bottom-left-radius:10px"></div>
   <div id="menuDIV" class="menubox">
     <ul>
       <li data-number="0" class="titleLi"><h4><strong>JavaScript</strong><br><span class="caret"></span></h4>
@@ -24,11 +25,8 @@
       </li>
     </ul>
   </div>
-  <div id="rightDIV"><img src="sources/right.png" height="60" width="100" alt="loading" style="border-top-right-radius:10px;border-bottom-right-radius:10px;"></div>
+  <div id="rightDIV"><img class="moveDIV" src="sources/right.png" height="60" width="100" alt="loading" style="border-top-right-radius:10px;border-bottom-right-radius:10px;"></div>
 </div>
-<div id="divide"><img src="sources/divide.png" height="10" width="900" alt="loading"></div>
-<img id="leftRing" src="sources/ring.png" height="125" width="40" alt="loading"/>
-<img id="rightRing" src="sources/ring.png" height="125" width="40" alt="loading" />
 <div class="menuContent">
 <div id="javascriptMenu" class="blockDisplay contentDiv">
  <ul>

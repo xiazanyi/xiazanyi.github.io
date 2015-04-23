@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<title>我的JavaScript学习之路</title>
 	<link rel="stylesheet" href="CSS/bootstrap-3.3.1-dist/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="CSS/home.css">
+	<link rel="stylesheet" href="CSS/home.css" media="only screen and (min-width:900px)">
+  <link rel="stylesheet" href="CSS/iphoneHome.css" media="only screen and (max-width:900px)">
   <link rel="stylesheet" href="CSS/prettify.css">
 <script src="JS/jQuery/jquery-2.1.1.min.js"></script>
 </head>
@@ -1064,7 +1065,7 @@ var topPos = (type window.screenTop =="number") ? window.screenTop : window.scre
                   <li><p><a class="IntroBtn" href="#"><strong>系统对话框</strong><span class="caret"></span></a></p>
                       <div class="Intro">
                       <p>浏览器通过<strong>alert(),confirm(),prompt()</strong>方法调用系统对话框向用户显示信息.三个方法的用法和显示结果如下:</p>
-                      <table>
+                      <table class="imgTable">
                         <tr><th>alert()方法</th><th>confirm()方法</th><th>prompt()方法</th></tr>
                         <tr><td class="tableCode"><p>接收一个字符串并将其显示给用户</p>
                                 <code> alert("hello world!");</code>

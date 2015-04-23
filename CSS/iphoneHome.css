@@ -1,63 +1,46 @@
 body{
 	background-image:url(../sources/bodyIMG.png);
 	/*background-color: grey;*/
+	width: 100%;
+	margin:0px;
 }
 img{
 	border-radius:5px;
-
 }
 #menu{
-	position: absolute;
-	top:0px;
+	position: relative;
 	height:60px;
-	margin-right: auto;
-	margin-left: auto;
+	left:0px;
 	z-index: 2;
-}
-#main{
-	margin-top: 75px;
+	width: 100%;
 }
 #imgDIV{
-	width:256px;
-    position: absolute;
-    left: 0px;
-    top:0px;
-    z-index: 2;
+	overflow: hidden;
+	display: none;
 }
 #leftDIV{
-	top:10px;
-    width:40px;
-    height:60px;
-    position: absolute;
-    left:197px;
-    border: 1px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    z-index: 2;
+	overflow: hidden;
+	display: none;
 }
 #rightDIV{
-	top:10px;
-	width:40px;
-	height: 60px;
-	position: absolute;
-	left:196px;
-	cursor: pointer;
-	z-index: 2;
+	overflow: hidden;
+	display: none;
 }
 #menuDIV{
 	top:10px;
-	width:0px;
-	position: absolute;
+	position: relative;
+	left:0px;
 	height:60px;
 	/*background-color:grey; */
 	overflow: hidden;
 	z-index: 2;
+	width: 100%;
 }
 #menuDIV>ul{
 	list-style-type:none;
-	margin-left: auto;
-	margin-right: auto;
+	left: 0px;
 	margin-top: 10px;
+	width: 100%;
 }
 #menuDIV ul li{
     float: left;
@@ -68,14 +51,16 @@ img{
     text-align: center;
     cursor: pointer;
     overflow: hidden;
+   /* background-color: #d1c7b7;*/
 }
 .menuContent{
-	width:820px;
+	width:100%;
 	position: absolute;
 	/*display: none;*/
 	height:0px;
 	top:70px;
-	left:282px;
+	margin-left: auto;
+	margin-right: auto;
 	overflow: hidden;
 	background-color: #FFFFFF;
 	border-left: 1px solid grey;
@@ -96,21 +81,27 @@ img{
 	margin-left: 4px;
 	margin-top: 2px;
 }
-
+#main{
+	margin-top: 0px;
+	margin-left: 0px;
+}
 .sections{
 	position: relative;
-	width:800px;
-	margin-left: auto;
-	margin-right: auto;
+	width:100%;
+	left:0px;
 	margin-top: 25px;
 	padding:5px;
 	background: #FFFFFF;
 	border-radius: 10px;
-	/*overflow: hidden;*/
+	overflow: hidden;
 }
 #main>ul{
 	list-style-type: none;
 }
+#main>ul>li{
+	margin-left:-20px;
+}
+/*上面的基本弄好*/
 #Intro{
    width:60%;
 }
@@ -121,21 +112,26 @@ img{
 }
 .publicLiStyle{
 	list-style-type:none;
+	margin-left: -20px;
 }
 .noneLiStyle{
 	list-style: none;
+	margin-left: -20px;
 }
 table{
-   width: 700px;
+   width: 100%;
    text-align: center;
-   padding: 3px;
+   padding: 5px;
    margin-left: auto;
    margin-right: auto;	
    margin-top: 10px;
    margin-bottom: 10px;
 }
+.imgTable{
+	margin-left: -20px;
+}
 .tableTwo{
-	width:500px;
+	width:100%;
 }
 .tableCode{
 	text-align: left;
@@ -145,16 +141,18 @@ th{
 	text-align: center;
 	border: 1px solid grey;
 	border-radius: 5px;
+	overflow: hidden;
 }
 td{
 	border: 1px solid grey;
 	border-radius: 5px;
+	overflow: hidden;
 }
 td:hover{
 	background-color: #d1c7b7;
 }
 .container{
-	width:800px;
+	width:100%;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	margin-right: auto;
@@ -166,22 +164,25 @@ td:hover{
 	list-style-type: none;
 }
 .title{
-	width:680px;
-	height:30px;
+	width:100%;
+	height:60px;
 }
 .title>ul{
 	margin: 0px;
 	padding: 0px;
 	list-style-type: none;
 }
+ol>li{
+	margin-left: -10px;
+}
 .titleNine{
-	width:765px;
+	width:100%;
 }
 .titleFour{
-   width:760px;
+   width:100%;
 }
 .titleThree{
-	width:780px;
+	width:100%;
 }
 .titleLi{
 	float: left;
@@ -191,25 +192,26 @@ td:hover{
 	border-top-left-radius: 5px;
 	cursor: pointer;
 	color: green;
+	height:60px;
 }
 .threeCrack{
-	width:260px;
+	width:30%;
 }
 .fourCrack{
-	width:190px;
+	width:25%;
 }
 .fiveCrack{	
-	width:130px;	
+	width:20%;	
 }
 .nineCrack{	
-	width:85px;
+	width:11%;
 }
 /*tabs的内容框*/
 .content{
 	margin-right: auto;
 	margin-left: 0px;
 	margin-top: 0px;
-	padding: 5px;
+	padding: 3px;
 	background-color: #FFFFFF;
 	border: 3px solid #FFFFFF;
 	border-bottom-right-radius: 5px;
@@ -217,16 +219,16 @@ td:hover{
 }
  /*tabs 的内容框width*/
 .contentFive{
-	width:650px;
+	width:100%;
 }
 .contentThree{
-	width:780px;
+	width:100%;
 }
 .contentFour{
-	width:760px;
+	width:100%;
 }
 .contentNine{
-    width:765px;
+    width:100%;
 }
 .blockDisplay{
 	display: block;
@@ -242,7 +244,7 @@ td:hover{
 }
 /*左右布局*/
 .leftTitleRightContent{
-   width:800px;
+   width:100%;
 }
 .leftTitle{
 	width:80px;
@@ -269,7 +271,7 @@ td:hover{
 	cursor: pointer;
 }
 .rightContent{
-	width:790px;
+	width:95%;
 	border-top: 1px solid #FFFFFF;
 	padding-top: 10px;
 }
