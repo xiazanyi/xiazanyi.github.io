@@ -20,9 +20,9 @@ source.Ajax =function(config,callback){
 	if(xmlhttp){
         xmlhttp.onreadystatechange = function(){
         	 if(xmlhttp.readyState ==4 && xmlhttp.status==200){
-        	 	if(callback instanceof function){
+        	 	
         	 		callback(xmlhttp.responseText);
-        	 	}
+        	 
         	 }else{
         	 	callback(false);
         	 }
