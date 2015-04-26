@@ -1,17 +1,18 @@
  var time =[];//滚动标题栏的定时器数组
+ var allSections =document.getElementsByClassName('sections');
+var mainDiv =document.getElementById('main');
+var menuDIV = document.getElementById('menuDIV');
+var sonMenus =menuDIV.getElementsByTagName('li');
+var menuContent = document.getElementsByClassName('menuContent')[0];
+//子菜单栏高度
+//
+var objectImg = getImgHeightWidth();
+//
+var menuContentHeight = ContentHeight().Height;
+var rightDIVBeginLeft = ContentHeight().rightDIVBeginLeft;
+var rightDIVEndLeft = ContentHeight().rightDIVEndLeft;
 window.onload =function(){
-      var allSections =document.getElementsByClassName('sections');
-      var mainDiv =document.getElementById('main');
-      var menuDIV = document.getElementById('menuDIV');
-      var sonMenus =menuDIV.getElementsByTagName('li');
-      var menuContent = document.getElementsByClassName('menuContent')[0];
-      //子菜单栏高度
-      //
-      var objectImg = getImgHeightWidth();
-      //
-      var menuContentHeight = ContentHeight().Height;
-      var rightDIVBeginLeft = ContentHeight().rightDIVBeginLeft;
-      var rightDIVEndLeft = ContentHeight().rightDIVEndLeft;
+      
       changeSubMenu();
 
       //
@@ -62,27 +63,7 @@ window.onload =function(){
      //
      //菜单图标的左右移动    start(menuDIV,rightDIV,rightDIVBeginLeft);        
    //设置标题栏的子标题栏的高度
-   function ContentHeight(){
-   var obj  ={
-      Height : null,
-      rightDIVBeginLeft : null,
-      rightDIVEndLeft :null
-   }
-   if(pageBoM()){//大屏幕
-    with(obj){
-       Height = 85;
-       rightDIVBeginLeft = getOffsetLeft(allSections[0]) - 50;
-       rightDIVEndLeft = getPageWidth() - rightDIVBeginLeft - 80;
-    }
-   }else{ //小屏幕
-      with(obj){
-         Height = 180;
-         rightDIVBeginLeft = 0;
-         rightDIVEndLeft = 0;
-       }
-   }
-   return obj;
-} 
+   
 //对菜单的操作
 function doMenu(){
      Tabs(document,'menubox','menuContent');
@@ -225,6 +206,29 @@ function adjustImg(){
    }
 }
 //
+} //onload 
+//
+function ContentHeight(){
+   var obj  ={
+      Height : null,
+      rightDIVBeginLeft : null,
+      rightDIVEndLeft :null
+   }
+   if(pageBoM()){//大屏幕
+    with(obj){
+       Height = 85;
+       rightDIVBeginLeft = getOffsetLeft(allSections[0]) - 50;
+       rightDIVEndLeft = getPageWidth() - rightDIVBeginLeft - 80;
+    }
+   }else{ //小屏幕
+      with(obj){
+         Height = 180;
+         rightDIVBeginLeft = 0;
+         rightDIVEndLeft = 0;
+       }
+   }
+   return obj;
+} 
 function getImgHeightWidth(){
     var imgs = document.getElementsByTagName('img');
    var height =[],width =[];
@@ -238,8 +242,6 @@ function getImgHeightWidth(){
    }
    return obj;
 }
-} //onload 
-//
 function start(obj1,obj2,end){//parseInt(getComputedStyle(obj2,false).left)
               var speed  = (end -getStyle(obj2,'left'))/10;
               speed = speed >0 ? Math.ceil(speed) : Math.floor(speed);
