@@ -22,7 +22,7 @@ source.Ajax =function(config,callback){
         	 if(xmlhttp.readyState ==4 && xmlhttp.status==200){
         	 	
         	 		callback(xmlhttp.responseText);
-        	 
+        	 	
         	 }else{
         	 	callback(false);
         	 }
