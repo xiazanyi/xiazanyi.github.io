@@ -1,0 +1,85 @@
+{
+	"mysql" : [
+			
+             {  "name" : "启动mysql服务",
+                "value"  :  "net start MySQL56",
+                "exapmle" : ""
+          
+              },
+             {  "name" : "停止mysql服务",
+                "value"  :  "net start MySQL56",
+                "exapmle" : ""
+          
+              },    
+              {  "name" : "登陆MySQL数据库",
+              "value"  :  "MySQL -h hostname -u username -p",
+              "exapmle" : ""
+        
+            }, 
+           {  "name" : "mysql 数据库的基本操作",
+              "value"  :  "",
+              "exapmle" : ""
+        
+            },  
+            {  "name" : "创建数据库",
+              "value"  :  "create database database_name",
+              "exapmle" : ""
+            },   
+             {  "name" : "删除数据库",
+              "value"  :  "drop database database_name",
+              "exapmle" : ""
+            },   
+            {  "name" : "创建数据库表",
+              "value"  :  "create table table_name(字段名，数据类型[默认值])",
+              "exapmle" : "create table table_name(<br>id integer auto_increment comment 'id',<br>number int(10),<br>name varchar(20));"
+            },   
+            {  "name" : "查看数据库",
+              "value"  :  "show databases;",
+              "exapmle" : ""
+            },   
+              {  "name" : "选择数据库",
+              "value"  :  "use database;",
+              "exapmle" : ""
+            },            
+             {  "name" : "查看表结构1",
+              "value"  :  "'show columns from 数据表名 [from 数据库名]' 或者'show columns from 数据库名.数据表名' ",
+              "exapmle" : "通过这个可以来查看每一列的类型"
+            },   
+            {  "name" : "查看表结构2",
+              "value"  :  "desc 数据表名 [列名]",
+              "exapmle" : ""
+            } ,
+           {  "name" : "重命名表",
+              "value"  :  "rename table 数据表名1 to 数据表名2",
+              "exapmle" : ""
+            },
+             {  "name" : "插入记录",
+              "value"  :  "insert into 数据表名(column_name,column_name2,...) values(value1,value2,...)",
+              "exapmle" : ""
+            },
+            {  "name" : "查询数据库记录",
+              "value"  :  "select [distinct][concat(col 1,':',col 2) as col] selection_list from 数据表名 where ...",
+              "exapmle" : "select * from table_demo;"
+            },
+            {  "name" : "对结果分组",
+              "value"  :  "group by",
+              "exapmle" : "select bookname,avg(price),type from tb_book group by type;"
+            },
+            {  "name" : "去除重复行",
+              "value"  :  "distinct",
+              "exapmle" : "select distinct  type from tb_book; "
+            },
+            {  "name" : "修改记录",
+              "value"  :  "update 数据表名 set column_name = new_value1,column_name2=new_value2,...where ...",
+              "exapmle" : "update tb_book set type=\"黄书\" where bookname=\"AV\";"
+            },
+            {  "name" : "存储过程的无参数，如",
+              "value"  :  "",
+              "exapmle" : "创建：~~delimiter //~~create procedure proc_name()~~begin ~~select * from tb_name;~~end;~~//~~执行~~call proc_name()//"
+            },
+            {  "name" : "存储过程带输入参数",
+              "value"  :  "",
+              "exapmle" : "创建：~~ delimiter// ~~ create prodecure InFun(in mId int(10),in mName char(20),in mAge int(4)) ~~ begin ~~insert into tb_name(id,name,age) values(mId,mName,mAge);~~ end;~~//~~执行：~~delimiter;~~call InFun('2','JS','15');"
+            }
+	]
+}
