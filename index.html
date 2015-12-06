@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的JavaScript学习之路</title>
+  <link type="image/x-icon" href="http://www.xiazanyi.com/my.ico" rel="shortcut icon"/>
+	<link rel="stylesheet" href="CSS/bootstrap-3.3.1-dist/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="CSS/home.css" media="only screen and (min-width:900px)">
+  <link rel="stylesheet" href="CSS/iphoneHome.css" media="only screen and (max-width:900px)">
+  <link rel="stylesheet" href="CSS/prettify.css">
+<script src="JS/jQuery/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+<div id="menu">
+  <div id="imgDIV"><img src="sources/main.png" height="63" width="256" alt="loading"/></div>
+  <div id="leftDIV"><img src="sources/left.png" height="60" width="100" alt="loading" style="border-top-left-radius:10px; border-bottom-left-radius:10px"></div>
+  <div id="menuDIV" class="menubox">
+    <ul>
+      <li data-number="0" class="titleLi"><h4><strong>JavaScript</strong><br><span class="caret"></span></h4>
+      </li>
+      <li data-number="1" class="titleLi"><h4><strong>HTML5</strong><br><span class="caret"></span></h4>
+      </li>
+      <li data-number="2" class="titleLi"><h4><strong>CSS3</strong><br><span class="caret"></span></h4>
+      </li>
+      <li data-number="3" class="titleLi"><h4><strong>mySQL</strong><br><span class="caret"></span></h4>
+      </li>
+    </ul>
+  </div>
+  <div id="rightDIV"><img src="sources/right.png" height="60" width="100" alt="loading" style="border-top-right-radius:10px;border-bottom-right-radius:10px;"></div>
+</div>
+<!-- <div id="divide"><img src="sources/divide.png" height="10" width="900" alt="loading"></div>
+<img id="leftRing" src="sources/ring.png" height="125" width="40" alt="loading"/>
+<img id="rightRing" src="sources/ring.png" height="125" width="40" alt="loading" /> -->
+<div class="menuContent">
+<div id="javascriptMenu" class="blockDisplay contentDiv">
+ <ul>
+   <li><a href="#section-1"><button class="btn btn-default" type="button" data-number="0">简介</button></a></li>
+   <li><a href="#section-2"><button class="btn btn-default" type="button" data-number="1">基本概念</button></a></li>
+   <li><a href="#section-3"><button class="btn btn-default" type="button" data-number="2">引用类型</button></a></li>
+   <li><a href="#section-4"><button class="btn btn-default" type="button" data-number="3">函数表达式</button></a></li>
+   <li><a href="#section-5"><button class="btn btn-default" type="button" data-number="4">BOM</button></a></li>
+   <li><a href="#section-6"><button class="btn btn-default" type="button" data-number="5">DOM</button></a></li>
+   <li><a href="./index2.html"><button class="btn btn-default" type="button" >事件</button></a></li>
+   <li><a href="./index2.html"><button class="btn btn-default" type="button" >表单</button></a></li>
+   <li><a href="./index2.html"><button class="btn btn-default" type="button" >面向对象程序设计</button></a></li>
+   <li><a href="./index2.html"><button class="btn btn-default" type="button" >浏览器检测</button></a></li>
+   <li><a href="./index2.html"><button class="btn btn-default" type="button" >错误处理与调试</button></a></li>
+   <li><a href="./index2.html"><button class="btn btn-default" type="button" >离线应用与客户端存储</button></a></li>
+ </ul>
+</div>
+<div id="htmlMenu" class="noneDisplay contentDiv">暂时还没弄</div>
+<div id="cssMenu" class="noneDisplay contentDiv">暂时还没弄</div>
+<div id="moreMenu" class="noneDisplay contentDiv"><li><a href="./mysql.html"><button class="btn btn-default" type="button" >mySQL语法</button></a></li></div>
+</div>
+<div id="main">
+<ul >
+	<li id="section-1">
+		<div class="sections" id="firstSection">
+			<h3>Javascript简介<small><a href="#" class="beginStudy">开始学习</a></small></h3>
+            <div id="section1" class="section">
+                <h4>&nbsp; &nbsp; &nbsp;<strong>JavaScript</strong>诞生于1995年,为一门功能全面的编程语言,能够处理复杂的计算与交互,是WEB的一个重要组成部分</h4>
+                <div id="Introduction">
+                    <h4>&nbsp; &nbsp; &nbsp;<strong>JavaScript</strong>由三个部分组成</h4>
+                    <ol start="1" style="list-style:1">
+	                	<li><a class="IntroBtn" href="#"><strong>ECMAScript<span class="caret"></span></strong></a>
+	                	    <div class="Intro">
+	                            <p><strong>ECMAScript</strong>是对实现此标准的各方面内容的语言的描述,其规定了这门语言的一些重要组成部分</p>
+	                            <ul class="publicLiStyle">
+	                               	<li>语法</li>
+	                               	<li>类型</li>
+	                               	<li>语句</li>
+	                               	<li>关键字</li>
+	                               	<li>保留字</li>
+	                               	<li>操作符</li>
+	                               	<li>对象</li>
+	                               </ul>   
+	                            <p>关于上面的描述,将在后面有详细介绍......</p>  
+	                	     </div> <!-- Intro -->
+	                	</li> 
+	                	<li><a class="IntroBtn" href="#"><strong>DOM(文本对象模型)<span class="caret"></span></strong></a>
+                             <div class="Intro">
+                             	<p><strong>DOM</strong>是针对<strong>XML</strong>但经过扩展用于<strong>HTMl</strong>的应用程序编写接口,DOM把整个页面映射成一个多层节点结构...example:</p>
+                             	<pre class="prettyprint linenums">
+&lt;html&gt;
+     &lt;head&gt;
+          &lt;title&gt;Sample Page&lt;/title&gt;
+     &lt;/head&gt;
+     &lt;body&gt;
+          &lt;p&gt;Hello World&lt;/p&gt;
+     &lt;/body&gt;
+&lt;/html&gt;               
+                             	</pre>
+                             	<p>对于上面这个简单的结构对应得层次结构就像下面这样</p>
+                                     <img src="sources/DOMphoto.png" height="150px" width="750px" alt="加载中" style="margin-bottom:20px;">
+                                <p><strong>DOM</strong>大致可以分为三级:</p>
+                                <ul class="publicLiStyle">
+                                	<li>DOM 1级,</li>
+                                	<li>DOM 2级</li>
+                                	<li>DOM 3级</li>
+                                </ul>
+                                <p>当然,在这些分级中,每个级别都提供了许多的接口,这些内容将在后面的章节中有些介绍,如果你有兴趣,可以去看一看...</p>
+	                	</li> <!-- DOM(文本对象模型) -->
+	                	<li id="section2"><a class="IntroBtn" href="#"><strong>BOM(浏览器对象模型)<span class="caret"></span></strong></a>
+                              <div class="Intro">
+                              	<p>从根本上来说<strong>BOM</strong>只处理浏览器窗口和框架,但是也把许多针对浏览器JS扩展也作为BOM的一部分</p>
+                              	<ul class="publicLiStyle">
+                              		<li>弹出新浏览器窗口的功能</li>
+                              		<li>移动,缩放和关闭浏览器窗口的功能</li>
+                              		<li>提供浏览器详细信息的<strong>navigator</strong>对象</li>
+                              		<li>提供浏览器所加载页面详细信息的<strong>location</strong>对象</li>
+                              		<li>提供用户显示器分辨率详细信息的<strong>screen</strong>对象</li>
+                              		<li>对<strong>cookie</strong>的支持</li>
+                              		<li>如<strong>XMLHttpRequest</strong>和IE的<strong>ActiveXObject</strong>这样的自定义对象</li>
+                              	</ul>
+                              </div>
+	                	</li>
+                    </ol> 
+                    <div id="imgJS">
+                       <img src="sources/JSphoto.png" height="53px" width="200px" alt="加载中"/>
+                    </div> 
+                </div> <!-- Introduction -->
+            </div><!-- section1 -->
+		</div>
+	</li>
+	<li id="section-2">
+		<div class="sections">
+			<h3>JavaScript基本概念<small><a href="#" class="beginStudy">开始学习</a></small></h3>
+			<div id="section2" class="section">
+				<ol start='1'>
+					<li>
+					    <a class="IntroBtn" href="#"><strong>语法</strong><span class="caret"></span></a>
+                        <ul class="Intro publicLiStyle">
+                         	<li><p>ECMAScript中的变量都是区分大小写</p></li>
+                         	<li><p><strong>标识符</strong>指变量,函数,属性的名字 ,参数..其格式有如下的规则</p>
+                                 <ul class="publicLiStyle">
+                                      	<li>第一个字符是一个字母,下划线,或者美元符号</li>
+                                      	<li>其他字符可以是字母,下划线,美元符号,数字</li>
+                                      </ul>     
+                         	</li>
+                         	<li><strong>注释</strong>
+                                  <ul class="publicLiStyle">
+                                   	<li><strong>"//"</strong>可以用来单行注释</li>
+                                   	<li><strong>"/*...*/"</strong>多行,块级注释</li>
+                                   </ul> 
+                         	</li>
+                         	<li><p><strong>"严格模式"</strong>,是为JavaScript定义了一种不同的解析与执行模型,  在严格模型中,一些不确定的行为将会得到处理,而且对某些不安全的操作抛出错误...</p>
+                                <p>如果要启用严格模式,只要在顶部添加如下代码:</p>
+                                <pre class="prettyprint linenums">"use strict"</pre>
+                         	</li>
+                         	<li><p><strong>语句,</strong>ECMAScript中语句以一个分号结尾,但分号不是必须的,最好还是使用分号,这样更加明了,还可以增进代码性能...</p></li>
+                         </ul> 
+					</li>
+					<li><a class="IntroBtn" href="#"><strong>关键字和保留字</strong><span class="caret"></span></a>
+                        <div class="Intro">
+	                        <p>在ECMAScript中保留着许多的关键字,许多也许现在还没用到,但有可能将来被用作关键字...</p>
+	                        <p>其不能被用来当作标识符,以下就是ECMAScript的关键字:</p>
+	                        <table>
+	                        	<tr>
+	                        		<td>break</td><td>do</td><td>instanceof</td><td>typeof</td>
+	                        	</tr>
+	                        	<tr>
+	                        		<td>case</td><td>else</td><td>new</td><td>var</td>
+	                        	</tr>
+	                        	<tr>
+	                        		<td>catch</td><td>finally</td><td>return</td><td>void</td>
+	                        	</tr>
+	                        	<tr>
+	                        		<td>continue</td><td>for</td><td>switch</td><td>while</td>
+	                        	</tr>
+	                        	<tr>
+	                        		<td>debugger</td><td>function</td><td>this</td><td>with</td>
+	                        	</tr>
+	                        	<tr>
+	                        		<td>delete</td><td>throw</td><td>if</td><td>default</td>
+	                        	</tr>
+	                        	<tr>
+	                        		<td>in</td><td>try</td><td></td><td></td>
+	                        	</tr>
+	                        </table>
+	                        <p>以下是ECMA-262第三版的保留字</p>
+	                        <table>
+	                        	<tr>
+	                        		<td>abstract</td><td>enum</td><td>int</td><td>short</td><td>boolean</td>
+	                        	</tr>
+	                        	<tr>
+	                        		<td>export</td><td>interface</td><td>static</td><td>byte</td><td>extends</td>
+	                        	</tr>
+	                        	<tr>
+	                        		<td>long</td><td>super</td><td>char</td><td>final</td><td>native</td>
+	                    	</tr>
+	                        	<tr>
+	                        		<td>synchronized</td><td>class</td><td>float</td><td>package</td><td>throws</td>
+	                        	</tr>
+	                        	<tr>
+	                        		<td>const</td><td>goto</td><td>private</td><td>transient</td><td>debugger</td>
+	                        	</tr>
+	                        	<tr>
+	                        		<td>implements</td><td>protected</td><td>volatile</td><td>double</td><td>import</td>
+	                        	</tr>
+	                        	<tr>
+	                        		<td>public</td>
+	                        	</tr>
+	                        </table>
+	                    </div> <!-- Intro -->    
+					</li>
+					<li><a class="IntroBtn" href="#"><strong>变量</strong><span class="caret"></span></a>
+						<div class="Intro">
+						    <p>ECMAScript的变量是松散型的,可以用来保存任何数据</p>
+							<p>定义变量时要使用<strong>var</strong>操作符,如下:</p>
+							<pre class="prettyprint linenums">var message="hello world;"</pre>
+							<p>当省略了<strong>var</strong>时,变量就成了全局变量,可以在任何地方访问</p>
+							<pre class="prettyprint linenums">message = "Hi;"</pre>
+						</div>
+					</li>
+					<li><a href="#" class="IntroBtn"><strong>变量类型</strong><span class="caret"></span></a>
+                        <div class="Intro">
+                        	<p>ECMAScript中有<strong>5种</strong>基本数据类型</p>
+                        	<ul class="publicLiStyle">
+                        		<li>
+                        		    <a href="#" class="IntroBtn"><strong>Undefined</strong><span class="caret"></span></a>
+                        		    <div class="Intro">
+                        		    	<p><strong>Undefined</strong>类型就一个值:<strong>undefined</strong>,当用<em>var</em>声明但未初始化时,变量值就为<em>undefined</em></p>
+                        		    	<pre class="prettyprint linenums">
+var message
+alert(message==undefined)//true</pre>
+                        		    </div>
+                        		</li>
+                        		<li>
+                        			<a href="#" class="IntroBtn"><strong>Null</strong><span class="caret"></span></a>
+                        			<div class="Intro">
+                        				<p><strong>Null</strong>类型也就一个值:<strong>null</strong>,从逻辑角度看,null值表示一个空指针因此使用<strong>typeof</strong>操作符检测null值返回<em>"object"</em></p>
+                        				<pre class="prettyprint linenums"> 
+ var car =null;
+ console.log(typeof car);// object
+                                 </pre>
+                        				<p>上面提到的<strong>undefined</strong>其实也是派生自<strong>null</strong></p>
+                        				<pre class="prettyprint linenums">  alert(null==undefined);//true</pre>
+                        				<p>但是他们的用途完全不同,无论在什么情况下,都没有必要把一变量的值显示地设置为<em>undefined</em>,可是同样的规则对<em>null</em>却不适用</p>
+                        			</div> <!-- Intro -->
+                        		</li>
+                        		<li>
+                        			<a href="#" class="IntroBtn"><strong>Boolean</strong><span class="caret"></span></a>
+                        			<div class="Intro">
+                        				<p><strong>Boolean</strong>的字面值就两个:<pre class="prettyprint linenums">true</pre>与<pre class="prettyprint linenums">false</pre><small>(注意:<em>true</em>与<em>false</em>是区分大小写的)</small></p>
+                        				<table>
+                        					<tr>
+                        						<th>数据类型</th><th>转换为true的值</th><th>转换为false的值</th>
+                        					</tr>
+                        					<tr>
+                        						<td>Boolean</td><td>true</td><td>false</td>
+                        					</tr>
+                        					<tr>
+                        						<td>String</td><td>任何非空字符串</td><td>""(空字符串)</td>
+                        					</tr>
+                        					<tr>
+                        						<td>Number</td><td>任何非零数值(包括无穷大)</td><td>0和NaN</td>
+                        					</tr>
+                        					<tr>
+                        						<td>Object</td><td>任何对象</td><td>null</td>
+                        					</tr>
+                        					<tr>
+                        						<td>Undefined</td><td>n/a(不适用)</td><td>undefined</td>
+                        					</tr>
+                        				</table>
+                        			</div>
+                        		</li>
+                        		<li>
+                        			<a href="#" class="IntroBtn"><strong>Number</strong><span class="caret"></span></a>
+                        			<div class="Intro">
+                        				<ol>
+                        					<li><strong>整数</strong>
+                                                <ul class="publicLiStyle">
+                                                     	<li><p>十进制整数</p>
+ 															<pre class="prettyprint linenums"> intNum=55;//整数55</pre>
+                                                     	</li>
+                                                     	<li><p>八进制整数<small>(第一位必须是"0")</small></p>
+                                                            <pre class="prettyprint linenums">  var octalNum=070;//56</pre>
+                                                     	</li>
+                                                     	<li><p>十六进制整数<small>前两位必须为0x</small></p>
+                                                            <pre class="prettyprint linenums">  var hexNum = 0xA;//10</pre>
+                                                     	</li>
+                                                     </ul>     
+                        					</li>
+                        					<li><strong>浮点数值</strong><p>,浮点数值计算会产生舍人误差这是使用基于<em>IEEE754数值</em>的浮点计算的通病</p>
+                                                <pre class="prettyprint linenums">  0.1+0.2 = 0.3000000000000000004;//注意不是0.3</pre>
+                        					</li>
+                        					<li><strong>数值范围</strong>
+                        					<ul class="publicLiStyle">   
+                        					    <li><p>ECMAScript能够表示的最小数值保存在<var>Number.MIN_VALUE</var>中,这个值为<code class="_1">5e-324</code><small>(大多数浏览器中)</small></p>
+                        					    </li>
+                                                <li><p>最大数值保存在<var>Number.MAX_VALUE</var>中,这个值为<code class="_1">1.7976931348623157e+308</code></p>
+                                                </li>
+                                                <li><p>如果超过了JavaScript数值范围,将自动转换成<pre class="prettyprint linenums">Infinity</pre>,正无穷:<pre class="prettyprint linenums">+Infinity</pre>,负无穷:<pre class="prettyprint linenums">-Infinity</pre></p>
+                                                </li>
+                                             </ul>
+                        					</li>
+                        					<li><strong>数值转换</strong>
+                        					    <p>有三个函数可以把非数值转换为数值</p>
+                                                <ul class="publicLiStyle">
+                                                	<li><p><code class="_1">Number()</code>可以用于任何数据类型</p></li>
+                                                	<li><p><code class="_1">parseInt()</code>把字符串转换为整数</p></li>
+                                                	<li><p><code class="_1">parseFloat()</code>把字符串转换为浮点数<small>只能解析十进制</small></p></li>
+                                                </ul>
+                        					</li>
+                        				</ol>
+                        			</div>
+                        		</li>
+                        		<li>
+                        			<a href="#" class="IntroBtn"><strong>String</strong><span class="caret"></span></a>
+                        			<div class="Intro">
+                        				<p>用双引号表示的字符串和用单引号表示的字符串完全相同</p>
+                        				<p>转换为字符串的函数</p>
+                        				<ul>
+                        					<li><p><strong>toString()函数</strong>其不必传递参数,但也可以传递输出数值的基数<small>(2,8,10,16)</small></p>
+												<pre class="prettyprint linenums">  var age=11;  age.toString();//"11"</pre>
+                        					</li>
+                        					<li><p><strong>String()函数</strong></p>
+                                                 <pre class="prettyprint linenums">  var num = null;  String(num);//'null'</pre>
+                        					</li>
+                        				</ul>
+                        			</div>
+                        		</li>
+                        	</ul>
+                        </div>    
+					</li>
+					<li><a href="#" class="IntroBtn"><strong>操作符</strong><span class="caret"></span></a>
+					    <div class="Intro">
+						    <p>在<em>JavaScript</em>中,描述了一组用于操作数的操作符,主要有<strong>算术操作符,位操作符,关系操作符,相等操作符</strong>,下面将逐一介绍一些常用的操作符:</p>
+						    <ul class="publicLiStyle">
+						    	<li>一元操作符:<strong>"++","--"</strong></li>
+						    	<li><a class="IntroBtn" href="#"><strong>位操作符</strong><span class="caret"></span></a>
+                                    <ul class="Intro">
+                                    	<li><strong>按位非(NOT,"~")</strong>如:<br>
+                                           <pre class="prettyprint linenums">
+ var num1 =25;
+ var num2 = ~num1;//num2=-26
+                                          </pre>
+                                    	</li>
+                                    	<li><strong>按位与(AND,"&")</strong></li>
+                                    	<li><strong>按位或(OR,"|")</strong></li>
+                                    	<li><strong>按位异或(XOR,"^")</strong></li>
+                                    	<li><strong>左移("<<")</strong></li>
+                                    	<li><strong>有符号的右移(">>")</strong></li>
+                                    	<li><strong>无符号的右移(">>>")</strong></li>
+                                    </ul>
+						    	</li>
+						    	<li><strong>布尔操作符:</strong><em>逻辑非("!"),逻辑与("&&"),逻辑或("||")</em></li>
+						    	<li><p><strong>乘性操作符:</strong><em>乘法("*"),除法("/"),求模("%");</em>当然特殊情况有特殊的规则</p>
+                     <pre class="prettyprint linenums"> 
+ anyNumber * NaN = NaN;//有一个操作数位NaN,结果为NaN
+ Infinity * 0 =  NaN;
+ anyNumber(非零) * Infinity = Infinity(-Infinity) ;
+ Infinity * Infinity = Infinity ;
+ Infinity / Infinity = NaN ;
+ 0 / 0 = NaN ; 
+...
+                   </pre>
+						    	</li>
+						    	<li><strong>加性操作符:</strong><em>加法("+"),减法("-")</em></li>
+						    	<li><strong>关系操作符:</strong><em>小于("<"),大于(">"),小于等于("<="),大于等于(">=")</em></li>
+						    	<li><strong>相等操作符:</strong>相等("=="),不相等("!="),全等("==="),不全等("!==")</li>
+						    	<li><strong>条件操作符:</strong><em>三目运算符</em><br>
+                                    <pre class="prettyprint linenums">  var max = (num1>num2) ? num1:num2;//当括号里条件成立时,值为num1,否则为num2</pre>
+						    	</li>
+						    	<li><strong>赋值操作符:</strong>" = "</li>
+						    	<li><strong>逗号操作符:</strong><br>
+                                    <pre class="prettyprint linenums">  var num1=1, num2=2, num3=3 ;</pre>
+						    	</li>
+						    </ul>
+					    </div>
+					</li>
+					<li><a class="IntroBtn" href="#"><strong>语句</strong><span class="caret"></span></a>
+                        <div class="Intro">
+	                        <p>ECMAScript 规定了一组流控制语句,具体有下面这些:</p>
+	                        <ul class="publicLiStyle">
+	                        	<li><strong>if </strong>语句<br>
+	                                <pre class="prettyprint linenums">  if(condition) statement1 else statement2 ; </pre>
+	                        	</li>
+	                        	<li><strong>do-while</strong>语句<br>
+	                                <pre class="prettyprint linenums">  
+do{ 
+   statement
+  }while(epression);
+                                  </pre> 
+	                        	</li>
+	                        	<li><strong>while</strong>语句<br>
+	                                <pre class="prettyprint linenums">  while(expression) statement ; </pre>
+	                        	</li>
+	                        	<li><strong>for</strong>语句<br>
+	                                <pre class="prettyprint linenums"> for(initialization;expression;post-loop-expression) statement ;</pre>
+	                        	</li>
+	                        	<li><strong>for-in</strong>语句,可以用来枚举对象的属性.<br>
+	                                <pre class="prettyprint linenums">  for(property in expression) statement; </pre>
+	                        	</li>
+	                        	<li><strong>label</strong>语句,在代码中添加标签.<br>
+	                                 <pre class="prettyprint linenums">  label: statement; </pre>
+	                        	</li>
+	                        	<li><strong>break , continue</strong>语句<br>
+	                                <p><em>break</em> 语句会立即退出循环,强制继续执行循环后面的语句</p>
+	                                <p><em>continue</em> 语句也会退出循环,但退出后会从循环顶部继续执行.</p>
+	                        	</li>
+	                        	<li><strong>with</strong>语句,主要是简化多次编写同一对象的工作.<br>
+	                                 <pre class="prettyprint linenums">  with(expression) statement ;</pre>
+	                        	</li>
+	                        	<li><strong>switch</strong>语句<br>
+	                          <pre class="prettyprint linenums"> 
+switch(expression) {
+     case value : statement; break ;
+	   case value : statement; break ;	
+	     default : statement; 
+	  } 
+                          </pre>			
+	                        	</li>
+	                        </ul>
+	                    </div> <!-- Intro -->
+					</li>
+					<li><a href="#" class="IntroBtn"><strong>函数</strong><span class="caret"></span></a>
+          <div class="Intro">
+              <p>ECMAScript中的函数使用<em>function</em>关键字来声明,具体如下:</p>
+                  <pre class="prettyprint linenums">  
+function functionName(arg0,arg1,..argN){
+     statements;
+} 
+                  </pre>
+              <p>并且ECMAScript在定义时不必指定是否返回值,但可以用<strong>return</strong>返回值.</p>
+              <p>函数在执行完return语句后停止并立即退出,所以位于return语句之后的任何代码都永远不会执行.</p>
+              <p>与其他语言不同的是,ECMAScript函数不介意传递进来多少个参数,也不在乎进来的参数是什么类型.</p>
+              <p>定义函数时只接受两个参数,但调用此函数时,可以传递一个,三个,甚至不传参数...</p>
+              <p>还有一点要注意的是,ECMAScript中的参数在内部是用一个数组表示的,这也是为什么参数传递可以无太多要求了,在函数体内可以用<strong>arguments</strong>对象来访问参数数组,与访问数组一样,如下:</p>
+              <pre class="prettyprint linenums">  arguments[0];//第一个参数 arguments[1];//第二个参数,依次类推..</pre><br>
+              <p>还有重要的一点,对于学过C++,Java等高级语言的来说,重载函数应该是很熟悉的,但是ECMAScript是没有<strong>函数重载</strong>的,后定义的函数会覆盖掉先定义的函数,因为没有函数签名(接受的参数类型和数量)....</p>
+          </div>
+          </li>
+          <li>更多详细的内容,可以到<a href="https://developer.mozilla.org/en-US/">mozilla网站</a>上仔细阅读.</li>
+				</ol>
+			</div>
+		</div>
+	</li>
+	<li id="section-3">
+		<div class="sections">
+			<h3>JavaScript的引用类型<small><a href="#" class="beginStudy">开始学习</a></small></h3>
+			<div id="section3" class="section">
+           <h4>&nbsp &nbsp &nbsp &nbsp 引用类型的值是<strong>引用类型</strong>的实例,在ECMAScript中,引用类型是一种数据结构,用于将数据和功能组织在一起,尽管ECMAScript从技术上讲是一门面向对象的语言,但它不具备传统的面向对象语言所支持的<strong>类和接口</strong>等基本结构...</h4>
+           <h4>&nbsp &nbsp &nbsp &nbsp 下面我们将一起学习几种基本的引用类型:</h4>   
+           <ol>
+             <li><a href="#" class="IntroBtn">
+                <strong>Object</strong>类型<span class="caret"></span></a>
+                <div class="Intro">
+                  <h5><strong>Object</strong>是ECMAScript中使用最多的一个类型,我们看到的大多数引用类型都是Object类型的实例.</h5>
+                  <h5>创建Object实例方式有两种:</h5>
+                  <p>第一种是使用<strong>new</strong>操作符后跟Object构造函数,如:</p>
+                  <pre class="prettyprint linenums">
+var person = new Object() ; 
+person.name = 'JS' ;</pre>
+                  <p>第二种是使用<strong>对象字面量</strong>表示法,如:</p>
+                  <pre class="prettyprint linenums"> 
+var person = { 
+  name : "js"; } </pre>
+                  <h5>当创建好对象后,访问对象的属性时,一般使用的是<strong>点表示法</strong>,当然,使用<strong>方括号表示法</strong>也可以用来访问对象属性,此时应将要访问的属性以字符串的形式放在括号中,如:</h5>
+                  <pre class="prettyprint linenums"> 
+alert(person.name) ;// 'js'
+ alert(person["name"]) ;//'js'</pre>
+                  <h5>在一般情况下,两种访问方式是等效的,当需要注意的是:<strong>如果属性名中包含会导致语法错误的字符,或者属性名使用的是关键字,保留字,应使用方括号表示法:</strong></h5>
+                  <pre class="prettyprint linenums">  person["first name"] = "JavaScript" ;//此时不能使用点表示法访问</pre>
+                </div>
+             </li>
+             <li><a href="#" class="IntroBtn">
+                 <strong>Array(数组)</strong>类型<span class="caret"></span></a>
+                 <div class="Intro">
+                   <h5>与其它语言的数组不同的是,ECMAScript的数组每一项可以保存<strong>任何类型的数据</strong>,也就是说,可以用数组的第一个位置来保存字符串,第二个位置保存数值,第三个位置保存对象...其大小可以动态调整的...</h5>
+                   <h5>与Object类型一样,创建<strong>Array</strong>类型也有两种基本方式:</h5>
+                   <p>第一种是使用<strong>Array的构造函数</strong>,可以给构造函数传递保存的项目数量,也就是数组长度,也可以向构造函数传递数组中应该包含的项,其中可以省略<em>new</em>操作符...</p>
+                   <pre class="prettyprint linenums">
+ var colors = new Array() ; //
+ var colors = new Array(20) ;//创建一个length为20的数组
+ var colors = new Array("red","blue","green");//创建包含这三种颜色的数组</pre>
+                   <p>第二种是使用<strong>数组字面量表示法</strong>,数组字面量由一对包含数组项的方括号表示,多个数组项之间以逗号隔开...</p>
+                   <pre class="prettyprint linenums"> var colors = ["red","blue","green"] ;</pre>
+                   <h5>既然数组功能这么强大,那么检测数组也就很重要了:</h5>
+                   <p>1:首先,我们可以使用<strong>instanceof</strong>操作符检测,如:</p>
+                   <pre class="prettyprint linenums">if(value instanceof Array){//执行操作} ;</pre>
+                   <p>2:或者我们还可以使用ECMAScript 5提供的<strong>Array.isArray()</strong>方法,如:</p>
+                   <pre class="prettyprint linenums">if(Array.isArray(value) {//执行操作}) ; </pre>
+                   <h5>下面将讨论几种数组的方法:</h5>
+                   <ul class="publicLiStyle">
+                     <li><a class="IntroBtn" href="#"><strong>转换</strong>方法<span class="caret"></span></a>
+                     <div class="Intro">  
+                       <p><em>toString()</em>方法,返回由数组中每个值的字符串形式拼接而成的一个以逗号分隔的字符串:</p>
+                       <pre class="prettyprint linenums">
+var colors = ["red","blue","green"];
+alert(colors.toString()); //red,blue,green</pre>
+                       <p><em>valueOf()</em>方法,返回的还是数组:</p>
+                       <pre class="prettyprint linenums">alert(colors.valueOf()); //["red","blue","green"]</pre>
+                       <p><em>toLocaleString()</em>方法,其经常返回与toString(),valueOf()方法相同的值,但不总相同,当调用<em>toLocaleString()</em>方法时,它会创建一个数组值的以逗号分隔的字符串,而与前两个方法不同之处在于,这一次调用的是每一项的<em>toLocaleString()</em>方法,而不是toString()方法...</p>
+                       <p>数组继承的上面三种方法,在默认情况下都会以逗号分隔的字符串形式返回数组项,而使用<em>join()</em>方法,则可以以不同的分隔符来构建字符串,其只接收一个参数,即用作分隔符的字符串:</p>
+                       <pre class="prettyprint linenums">alert(colors.join("||")) ; //red||blue||green</pre>
+                       <p>最后还有一点要注意的是,如果数组的某一项的值是<em>null</em>或者<em>undefined</em>,那么该值在<em>join()</em>方法,<em>toLocaleString()</em>方法,<em>toString()</em>方法,<em>valueOf()</em>方法返回的结果以空字符串表示...</p>
+                      </div> 
+                     </li>
+                     <li><a class="IntroBtn" href="#"><strong>栈</strong>方法<span class="caret"></span></a>
+                     <div class="Intro">
+                       <p>ECMAScript数组提供了一种让数组行为类似栈一样的方法,可以用来限制插入和删除项的数据结构,因此提供了专门的<em>push()</em>以及<em>pop()</em>方法...</p>
+                       <p><em>push()</em>方法可以接收任意数量的参数,把它们逐个添加到数组末尾,并返回修改后的数组长度...</p>
+                       <pre class="prettyprint linenums">var count = colors.push("black","yellow");//count=5,['red','blue','green','black','yellow']</pre>
+                       <p><em>pop()</em>方法则从数组末尾移除最后一项,减少数组length值,然后返回移除的项...</p>
+                       <pre class="prettyprint linenums">var item = colors.pop();//item = 'yellow'</pre>
+                      </div> 
+                     </li>
+                     <li><a class="IntroBtn" href="#"><strong>队列</strong>方法<span class="caret"></span></a>
+                     <div class="Intro">
+                       <p>既然能够来实现栈,那么来实现<strong>队列</strong>这个数据结构也应是理所当然了...其提供了两个方法:<em>push()</em>方法,与栈的push()方法一样,是在数组末尾添加项的方法;<em>shift()</em>方法则能够移除数组中的第一个项并返回该项,同时长度减一...</p>
+                       <pre class="prettyprint linenums">
+ var count = colors.push("black","yellow");//推入两项,并返回数组长度
+ var item = colors.shift();//item = 'red'</pre>
+                       <p><em>push(),shift()</em>方法是数组尾部插入数据,数组头部删除数据,而ECMAScript还提供了一组与之相反的方法: <em>pop(),unshift()</em>方法,顾名思义,其能够在数组前端添加任意项数据,并返回数组长度,删除数组最后一项数据...</p>
+                      </div> 
+                     </li>
+                     <li><a class="IntroBtn" href="#"><strong>重排序</strong>方法<span class="caret"></span></a>
+                     <div class="Intro">
+                        <p>数组中可以用来重排序的方法有两个:<em>reverse()</em>以及<em>sort()</em>方法</p>
+                        <p><em>reverse()</em>方法是反转数组项的数据.</p>
+                        <pre class="prettyprint linenums">  
+ var values = [1,2,3,4,5];
+ values.reverse();// values =[5,4,3,2,1]</pre>
+                        <p>在默认情况下,<em>sort()</em>方法是按升序排列数组项,并且重要的是其比较的是字符串...</p>
+                        <pre class="prettyprint linenums">
+var values = [0,1,5,10,15];
+values.sort(); //0,1,10,15,5</pre>
+                        <p>对于其对字符串的排序,我们很多情况下不需要这样,因此<em>sort()</em>方法可以接收一个比较函数作为参数,来指定哪个值位于哪个值的前面...下面就是一个简单的比较函数:</p>
+                        <pre class="prettyprint linenums">
+  function compare(value1,value2){
+     if(value1 &lt; value2){
+          return -1;
+     }else if(value1 &gt; value2){
+          return 1;
+     }else{
+          return 0;
+     }
+  }
+  var values = [0,1,5,15,10];
+  values.sort(compare);
+  alert(values); //0,1,5,10,15
+                        </pre>
+                     </div>   
+                     </li>
+                     <li><a class="IntroBtn" href="#"><strong>操作</strong>方法<span class="caret"></span></a>
+                     <div class="Intro">
+                       <p>ECMAScript为操作已经包含在数组中的项提供了很多方法...</p>
+                        <p><em>concat()</em>方法,可以基于当前数组中的所有项创建一个新数组,先创建当前数组的一个副本,然后将接收的参数添加到这个副本的末尾,若没有参数,则只是复制当前数组,并返回副本.</p>
+                        <pre class="prettyprint linenums"> 
+var colors = ['red','green','blue'];
+var  colors2 =colors.concat('yellow','black');//"red", "green", "blue", "yellow", "black"</pre>  
+                        <p><em>slice()</em>方法,能够基于当前数组中的一项或者多个项创建一个新数组,其可以接收一个或者两个参数,即要返回的起始和结束位置,一个参数时,返回从该项参数指定位置到数组末尾的所有项,两个参数时,返回起始到结束位置间的项,但不包括结束位置的项...如:</p>
+                        <pre class="prettyprint linenums">
+color3 = colors2.slice(1);//green,blue,yellow,black
+color4 = colors2.slice(1,4);//green,blue,yellow</pre>
+                        <p>值得注意的是,<em>slice()</em>不会影响原始数组,如果参数中有负数,则用数组长度加上这个负数来确定相应的位置...</p>
+                        <p><em>splice()</em>方法主要用途是向数组中部插入项,但使用这种方式则有以下三种:</p>
+                        <ul class="publicLiStyle">
+                          <li><p>删除,可以删除任意数量的项,只需指定2个参数:<strong>要删除的第一个项位置,和要删除的项数</strong>.并返回删除的项.</p>
+                            <pre class="prettyprint linenums">var color5 = colors2.splice(0,2);//删除前两项,color5 =['red','green']</pre>
+                          </li>
+                          <li><p>插入,可以向指定位置插入任意数量的项,只需3个参数:<strong>起始位置,0(要删除的项),要插入的项</strong>,返回的是空数组(删除项为0)...</p>
+                          <pre class="prettyprint linenums"> var color6 = colors2.splice(1,0,'orange','white');//从位置1开始插入两项</pre></li>
+                          <li><p>替换,可以向指定位置插入任意数量的项,且同时删除任意数量的项,只需3个参数:<strong>起始位置,要删除的项数,要插入任意数量的项</strong>,返回的是删除的项...</p>
+                           <pre class="prettyprint linenums">var color7 =colors2.splice(1,1,'red','blue');//插入二项,删除一项</pre>
+                          </li>
+                        </ul>
+                      </div>  
+                     </li>
+                     <li><a class="IntroBtn" href="#"><strong>位置</strong>方法<span class="caret"></span></a>
+                     <div class="Intro">
+                       <p>ECMAScript5 为数组添加了两个位置方法:<em>indexOf()</em>以及<em>lastIndexOf()</em>方法,这两个方法都接收两个参数: <strong>要查找的项</strong>以及可选的<strong>查找位置的索引</strong>,返回的是查找项在数组中的位置,没有找到时返回<strong>-1</strong>,并且比较是全等操作符</p>
+                       <p><em>indexOf()</em>从数组的开头向后查找...</p>
+                       <pre class="prettyprint linenums">
+var numbers = [1,2,3,4,5,6,4] ;
+alert(numbers.indexOf(4)); //3 在3位置上</pre>
+                       <p><em>lastIndexOf()</em>从数组的末尾开始向前查找...</p>
+                       <pre class="prettyprint linenums">alert(numbers.lastIndexOf(4));//6 在6位置上</pre>
+                      </div> 
+                     </li>
+                     <li><a class="IntroBtn" href="#"><strong>迭代</strong>方法<span class="caret"></span></a>
+                      <div class="Intro">
+                         <p>ECMAScript为数组定义了5个迭代方法,每个方法都接收两个参数:<strong>在每一项上运行的函数,运行函数的作用域对象(可选)</strong>,而传入这些方法的函数会接收三个参数:<strong>数组项的值,该项在数组中的位置,数组对象本身...</strong></p>
+                         <p>现在定义了一个数组,来说明这五个方法的用法:</p>
+                         <pre class="prettyprint linenums"> var numbers =[1,2,3,4,5,4,3,2,1];</pre>
+                         <div class="container" id="iterationArray">
+                            <div class="title">
+                              <ul>
+                                <li class="fiveCrack selectedTitle titleLi" data-number="0"><strong>every()</strong>方法<span class="caret"></span></li>
+                                <li class="fiveCrack notSelectTitle titleLi" data-number="1"><strong>filter()</strong>方法<span class="caret"></span></li>
+                                <li class="fiveCrack notSelectTitle titleLi" data-number="2"><strong>forEach()</strong>方法<span class="caret"></span></li>
+                                <li class="fiveCrack notSelectTitle titleLi" data-number="3"><strong>map()</strong>方法<span class="caret"></span></li>
+                                <li class="fiveCrack notSelectTitle titleLi" data-number="4"><strong>some()</strong>方法<span class="caret"></span></li>
+                              </ul>
+                            </div> <!-- title -->
+                            <div class="content contentFive">
+                                <div class="blockDisplay contentDiv">
+                                  <p>对数组中的每一项运行给定函数,如果函数每一项返回<em>true</em>,则返回<em>true</em></p>
+                                 <pre class="prettyprint linenums">var everyResult = numbers.every(function(item,index,array){ return (item>2);}) ;//false</pre>
+                                </div>
+                                <div class="noneDisplay contentDiv">
+                                  <p>对数组中的每一项运行给定函数,返回该函数会返回的<em>true</em>的项组成的数组</p>
+                                  <pre class="prettyprint linenums"> var filterResult= numbers.filter(function(item,index,array){ return (item>2);}); //[3,4,5,4,3]</pre>
+                                </div>
+                                <div class="noneDisplay contentDiv">
+                                  <p>对数组中的每一项运行给定函数,这个方法没有返回值</p>
+                                  <pre class="prettyprint linenums">numbers.forEach(function(item,index,array){//执行某些操作});//</pre>
+                                </div>
+                                <div class="noneDisplay contentDiv">
+                                  <p>对数组中的每一项运行给定函数,返回每次函数调用的结果组成的数组</p>
+                                  <pre class="prettyprint linenums">var mapResult =numbers.map(function(item,index,array){ return item*2;}); //[2,4,6,8,10,8,6,4,2]</pre>
+                                </div>
+                                <div class="noneDisplay contentDiv"><p>对数组中的每一项运行给定函数,如果函数对任一项返回<em>true</em>,则返回<em>true</em></p>
+                                 <pre class="prettyprint linenums">var someResult = numbers.some(function(item,index,array){ return (item>2);}); //true</pre>
+                                </div>
+                            </div> <!-- content contentFive -->
+                         </div> <!-- container" id="iterationArray -->
+                      </div>    
+                     </li>
+                     <li><a class="IntroBtn" href="#"><strong>缩小</strong>方法<span class="caret"></span></li></a>
+                     <div class="Intro">
+                         <p>ECMAScript5 新增了两个缩小数组的方法:<em>reduce(),reduceRight()</em>方法,这两个方法都会迭代数组的所有项,然后构建一个最终的返回值,其中<em>reduce()</em>从数组的第一项开始,逐个遍历到最后,<em>reduceRight()</em>从数组最后一项开始,向前遍历到第一项...</p>
+                         <p>这两个方法都接收两个参数:<strong>一个在每一项上调用的函数,作为缩小基础的初始值(可选)</strong>,其中函数部分都接收四个参数:<strong>前一个值,当前值,项的索引,数组对象</strong>,这个函数的返回值会作为第一个参数自动传给下一项.如:</p>
+                         <pre class="prettyprint linenums">
+   var values =[1,2,3,4,5];
+   var sum = values.reduce(function(pre,cur,index,array){
+       return pre + cur;
+   });
+   alert(sum); //15
+                         </pre>
+                     </div>
+                   </ul>
+                 </div>
+              </li>
+             <li><a href="#" class="IntroBtn">
+                 <strong>Date</strong>类型<span class="caret"></span></a>
+                 <div class="Intro">
+                    <p><em>Date</em>类型使用<strong>UTC</strong>国际协调时间,保存的日期能够精确到<em>1970年1月1日之前或者285616年</em></p> 
+                    <p>创建一个日期对象,使用<em>new</em>操作符,和<em>Date</em>构造函数即可</p>
+                    <pre class="prettyprint linenums">var now  =new Date();//获得当前日期和时间</pre>
+                    <p>关于日期的方法有很多,下面介绍几种常用的方法:</p>
+                    <ul class="publicLiStyle">
+                      <li><em>getTime()</em>,返回日期的毫秒数,与<em>valueOf()</em>方法返回值相同</li>
+                      <li><em>getFullYear()</em>,取得四位数的年份</li>
+                      <li><em>getMonth()</em>,返回日期中的月份,其中0 表示1月,11表示12月</li>
+                      <li><em>getDate()</em>,返回日期月份中的天数</li>
+                      <li><em>getDay()</em>返回日期中的星期的星期几,0表示星期日,6表示星期六</li>
+                      <li><em>getHours()</em>返回日期中的小时数</li>
+                      <li><em>getMinutes()</em>返回日期中的分钟数</li>
+                      <li><em>getSeconds()</em>返回日期中的秒数</li>
+                      <li><em>getMillseconds()</em>返回日期中的毫秒数</li>
+                      <li>...</li>
+                    </ul>
+                 </div>
+              </li>
+             <li><a href="#" class="IntroBtn">
+                 <strong>RegExp</strong>类型<span class="caret"></span></a>
+                 <div class="Intro">
+                   <p>ECMAScript通过<em>RegExp</em>类型来支持<strong>正则表达式</strong></p>
+                   <p>创建正则表达式的语法类<em>Perl</em>语法:</p>
+                   <pre class="prettyprint linenums"> var expression = / pattern / flags ;</pre>
+                   <p>其中的模式(pattern)部分可以是任意简单或者复杂的正则表达式,可以包含<em>字符,限定符,分组,向前查找,反向引用</em>;每个正则表达式可以带有一或多个标志(flags),用来表明正则表达式的行为...</p>
+                   <p>其匹配模式支持下列三种标志:</p>
+                   <ul class="publicListyle">
+                     <li><p><strong>g </strong>:表示全局模式,即模式应用于所有字符串,而非在发现第一个匹配项时停止...</p>
+                       <pre class="prettyprint linenums">var pattern1 = /at/g ;//匹配字符串中所有的"at"实例</pre>
+                     </li>
+                     <li><p><strong>i </strong>:表示不区分大小写模式</p>
+                       <pre class="prettyprint linenums">var pattern2 = /[bc]at/i ;//匹配第一个"bat"或"cat",不区分大小写</pre>
+                     </li>
+                     <li><p><strong>m </strong>:表示多行模式,即 在到达一行文本末尾时还会继续查找下一行是否存在与模式匹配的项</p>
+                       <pre class="prettyprint linenums">var pattern3 = /.at/gi ;//匹配所有以"at"结尾的三个字符的组合,不区分大小写</pre>
+                     </li>
+                   </ul>
+                  <p>与其它语言的正则表达式类似,模式中使用的所有<strong>元字符</strong>都必须转义,如:</p>
+                  <pre class="prettyprint linenums">( [ { \ ^ $ | ) ? * + .] }</pre>
+                  <p>RegExp的每一个实例都具有下列属性,通过这些属性可以取得有关模式的各种信息</p>
+                  <ul class="publicLiStyle">
+                      <li>
+                        <p><strong>global </strong>:布尔值,表示是否设置了<em>g</em>标志</p>
+                      </li>
+                      <li>
+                        <p><strong>ignoreCase </strong>: 布尔值,表示是否设置了<em>i</em>标记</p>
+                      </li>
+                      <li>
+                        <p><strong>lastIndex </strong>:整数,表示开始搜索下一个匹配项的字符位置</p>
+                      </li>
+                      <li>
+                        <p><strong>multiline </strong>布尔值,表示是否设置了<em>m</em>标记</p>
+                      </li>
+                      <li>
+                        <p><strong>source</strong>正则表达式的字符串表示</p>
+                      </li>
+                    </ul>  
+                    <p>RegExp的实例方法主要有两个<strong>exec(),test()</strong></p>
+                    <ul class="publicLiStyle">
+                      <li>
+                        <p><strong>exec()</strong>方法接收一个参数,即要应用模式的字符串,返回包含第一个匹配项信息的数组,没有匹配项时返回<em>null</em>,返回的数组有两个属性:<em>index</em>和<em>input</em>,index表示匹配项在字符串中的位置,input表示应用正则表达式的字符串</p>
+                        <img src="sources/matches22.png" height="220" width="600" alt="loading"/>
+                        <p>对于exec()方法,在不设置全局标记的情况下,在同一个字符串上多次调用exec()将始终返回第一个匹配项的信息,如:</p>
+                        <img src="sources/matches0.png" height="214" width="600" alt="loading"/>
+                        <p>然而即使在模式中设置全局标记,它每次也只返回一个匹配项,但返回的匹配项都是字符串中的下一个匹配项,如;</p>
+                        <img src="sources/matches1.png" height="220" width="600" alt="loading"/>
+                      </li>
+                      <li>
+                        <p><strong>test()</strong>方法,它只接收一个字符串参数,在模式与该参数匹配的情况下返回<em>true</em></p>
+                      </li>
+                    </ul>
+                 </div>
+              </li>
+             <li><a href="#" class="IntroBtn">
+                 <strong>Function</strong>类型<span class="caret"></span></a>
+                 <div class="Intro">
+                   <p>在ECMAScript中,函数实际上是对象,每个函数都是<em>Function</em>类型的实例,而且都与其他引用类型一样具有属性和方法...</p>
+                   <p><strong>函数名</strong>实际上也是一个指向函数对象的指针而已,不会与某个函数绑定...</p>
+                   <p>既然函数名是指针了,那就很容易清楚前面说的<strong>ECMAScript的函数为什么没有重载</strong>了...</p>
+                   <p>还有一个需要知道的是<strong>函数声明和函数表达式</strong>,前面说了这是定义函数的两种方法,但也有它们的区别:解析器在向执行环境中加载数据时,对函数声明和函数表达式并非一视同仁.解析器会率先读取函数声明,并使其在执行任何代码之前可用;至于函数表达式,则必须等到解析器执行到它所在的代码行,才会真正被解释执行...如:</p>
+                   <pre class="prettyprint linenums">
+   //这个是用的函数声明,在alert()语句中能够正确执行...
+     alert(sum(10,10));
+     function sum(a,b){
+        return a+b;
+     }
+  //下面的用的函数表达式,在执行期间会导致错误...
+    alert(sum(10,10));
+    var sum =function(a,b){
+       return a+b;
+    }
+                   </pre>
+                   <p>既然函数名本来就是变量,那么函数也就可以作为值来使用.也就是说,不仅可以像传递参数一样把一个函数传递给另一个函数,还可以将一个函数作为另一个函数的结果返回.</p>
+                   <p>函数有<strong>内部属性</strong>,在其内部,有两个特殊的对象:一个是前面提到的<strong>arguments</strong>,还有一个就是我们熟悉的<strong>this</strong>了,虽然<em>arguments</em>主要是用来保存函数参数,但其也有一个<em>callee</em>的属性,此属性是一个指针,指向拥有这个<em>arguments</em>对象的函数.如下面这个经典的阶乘运算,就用到了这个属性:</p>
+                   <pre class="prettyprint linenums">
+   function factorial(num){
+      if(num &lt;=1){
+          return 1;
+      }else{
+         return num * arguments.callee(num-1);
+      }
+   }
+                   </pre>
+                   <p>对于<em>this</em>来说,其行为与Java,C/C++中的<em>this</em>大致相似,<em>this</em>引用的是函数据以执行的环境对象...</p>
+                   <p>另一个函数对象的属性:<em>caller</em>,这个属性中保存着调用当前函数的函数的引用,如果是在全局作用域中调用当前函数,它的值就为<em>null</em>...</p>
+                   <p>函数既然是对象,也就有属性和方法,每个函数都包含两个属性:<em>length</em>以及<em>prototype</em>,其中<em>length</em>表示函数希望接收的命名参数个数,当函数的所需参数的个数与传递参数的个数相同时,<pre class="prettyprint linenums">functionName.length</pre>与函数内部的<pre class="prettyprint linenums">arguments.length</pre>相同...</p>
+                   <p>另一个属性<em>prototype</em>是最耐人寻味了,对于所有引用而言,<em>prototype</em>是保存它们所有实例方法的真正所在,关于其更多的内容,在<strong>JavaScript面向对象的程序设计</strong>一章中有更详细的描述...</p>
+                   <p>除了属性外,函数还有两个非继承而来的方法:<strong>apply() 和 call()</strong>,这两个方法的用途都是在特定的作用域中调用函数,实际上等于设置函数体内<em>this</em>对象的值</p>
+                   <p>其中<em>apply()</em>方法接收两个参数:一个是在其中运行函数的作用域,另一个是参数数组(<small>可以是Array的实例,也可以是arguments对象</small>)</p>
+                   <pre class="prettyprint linenums">
+   function sum(num1,num2){
+      return num1+num2;
+   }
+   function callSum(num1,num2){
+      return sum.apply(this,arguments);
+   }
+   alert(callSum(10,5)); //15
+                   </pre>
+                   <p><em>call</em>方法与<em>apply()</em>方法作用相同,其第一个参数与<em>apply()</em>的相同,而传递给函数的其余参数都必须逐个列举出来...</p>
+                   <p>而这两种方法的用武之地并非传递参数,而是能够扩充函数的作用域,如:</p>
+                   <pre class="prettyprint linenums">
+  window.color ='red';
+  var o ={ color : 'blue'};
+  function saColor(){
+      alert(this.color);
+  }  
+  sayColor();  //red
+  sayColor.call(this); //red
+  sayColor.call(window); //red
+  sayColor.call(o) ; //blue
+                   </pre>
+                 </div>
+              </li>
+             <li><a href="#" class="IntroBtn">
+                 <strong>单体内置</strong>对象<span class="caret"></span></a>
+                 <div class="Intro">
+                   <p>有ECMAScript实现提供的,不依赖宿主环境的对象就是<strong>内置对象</strong>,前面说的<em>Object,Array,String</em>等对象都是内置对象,而除此之外还定义了两个单体内置对象:<strong>Global 和 Math</strong></p>
+                   <ul class="publicLiStyle">
+                     <li><strong>Global</strong>对象
+                         <p>Global(全局)对象是最特别的一个对象,因为不管从哪个角度看,这个对象都是不存在的.在某种意义上作为一个"兜底儿对象"定义的,不属于任何其它对象的属性和方法,最终都是它的属性和方法;所有在全局作用域中定义的属性和函数都是Global对象的属性,方法...</p>
+                         <p>下面将介绍几种Global对象的方法</p>
+                         <ul class="publicLiStyle">
+                           <li><p><strong>URI</strong>编码方法</p>
+                               <p><em>encodeURI(),encodeURIComponent()</em>可以对URI<small>(通用资源标识符)</small>进行编码,以便发送给浏览器,其中<em>encodeURI</em>对整个URI,而<em>encodeURIComponent</em>对URI的某一段编码</p>
+                               <p>与之对应的两个解码方法是:<em>decodeURI() ,decodeURIComponent()</em></p>
+                           </li>
+                           <li><p><strong>eval()</strong>方法</p>
+                              <p>其大概是ECMAScript语言中最强大的一个方法,就像一个完整的解析器,它只接收一个参数,即要执行的ECMAScript字符串..</p>
+                              <pre class="prettyprint linenums">eval("alert('hello JS')");//相当于 alert("hello JS");</pre>
+                           </li>
+                         </ul>
+                         <p><strong>window</strong>对象,ECMAScript虽然没有指出如何访问<em>Global</em>对象,但浏览器可以将这个全局变量作为<em>window</em>对象的一部分加以实现,所以在全局作用域中声明的变量和函数,成为了<em>window</em>对象的属性</p>
+                     </li>
+                     <li><strong>Math</strong>对象
+                         <p><em>Math</em>对象中保存数学公式和信息</p>
+                         <div class="container" id="Math">
+                            <div class="title">
+                              <ul>
+                                <li class="fiveCrack selectedTitle titleLi" data-number="0"><strong>Math</strong>对象的属性<span class="caret"></span></li>
+                                <li class="fiveCrack notSelectTitle titleLi" data-number="1"><strong>min(),max()</strong>方法<span class="caret"></span></li>
+                                <li class="fiveCrack notSelectTitle titleLi" data-number="2"><strong>舍入</strong>方法<span class="caret"></span></li>
+                                <li class="fiveCrack notSelectTitle titleLi" data-number="3"><strong>random()</strong>方法<span class="caret"></span></li>
+                                <li class="fiveCrack notSelectTitle titleLi" data-number="4"><strong>其它</strong>方法<span class="caret"></span></li>
+                              </ul>
+                            </div>
+                           <div class="content contentFive">
+                             <div class="blockDisplay contentDiv">
+                               <table class="tableTwo">
+                                  <tr><th>属性</th><th>说明</th></tr>
+                                  <tr><td>Math.E</td><td>自然对数的底数,常量e的值</td></tr>
+                                  <tr><td>Math.LN10</td><td>10的自然对数</td></tr>
+                                  <tr><td>Math.LN2</td><td>2的自然对数</td></tr>
+                                  <tr><td>Math.LOG2E</td><td>以2为底e的对数</td></tr>
+                                  <tr><td>Math.LOG10E</td><td>以10为底e的对数</td></tr>
+                                  <tr><td>Math.PI</td><td>圆周率</td></tr>
+                                  <tr><td>Math.SQRT_2</td><td>1/2的平方根</td></tr>
+                                  <tr><td>Math.SQRT2</td><td>2的平方根</td></tr>
+                               </table>
+                             </div>
+                             <div class="noneDisplay contentDiv">
+                               <p><em>min()</em>方法用于确定一组数值的最小值可以接收任意多个数值参数,如:</p>
+                               <pre class="prettyprint linenums">var min = Math.min(3,4,1,5); //min =1</pre>
+                               <p><em>max()</em>方法与<em>min()</em>方法相反,用于确定一组数值的最大值,同样可以接收任意多个数值参数,如:</p>
+                               <pre class="prettyprint linenums">var max = Math.max(3,4,1,5); //max = 5</pre>
+                               <p>结合上面所说的<em>apply()</em>方法,可以来求一个数组中的最大(最小)值,如:</p>
+                               <pre class="prettyprint linenums">
+ var values = [4,3,2,1,5,7,8];
+ var min = Math.min.apply(Math,values);//min = 1;</pre>
+                             </div>
+                             <div class="noneDisplay contentDiv">
+                               <p>将小数值舍入为整数有以下几个方法:</p>
+                               <ul class="publicLiStyle">
+                                 <li><strong>Math.ceil()</strong>方法,向上舍入</li>
+                                 <li><strong>Math.floor()</strong>向下舍入</li>
+                                 <li><strong>Math.round()</strong>标准舍入,四舍五入为最接近的整数</li>
+                               </ul>
+                             </div>
+                             <div class="noneDisplay contentDiv">
+                               <p><em>Math.random()</em>方法是一个求随机数的方法,返回一个介于<strong>0和1</strong>之间的随机数,但不包括0和1</p>
+                               <p>为了求某个整数范围内的一个随机值,可以套用下面的公式:</p>
+                               <pre class="prettyprint linenums">值 =  Math.floor(Math.random() * 可能值的总数 + 第一个可能的值)</pre>
+                             </div>
+                             <div class="noneDisplay contentDiv">
+                                <table class="tableTwo">
+                                  <tr><th>方法</th><th>说明</th></tr>
+                                  <tr><td>Math.abs(num)</td><td>返回num的绝对值</td></tr>
+                                  <tr><td>Math.exp(num)</td><td>返回Math.E的num次幂</td></tr>
+                                  <tr><td>Math.pow(num,power)</td><td>返回num的power次幂</td></tr>
+                                  <tr><td>Math.sqrt(num)</td><td>返回num的平方根</td></tr>
+                                  <tr><td>Math.cos(x)[Math.acos(x)]</td><td>x的余弦值[x的反余弦值]</td></tr>
+                                  <tr><td>Math.sin(x)[Math.asin(x)]</td><td>x的正弦值[x的反正弦值]</td></tr>
+                                  <tr><td>Math.tan(x)[math.atan(x)]</td><td>x的正切值[x的反正切值]</td></tr>
+                                </table>
+                             </div>
+                           </div> 
+                         </div> <!-- container -->
+                     </li> <!-- math 对象 -->
+                   </ul>
+                 </div> <!-- 单体内置对象 -->
+              </li>  <!-- 单体内置对象的直接外层li -->
+             <li>更多详细的内容,可以到<a href="https://developer.mozilla.org/en-US/">mozilla网站</a>上仔细阅读.</li>
+           </ol>
+      </div>
+		</div>
+	</li>
+	<li id="section-4">
+		<div class="sections">
+			<h3>JavaScript的函数表达式<small><a href="#" class="beginStudy">开始学习</a></small></h3>
+			<div class="section">
+         <p>前面已经提到了<strong>函数表达式</strong>这一概念,它是定义函数的其中一种方式,本章则详细的介绍一些内容:<strong>函数表达式的特征,递归,闭包,模仿块级作用域</strong>等几部分的内容...</p>
+         <ol>
+           <li><p><strong>匿名函数,递归</strong></p>
+             <p>对于使用函数表达式创建的函数,看起来好像是常规的变量赋值语句,即创建一个函数并将它赋值给变量,这种情况下创建的函数叫<strong>匿名函数</strong>,匿名函数的<em>name</em>属性是空字符串...</p>
+             <p>关于<strong>递归</strong>,在前面已经说了,当在函数体内调用此函数时,最好不要使用此函数名称,因为其就是一个指针,可能变化.我们通过<em>arguments.callee</em>来调用自身,可以做到更好的效果...</p>
+           </li>
+           <li><a href="#" class="IntroBtn"><strong>闭包</strong><span class="caret"></span></a>
+           <div class="Intro">
+             <p>提到这儿,就不能不提<strong>闭包</strong>这个概念了,所谓闭包就是指有权访问另一个函数作用域中变量的函数.所以创建闭包的常见方式就是在一个函数内部创建另一个函数...如:</p>
+            <pre class="prettyprint linenums">
+  function createComparisonFunction(propertyName){
+      return function(object1,object2){
+          var value1 =object1[propertyName];
+          var value2 =object2[propertyName];
+          if(value1 &lt; value2){
+              return -1;
+          }else if(value1 &gt; value2){
+              return 1;
+          }else{
+              return 0;
+          }
+      };
+  }
+            </pre>
+           <p>在这个函数中,内部函数访问了外部函数的变量,即使这个内部函数被返回了,而且在其他地方被调用了,但其依然可以访问<em>propertyName</em>,因为内部函数的作用域链内包含了外部函数的作用域.
+           <small>(这里有了一个新的概念,那就是<strong>作用域链</strong>,关于如何创建作用域链以及作用域链有什么作用对彻底理解闭包至关重要,当函数第一次被调用时,会创建一个执行环境及相应的作用域链,并把作用域链赋值给一个特殊的内部属性:<strong>[[Scope]]</strong>,然后使用<em>this,arguments</em>,以及其他的命名参数来初始化函数的活动对象,但在作用域链中,外部函数的活动对象始终处于第二位,外部函数的外部函数活动对象处于第三位...直至作为作用域链终点的全局执行环境)</small></p>
+           <pre class="prettyprint linenums">
+  function compare(value1,value2){
+     if(value1 &lt; value2){
+         return -1;
+     }else if( value1 &gt; value2){
+         return 1;
+     }else{
+         retrun 0;
+     }
+  }   
+  var result = compare(5,10);    
+           </pre>
+           <p>上面代码定义的函数执行时的作用域链就如下面这个样子:</p>
+           <img src="sources/scopeChain.png" height="308" width="745" alt="loading"/>
+           <p>对于这个例子的compare()函数的执行环境而言,其作用域链中包含两个变量对象:本地活动对象和全局变量对象.很显然全局变量对象位于第二个位置...</p>
+          <p>无论何时在函数中访问一个变量时,就会从作用域链中搜索具有相应名字的变量,一般来说,当函数执行完毕后,局部活动对象就会被销毁,内存中仅保存全局作用域.但是对于本节讲的闭包,却有所不同...</p>
+          <p>就拿前面刚刚创建的那个闭包来说,当匿名函数从<em>createComparisonFunction()</em>中被返回后,其作用域链被初始化包含了createComparisonFunction()函数的活动对象和全局变量对象,当createComparisonFunction()函数在执行完毕后,其活动对象也不会被销毁,因为匿名函数的作用域链仍然在引用这个活动对象,但其执行环境的作用域链会被销毁,直到匿名函数被销毁后,createComparisonFunction()函数的活动对象才会被销毁..</p>
+          <p>由于闭包会携带包含它的函数作用域,所以会占用更多内存,使用时也要注意...</p>
+          <p>作用域链的这种配置机制引出了一个值得注意的副作用,即<strong>闭包只能取得包含函数中任何变量的最后一个值</strong>如:</p>
+          <pre class="prettyprint linenums">
+  function createFunctions(){
+   var result =new Array();
+   for(var i=0;i &lt; 10;i++){
+     result[i] =function(){
+        return i;
+     };
+   }
+   return result;
+  }
+
+  for(var j=0;j &lt; 10;j++){
+      createFunctions()[j]();
+  }
+          </pre>
+          <p>在上面的代码中,对于createFunctions()函数返回的函数数组的每个函数的返回结果是10,而不是0..9</p>
+          <p>为了使每个函数返回的是相应的数字而不是统一返回10,则可以向下面这样子来修改:</p>
+          <pre class="prettyprint linenums">
+  function createFunctions(){
+    var result =new Array();
+    for(var i=0;i &lt; 10;i++){
+      result[i] = function(num){
+         return function(){
+            return num;
+         };
+      }(i);
+    }
+    return result;
+  }
+
+for(var j=0;j &lt; 10;j++){
+  createFunctions()[j]();
+  } 
+          </pre>
+         <p>通过这样的改变每个函数则会返回自己所对应的数字</p> 
+         <p>在闭包中使用<em>this</em>也可能会导致一些问题,匿名函数的执行环境具有全局性,因此<em>this</em>对象通常指向<em>window</em><small>(在通过call(),apply()改变函数执行环境的情况下,this就会指向其他对象)</small>.前面已经说了,每个函数在被调用时其活动对象都会自动取得两个特殊变量: this和arguments,内部函数在搜索这两个变量时,只会搜索到其活动对象为止,因此永远不可能直接访问外部函数中的这两个变量...</p>
+        </div> <!-- Intro 闭包--> 
+        </li> 
+        <li>
+          <p><strong>模仿块级作用域</strong><p>
+          <p>有人可能会说,为什么是模仿呢?其原因就是JS没有块级作用域的概念而匿名函数可以用来模仿块级作用域并避免一些问题,比如<small>(由于JS从来不会告诉你是否多次声明了同一变量,遇到这种情况,它只会对后续的声明视而不见,但可以执行后续声明中的变量初始化)</small></p>
+          <p>用作块级作用域的匿名函数的语法如下:</p>
+          <pre class="prettyprint linenums">(function(){ //块级作用域}) ();</pre>
+          <p>在此语法中,函数声明部分包含在一对圆括号中,表示它实际是一个函数表达式,而紧随其后的另一对括号会立即调用这个函数</p>
+        </li>
+         <li>更多详细的内容,可以到<a href="https://developer.mozilla.org/en-US/">mozilla网站</a>上仔细阅读.</li>
+        </ol> 
+      </div> <!-- class section -->
+		</div>  <!-- class sections -->
+	</li> <!-- id section-4 -->
+	<li id="section-5">
+		<div class="sections">
+			<h3>JavaScript的BOM(浏览器对象模型)<small><a href="#" class="beginStudy">开始学习</a></small></h3>
+		    <div class="section">
+        <p>ECMAScript是JavaScript的核心,但如果要在Web中使用JavaScript,那么<strong>BOM</strong>则无疑才是真正的核心,BOM提供了很多对象,用于访问浏览器的功能,这些功能与任何网页内容无关,接下来我们将详细介绍几种BOM提供的对象...</p>
+        <div class="leftTitleRightContent" data-number="0" id="BOM"> <!--0表示第一个浮动在左边的标题栏,必须按顺序 -->
+           <div class="leftTitle">
+              <ul>
+                <li data-number="0" class="titleLi selectedTitle"><strong>window</strong>对象</li>
+                <li data-number="1" class="titleLi notSelectTitle"><strong>location</strong>对象</li>
+                <li data-number="2" class="titleLi notSelectTitle"><strong>navigator</strong>对象</li>
+                <li data-number="3" class="titleLi notSelectTitle"><strong>screen,hi- story</strong>对象</li>
+              </ul>
+           </div> <!-- leftTitle -->
+           <div class="rightContent">
+             <div class="blockDisplay contentDiv">
+               <p>&nbsp &nbsp &nbsp &nbspBOM的核心对象是<strong>window</strong>,它表示浏览器的一个实例,在浏览器中<em>window</em>对象有双重角色,它既可以通过JavaScript访问浏览器窗口的一个接口,又是ECMAScript规定的<em>Global</em>对象</p>
+               <ul class="publicLiStyle">
+                  <li><p><strong>全局作用域</strong></p>
+               <p>所有在全局作用域中声明的变量,函数都会变成<em>window</em>对象的属性和方法</p>
+               <p>抛开全局变量会成为window对象的属性不谈,定义全局变量与在window对象上直接定义属性还是有一点差别: <strong>全局变量不能通过<em>delete</em>操作符删除,而直接在window对象上定义的属性可以</strong> </p>
+                  </li> <!-- 全局作用域 -->
+                  <li>
+                      <p><strong>窗口关系及框架</strong></p>
+                      <p>如果页面中包含框架,则每个框架都有自己的window对象,并且保存在<em>frames</em>集合中,在frames集合中可以通过数值索引<small>(从0开始,从左至右,从上到下)</small>或者框架名称来访问相应的window对象,每个window对象都有一个<em>name</em>属性,其中包括框架的名称.</p>
+                      <p><strong>top</strong>对象始终指向最高(最外)层的框架,也就是浏览器窗口,使用它可以确保在一个框架中正确访问另一个框架...</p>
+                      <p>与top对应的另一个window对象是<strong>parent</strong>,其始终指向当前框架的直接上层框架,在某些情况下,parent有可能等于top,但在没有框架的情况下,parent一定等于top...</p>
+                      <p>与框架有关的最后一个对象是<strong>self</strong>,它始终指向window...</p>
+                  </li> <!-- 窗口关系及框架 -->
+                  <li>
+                    <p><a class="IntroBtn" href="#"><strong>窗口位置</strong><span class="caret"></span></a></p>
+                    <div class="Intro">
+                    <p>用来确定和修改window对象位置的属性和方法很多,在<strong>IE,Safari,Opera,Chrome</strong>都提供了<strong>screenLeft</strong>和<strong>screenTop</strong>属性,分别来表示窗口相对于屏幕左边和上边的位置,<strong>Firefox</strong>则在<strong>screenX,screenY</strong>属性中提供相同的窗口位置信息..我们可以通过如下代码跨浏览器取得窗口左边和上边位置...</p>
+                     <pre class="prettyprint linenums">
+var leftPos =(typeof window.screenLeft =="number") ? window.screenLeft : window.screenX;
+var topPos = (type window.screenTop =="number") ? window.screenTop : window.screenY;</pre>
+                     <p>尽管在不同的浏览器中能够返回窗口的位置,但有许多的差别,应视情况而定</p>
+                     <p>使用<strong>moveTo(),moveBy()</strong>方法可以将窗口位置精确地移动到新位置,这两个方法都接收两个参数,其中<em>moveTo()</em>接收的是新位置的x和y的坐标值,<em>moveBy()</em>接收的是在水平和垂直方向上移动的像素数,这两个方法都不适应于框架,只能对最外层的window对象使用...</p>
+                     </div> <!-- 窗口位置 -->
+                  </li>
+                  <li>
+                    <p><a class="IntroBtn" href="#"><strong>窗口大小</strong><span class="caret"></span></a></p>
+                    <div class="Intro">
+                    <p>跨浏览器确定一个窗口的大小不是一件简单的事.IE9,Firefox,Safari,Opera,Chrome均为此提供了4个属性: <strong>innerwidth,innerHeight,outerWidth,outerHeight</strong>.在IE9,Safari,Firefox中,<em>outerWidth,outerHeight</em>返回浏览器窗口本身的尺寸<small>(无论是从最外层的window对象还是从某个框架访问)</small>而在Opera中,这两个属性表示页面视图容器多大的大小,<em>innerWidth,innerHeight</em>表示该容器中页面视图的大小<small>(减去边框宽度)</small>,在Chrome中,<em>outerWidth,outerHeight与innerWidth,innerHeight</em>返回相同值,即视口大小...</p>
+                    <p>在IE9,Firefox,Safari,Opera,Chrome中,<em>document.documentElement,clientWidth</em>和<em>document.documentElement.clientHeight</em>中保存了页面视口的大小,在混杂模式下通过<em>document.body.clientWidth</em>和<em>document.body.clientHeight</em>取得相同信息...</p>
+                    <p>最终跨浏览器取得页面视口的大小可以通过如下的代码来实现:</p>
+                    <pre class="prettyprint linenums">
+    var pageWidth = window.innerWidth;
+    var pageHeight =window.innerHeight;
+    if(typeof pageWidth != "number"){
+       if(document.compatMode =="CSS1Compat"){
+           pageWidth =document.documentElement.clientWidth;
+           pageHeight = document.documentElement.clientHeight;
+       }else{
+           pageWidth =document.body.clientWidth;
+           pageHeight =document.body.clientHeight;
+       }
+    }
+                    </pre>
+                    <p>使用<em>resizeTo(),resizeBy()</em>方法可以调整浏览器窗口的大小,这两个方法都接收两个参数,<em>resizeTo()</em>接收浏览器窗口的新宽度和新高度,而<em>resizeBy()</em>接收新窗口与原窗口的宽度,高度之差...</p>
+                    </div>  <!-- 窗口大小 -->
+                  </li>
+                  <li>
+                    <p><a class="IntroBtn" href="#"><strong>导航和打开窗口</strong><span class="caret"></span></a></p>
+                    <div class="Intro">
+                    <p>使用<em>window.open()</em>方法既可以导航到一个特定的URL,也可以打开一个新的浏览器窗口,这个方法接收四个参数: <strong>要加载的URL,窗口目标,一个特定的字符串,一个表示新页面是否取代浏览器历史记录中当前加载页面的布尔值</strong>,通常只需传递第一个参数,最后一个参数只在不打开新窗口的情况下才使用...</p>
+                    <p>如果为<em>window.open()</em>传递第二个参数,而且该参数是已有的窗口或框架名称,那么就会在具有该名称的窗口或框架中加载第一个参数指定的URL,如果不是已有的窗口或框架,那么该方法就会根据第三个参数上传入的字符串创建一个新窗口或新标签页...</p>
+                    <p>第三个参数是一个逗号分隔的字符串,表示在新窗口中都显示哪些<a href="#" class="IntroBtn">特性</a></p>
+                    <div class="Intro">
+                      <table>
+                        <tr><th>设置</th><th>值</th><th>说明</th></tr>
+                        <tr><td>height</td><td>数值</td><td>新窗口的高度,大于100</td></tr>
+                        <tr><td>left</td><td>数值</td><td>新窗口左坐标,不能为负</td></tr>
+                        <tr><td>width</td><td>数值</td><td>新窗口宽度,大于100</td></tr>
+                        <tr><td>top</td><td>数值</td><td>新窗口上坐标,不能为负</td></tr>
+                        <tr><td>resizable</td><td>yes/no</td><td>是否可通过拖到浏览器边框改变其大小,默认no</td></tr>
+                        <tr><td>scrollbars</td><td>yes/no</td><td>若内容视口中显示不下,是否允许滚动,默认no</td></tr>
+                        <tr><td>status/toolbar/menubar</td><td>yes/no</td><td>状态栏/工具栏/菜单栏是否显示,默认no</td></tr>
+                      </table>
+                      </div>
+                    <p>如下面的例子打开一个新的窗口,并调整好其大小</p>
+                    <pre class="prettyprint linenums"> window.open("http://www.google.com","gName","height=400,width=400,top=10,left=10,resizable=yes");</pre>
+                    <p>window.open()方法会返回一个指向新窗口的引用,我们可以通过这个引用来调整其大小或移动距离.而且可以通过这个引用调用<em>close()</em>关闭打开的窗口或者通过<em>top.close()</em>在不经用户允许下关闭自己...</p>
+                    <p>由于这样设置成的弹出窗口很可能成为广告的天地,所以许多浏览器都对其进行了限制...</p>
+                    </div> <!-- 导航和打开窗口 -->
+                  </li>
+                  <li><p><a class="IntroBtn" href="#"><strong>间歇调用和超时调用</strong><span class="caret"></span></a></p>
+                    <div class="Intro">
+                      <p>JavaScript是单线程语言,但其可以通过设置超时值和间歇值在特定时刻执行代码...</p>
+                      <ul class="publicLiStyle">
+                         <li><p><strong>setTimeout()</strong>方法</p>
+                             <p>接收两个参数: <strong>要执行的代码,以毫秒表示的时间</strong>,第一个参数可以是一个包含JavaScript代码的字符串<small>(就和在eval()函数中使用字符串一样)</small>也可以是一个函数...</p>
+                             <p>第二个参数表示等待多长时间的毫秒数,但经过该时间后指定的代码不一定会执行<small>(JS是单线程序解释器,一定时间只能执行一段代码,其有一个任务队列,其第二个参数只是在这个时间后将它们添加到队列中,只有队列为空时,其才会立即执行...)</small></p>
+                             <p>该方法返回一个数值ID,表示超时调用,可以通过它来取消超时调用,调用<em>clearTimeout()</em>方法并将相应超时调用ID作为参数传递给它...</p>
+                         </li>
+                         <li><p><strong>setInterval()</strong>方法</p>
+                             <p>按照指定的时间间隔重复执行代码,直至间歇调用被取消或页面被卸载.</p>
+                             <p>接收的参数与<em>setTimeout()</em>方法的相同,其返回一个间歇调用的ID,通过使用<em>clearInterval()</em>方法并传入相应的间歇调用ID...</p>
+                         </li>
+                       </ul> 
+                       <p>一般认为,使用超时调用来模拟间歇调用是一种最佳模式.</p>
+                      </div> <!-- 间歇调用和超时调用 -->
+                  </li>
+                  <li><p><a class="IntroBtn" href="#"><strong>系统对话框</strong><span class="caret"></span></a></p>
+                      <div class="Intro">
+                      <p>浏览器通过<strong>alert(),confirm(),prompt()</strong>方法调用系统对话框向用户显示信息.三个方法的用法和显示结果如下:</p>
+                      <table class="imgTable">
+                        <tr><th>alert()方法</th><th>confirm()方法</th><th>prompt()方法</th></tr>
+                        <tr><td class="tableCode"><p>接收一个字符串并将其显示给用户</p>
+                                <code> alert("hello world!");</code>
+                            </td>
+                            <td class="tableCode"><p>除了向用户显示信息外,还提供了一个确认和取消的按钮,可以决定是否执行给定操作</p>
+                                <code>  
+ if(confirm("Are you aure?")){  <br>
+    alert("I'm so glad you're sure! "); <br>
+ }else{<br>
+   alert("I'm sorry to hear you're not sure!");<br>
+ }
+                                </code>
+                            </td>
+                            <td class="tableCode"><p>这是一个提示框,用于用户输入一些文本...其接收两个参数,一个为显示给用户的文本提示,以及文本输入域的默认值(可为空字符串)</p>
+                             <code> 
+var result = prompt("What is you name?","");<br>
+ if(result!==null){ alert("Welcome, "+ result); }
+                               </code>   
+                            </td>
+                        </tr>
+                        <tr>
+                          <td><img src="sources/alert.png" height="96" width="230" alt="loading"></td>
+                          <td><img src="sources/confirm.png" height="90" width="230" alt="loading"></td>
+                          <td><img src="sources/prompt.png" height="117" width="230" alt="loading"></td>
+                        </tr>
+                      </table>
+                    </div> <!-- 系统对话框 -->
+                  </li> 
+             </div>  <!-- window对象 -->
+             <div class="noneDisplay contentDiv">
+                <p>location是最有用的BOM对象之一,它提供了与当前窗口中加载的文档有关信息,还提供了一些导航功能,其既是window对象的属性,也是document对象的属性...</p>
+                <p>其的用处不只是表现在它保存着当前文档的信息,还表现在它将URL解析为独立的片段,下面列出了location对象的所有属性</p>
+                <table>
+                  <tr><th>属性名</th><th>例子</th><th>说明</th></tr>
+                  <tr><td>hash</td><td>"#contents"</td>
+                      <td>返回URL中的hash(#号后跟零或多个字符),如果不包含散列,则返回空字符串</td>
+                  </tr>
+                  <tr><td>host</td><td>"www.google.com:8080"</td>
+                      <td>返回服务器名称和端口号(如果有)</td>
+                  </tr>
+                  <tr><td>hostname</td><td>"www.google.com"</td>
+                      <td>返回不带端口号的服务器名称</td>
+                  </tr>
+                  <tr><td>href</td><td>"http://www.google.com"</td>
+                      <td>返回当前加载页面的完整URL,location对象的toString()方法也返回这个值</td>
+                  </tr>
+                  <tr><td>pathname</td><td>"/WileyCDA/"</td>
+                      <td>返回URL中的目录和文件名</td>
+                  </tr>
+                  <tr><td>port</td><td>"8080"</td>
+                      <td>返回URL中指定的端口号,如果没有,则返回空字符串</td>
+                  </tr>
+                  <tr><td>protocol</td><td>"http:"</td>
+                      <td>返回页面使用的协议,通常为http: 或https:</td>
+                  </tr>
+                  <tr><td>search</td><td>"?q=javascript"</td>
+                      <td>返回URL的查询字符串,这个字符串以问号开头</td>
+                  </tr>
+                </table>
+                <p>使用location对象可以通过很多方式来改变浏览器的位置,第一个方式就是使用<em>assign()</em>方法并为其传递一个URL,如:</p>
+                <pre class="prettyprint linenums">  location.assign("http://www.google.com");</pre>
+                <p>这样就可以打开新URL并在浏览器的历史记录中生成一条记录.</p>
+                <p>当然,也可以这样做,效果与上面的方式一样:</p>
+                <pre class="prettyprint linenums">  window.location = "http://www.google.com";</pre><br>
+                <pre class="prettyprint linenums">  location.href ="http://www.google.com";</pre>
+                <p>通过上面的任何一种方式修改URL后,用户通过单击"后退"按钮都会导航到前一个页面,要禁用这种行为,可以使用<em>replace()</em>方法,其只接收一个参数,即要导航到的URL,结果会导致浏览器位置改变,但不会在历史记录中生成新记录,用户不能回到前一个页面...</p>
+                <p>最后一个介绍的与位置有关的方法是<em>reload()</em>方法,作用是重新加载当前显示的页面,如果不传递参数,页面将以最有效的方式加载<small>(如果页面没有改变,页面将会从浏览器缓存中重新加载)</small>,如果要强制从服务器加载,则需要传递参数true...</p>
+             </div> <!-- location对象 -->
+             <div class="noneDisplay contentDiv">
+               <p>最早由Netscape Navigator 2.0引入的<strong>navigator</strong>对象,现在已经成为识别客户端的事实标准...</p>
+               <p><strong>检测插件</strong></p>
+               <p>对于非IE浏览器,可以使用<em>plugins</em>数组来达到这个目的,该数组中包括了下列属性</p>
+               <ul class="publicLiStyle">
+                 <li><p><strong>name</strong>:插件的名字</p></li>
+                 <li><p><strong>description</strong>:插件的描述</p></li>
+                 <li><p><strong>filename</strong>插件的文件名</p></li>
+                 <li><p><strong>length</strong>插件所处理的MIME类型数量</p></li>
+               </ul>
+               <p>而对于不一样的IE而言就比较麻烦了,IE不支持Netscape式的插件,在IE中检测插件的唯一方式就是使用专有的<em>ActiveXObject</em>类型,并尝试创建一个特定插件的实例,如果创建成功,则表明浏览器中本没有插件,否则存在插件...</p>
+               <p><strong>注册处理程序</strong></p>
+               <p>在这里主要提及两个在HTML5中定义的<em>registerContentHandler()</em>方法,以及<em>registerProtocoHandler()</em>方法,这两个方法可以让一个站点指明它可以处理特定类型的信息...</p>
+               <p>其中<em>registerContentHandler()</em>方法接收三个参数:要处理的MIME类型,可以处理该MIME类型的页面的URL,以及应用程序的名称...</p>
+               <p>registerProtocoHandler()方法也接收三个参数;要处理的协议,处理该协议的页面的URL,以及应用程序的名称...</p>
+             </div> <!-- navigator对象 -->
+             <div class="noneDisplay contentDiv">
+                 <p>首先提到的是<strong>screen</strong>对象,其在编程中用处不大,基本上只用来表明客户端的能力,其中包括浏览器窗口外部的显示器的信息,比如像素宽度和高度等...</p>
+                 <p>接下来,将介绍<strong>history</strong>对象,其保存着用户上网的历史记录,从窗口被打开的那一刻算起...</p>
+                 <p>因为<em>history</em>是window对象的属性,因此每个浏览器窗口,每个标签页乃至每个框架,都有自己的history对象与特定的window对象关联...</p>
+                 <p>然而处于安全的考虑,开发人员是不能得知用户浏览过的URL的,但可以实现后退与前进...</p>
+                 <p>使用<em>go()</em>方法可以在用户的历史记录中任意跳转,可以向前也可以向后,这个方法接收一个参数,表示向后或向前跳转的页面数的一个整数值<small>(负数表示向后跳转,类似单击"后退按钮",正数表示向前跳转.类似单击"前进"按钮)</small></p>
+                 <pre class="prettyprint linenums"> history.go(-1);//后退一页 </pre><br><pre class="prettyprint linenums">  history.go(1);//前进一页</pre>
+                 <p>也可以给<em>go()</em>方法传递一个字符串参数,此时浏览器会跳转到历史记录中包含该字符串的第一个位置--可能后退,也可能前进,具体看哪个位置最近,如果历史记录中没有包含这个字符串,则什么都不做...</p>
+                 <p>另外还可以使用两个简写方法<em>back(),forward()</em>方法来代替go(),这两个方法可以模仿浏览器的"后退"与"前进"按钮</p>
+                 <p>最后<em>history</em>对象还有一个<em>length</em>属性,保存着历史记录的数量,这个数量包括所有历史记录...</p>
+             </div> <!-- screen,history对象 -->
+           </div> <!-- rightContent -->
+         </div> <!-- leftTitleRightContent -->
+         <p>更多详细的内容,可以到<a href="https://developer.mozilla.org/en-US/">mozilla网站</a>上仔细阅读.</p>  
+        </div>
+		</div>
+	</li>
+	<li id="section-6">
+		<div class="sections">
+			<h3>JavaScript的DOM(文档对象模型)<small><a href="#" class="beginStudy">开始学习</a></small></h3>
+			<div class="section">
+      <div class="leftTitleRightContent" data-number="1" id="DOM"> <!-- 1表示第二个浮动在左边的标题栏 -->
+           <div class="leftTitle">
+              <ul>
+                <li data-number="0" class="titleLi selectedTitle"><strong>基本DOM</strong></li>
+                <li data-number="1" class="titleLi notSelectTitle"><strong>DOM扩展</strong></li>
+                <li data-number="2" class="titleLi notSelectTitle"><strong>DOM2和 DOM3</strong></li>
+              </ul>
+           </div> <!-- leftTitle -->
+           <div class="rightContent">
+              <div class="blockDisplay contentDiv">
+                <p><strong>DOM</strong>是针对HTML和XML文档的一个API,DOM描述了一个层次化的节点树,允许开发人员添加,移除和修改页面的某一部分</p> 
+                <p>DOM可以将任何HTML或XML描绘成一个由多层节点构成的结构,节点分为几种不同的类型,每种类型分别表示文档中不同的信息及标记,并且每个节点拥有各自的特点,方法,数据,还与其它节点存在某种关系...</p>
+                <p>其中<strong>文档节点</strong>是每个文档的根节点,文档节点只有一个子节点那就是<em>&lt;html&gt;</em>,即文档元素是文档的最外层元素,其它元素都包含在文档元素中,在HTML中文档元素始终是<em>&lt;html&gt;</em>,在XML中,没有预定义的元素,因此任何元素都可能成为文档元素</p>
+                <p>DOM定义了一个Node接口,该接口由DOM中的所有节点类型实现,下面将逐一介绍这一些类型...</p>
+                 <div class="container" id="containerDOM">
+                   <div class="title titleNine">
+                    <ul>
+                      <li class="nineCrack selectedTitle titleLi" data-number="0"><strong>Node</strong><br><span class="caret"></span></li>
+                      <li class="nineCrack notSelectTitle titleLi" data-number="1"><strong>Document</strong><br><span class="caret"></span></li>
+                      <li class="nineCrack notSelectTitle titleLi" data-number="2"><strong>Element</strong><br><span class="caret"></span></li>
+                      <li class="nineCrack notSelectTitle titleLi" data-number="3"><strong>Text</strong><br><span class="caret"></span></li>
+                      <li class="nineCrack notSelectTitle titleLi" data-number="4"><strong>Comment</strong><br><span class="caret"></span></li>
+                      <li class="nineCrack notSelectTitle titleLi" data-number="5"><strong>CDATASection</strong><br><span class="caret"></span></li>
+                      <li class="nineCrack notSelectTitle titleLi" data-number="6"><strong>Document-</strong><br><strong>Type</strong><span class="caret"></span></li>
+                      <li class="nineCrack notSelectTitle titleLi" data-number="7"><strong>Document-</strong><br><strong>Fragment</strong><span class="caret"></span></li>
+                      <li class="nineCrack notSelectTitle titleLi" data-number="8"><strong>Attr</strong><br><span class="caret"></span></li>
+                   </ul>
+                  </div>  <!-- class="title" dom -->
+                   <div class="content contentNine">
+                       <div class="blockDisplay contentDiv">
+                         <p>JavaScript中的所有节点类型都继承自<strong>Node</strong>类型,所以所有节点都共享着相同的基本属性和方法,每一个节点有一个<em>nodeType</em>属性,用来表明节点的类型,它们由下列的12个数值常量来表示,如: <a href="#" class="IntroBtn">查看</a></p>
+                         <div class="Intro">
+                           <table>
+                              <tr><th>类型</th><th>数值常量</th><th>类型</th><th>数值常量</th></tr>
+                              <tr><td>Node.ELEMENT_NODE</td><td>1</td><td>Node.ATTRIBUTE_NODE</td><td>2</td></tr>
+                              <tr><td>Node.TEXT_NODE</td><td>3</td><td>Node.CDATA_SECTION_NODE</td><td>4</td></tr>
+                              <tr><td>Node.ENTITY_REFERENCE_NODE</td><td>5</td><td>Node.ENTITY_NODE</td><td>6</td></tr>
+                              <tr><td>Node.PROCESSING_INSTRUCTION_NODE</td><td>7</td><td>Node.COMMENT_NODE</td><td>8</td></tr>
+                              <tr><td>Node.DOCUMENT_NODE</td><td>9</td><td>Node.DOCUMEN_TYPE_NODET</td><td>10</td></tr>
+                              <tr><td>Node.DOCUMENT_FRAGMENT_NODE</td><td>11</td><td>Node.NOTATION_NODE</td><td>12</td></tr>
+                           </table>
+                         </div>
+                         <p>通过比较这些常量,可以很容易地确定节点的类型,如:</p>
+                           <pre class="prettyprint linenums">  if(someNode.nodeType == 1) {alert("Node is an element");}</pre>
+                           <p><strong>nodeName,nodeValue</strong>属性</p>
+                           <p>这两个属性的值完全取决于节点的类型,在使用它们之前,最好先检测一下节点类型...</p>
+                           <pre class="prettyprint linenums"> if(someNode.nodeType ==1){ value = someNode.nodeName;//nodeName是元素标签名}</pre>
+                           <p>对于元素节点,<em>nodeName</em>中保存的始终是元素的标签名,而<em>nodeValue</em>的值则始终为null...</p>
+                           <p><strong>节点关系</strong></p>
+                           <p>文档中所有节点之间都存在这样或那样的关系,如:在HTML中,可以将&lt;body&gt;元素看成是&lt;html &gt;元素的子元素...</p>
+                           <p>每一个节点都有一个<strong>childNodes</strong>属性,其中保存着一个<strong>NodeList</strong>对象,<em>NodeList</em>是一个类数组<small>(并不是Array的实例)</small>,用来保存一组有序的节点,可以通过位置访问这些节点,要注意的是length属性表示的是访问<em>NodeList</em>的那一刻,其中包含的节点数量.对<em>arguments</em>对象使用<em>Array.prototype.slice()</em>方法可以将其转换为数组(非IE),如:</p>
+                           <pre class="prettyprint linenums"> var arrayofNodes = Array.prototype.slice.call(someNode.clideNodes,0);</pre>
+                           <p>而对于IE来说,要想将NodeList转换为数组,必须手动枚举所有成员...</p>
+                           <p>每一个节点都有一个<strong>parentNode</strong>属性,该属性指向文档树的父节点,包含在<em>childNodes</em>列表中的所有节点都具有相同的父节点,它们的<em>parentNode</em>属性都指向同一个节点,且互相为同胞兄弟...</p>
+                           <p>每个节点的<strong>previousSibling</strong>属性指向同胞节点中其前一个兄弟节点,如果本身为第一个节点,则其<em>previousSibling</em>为null...</p>
+                           <p>而与之对应的<strong>nextSibling</strong>属性指向同胞节点中其下一个兄弟节点,若本身为最后一个节点,则其<em>nextSibling</em>属性也为null...</p>
+                           <p>如果childNodes列表就一个节点,那么该节点的<em>previousSibling</em>和<em>nextSibling</em>属性都为null...</p>
+                           <p>父节点与第一个和最后一个节点之间也有关系,父节点的<strong>firstChild</strong>指向其childNodes的第一个节点,<strong>lastChild</strong>指向其childNodes的最后一个节点</p>
+                           <p>下图形象的展示了上面的关系:</p>
+                           <img src="sources/node.png" height="229" width="598" alt="loading"/>
+                           <p>另外还有一个非常有用的方法,<strong>hasChildNodes()</strong>,该方法在节点包含一个或多个子节点的情况下返回<em>true</em>,否则为<em>false</em></p>
+                           <p>所有节点还有一个属性: <strong>ownerDocument</strong>,该属性指向表示整个文档的文档节点,任何节点都不能同时存在于两个或多个文档中...</p>
+                           <p><strong>操作节点</strong></p>
+                           <p>在上面所讲的关系指针都是只读的,为了操作节点,DOM提供了一些方法:</p>
+                           <ul class="publicLiStyle">
+                             <li><p><strong>appendChild()</strong>方法</p>
+                                <p>其用于向<em>childNodes</em>列表末尾添加一个节点.添加节点后,childNodes的新增节点,父节点及以前的最后一个子节点的关系指针都会得到相应的更新,并且更新完成后,<em>appendChild()</em>返回新增的节点...</p>
+                                <pre class="prettyprint linenums"> var returnNode = someNode.appendChild(newNode);//returnNode == newNode</pre>
+                                <p>如果传入到<em>appendChild()</em>的节点已经是文档的一部分了,那结果就是将该节点从原来的位置转移到新位置,任何一个节点都不能同时出现在文档的多个位置上...</p>
+                             </li>
+                             <li><p><strong>insertBefore()</strong>方法</p>
+                                 <p>如果要把节点放在childNodes列表的某一个特定位置上,而不是末尾,就使用这个方法吧,这个方法接收两个参数: <strong>要插入的节点和作为参照的节点</strong>.插入节点后,被插入的节点会变成参照节点的前一个同胞节点,同时被方法返回,如果参照节点为null,则与<em>appendChild()</em>执行相同操作...</p>
+                                 <pre class="prettyprint linenums"> returnNode = someNode.inertBefore(newNode,null);//returnNode ==someNode.lastChild</pre>
+                             </li>
+                             <li>
+                               <p><strong>replaceChild()</strong>方法</p>
+                               <p>前面介绍的方法是插入节点,而此方法是替换节点,其接收两个参数<strong>要插入的节点,要替换的节点</strong>,要替换的节点将由这个方法返回并从文档树中被移除,同时由要插入的节点占据其位置</p>
+                               <pre class="prettyprint linenums"> returnNode = someNode.replaceChild(newNode,someNode.firstChild);</pre>
+                             </li>
+                             <li><p><strong>removeChild()</strong></p>
+                                 <p>如果只想移除而非替换节点,那就使用此方法,其接收一个参数: <strong>要移除的节点</strong>,被移除的节点将成为该方法的返回值.</p>
+                                 <pre class="prettyprint linenums">  returnNode = someNode.removeChild(someNode.firstChild);</pre>
+                                 <p><em>replaceChild()</em>与<em>removeChild()</em>方法中被移除的节点虽然被移除了,但仍然为文档所有,只是在文档中已经没有了自己的位置...</p>
+                             </li>
+                             <li><p><strong>cloneNode()</strong>方法</p>
+                                 <p>用于创建调用这个方法的节点的一个完全相同的副本,其接收一个布尔值作为参数,表示是否执行深复制,为<em>true</em>时,复制节点及其整个子节点树,为<em>false</em>时,只复制节点本身,复制后返回的副本归文档所有,但并没有指定父节点,所以还得使用前面的插入方法插入到文档中...</p>
+                             </li>
+                             <li><p><strong>normalize()</strong>方法</p>
+                                 <p>这个方法唯一的作用是处理文档树中的<strong>文本节点</strong>如果找到了空文本节点则删除,如果相邻的文本节点则合并为一个文本节点...</p>
+                             </li>
+                           </ul>
+                       </div> <!-- node -->
+                       <div class="noneDisplay contentDiv">
+                         <p>在浏览器中,<strong>document</strong>对象是<em>HTMLDocument</em><small>继承自Document类型</small>的一个实例,表示整个HTML页面,而且,document对象是window对象的一个属性,因此可以将其作为全局对象来访问...</p>
+                         <p>Document节点具有下列特征:</p>
+                         <ul class="publicLiStyle">
+                           <li>nodeType的值为 9</li>
+                           <li>nodeName 的值为 #document</li>
+                           <li>nodeValue 的值为null</li>
+                           <li>parentNode 的值为null</li>
+                           <li>ownerDocument 的值为null</li>
+                           <li>其子节点可能为DocumentType(最多一个),Element(最多一个),PrecessingInstruction或Comment</li>
+                         </ul>
+                         <p>Document节点有两个内置的访问其子节点的快捷方式,第一个是<strong>documentElement</strong>属性,该属性始终指向HTML页面中的&lt;html&gt;元素...</p>
+                         <pre class="prettyprint linenums">  var html = document.documentElement;</pre>
+                         <p>第二个就是<strong>body</strong>属性,直接指向&lt;body&gt;属性</p>
+                         <pre class="prettyprint linenums"> var body = document.body;</pre>
+                         <p>值得庆幸的是,所有浏览器都支持这两个属性...</p>
+                         <p>Document的另一个子节点是<em>DocumentType</em>通常将<em>&lt;!DOCTYPE&gt;</em>标签看成是一个与文档其它部分不同的实体,可以通过<strong>doctype</strong>属性来访问它的信息</p>
+                         <p>document还有一些其它的属性,如: <em>title</em>属性,包含着&lt;title&gt;中的文本,<em>URL</em>属性中包含页面完整的URL,<em>domain</em>属性中只包含页面域名,<em>referrer</em>属性中则保存着链接到当前页面的那个页面的URL,所以其可能为空字符串...</p>
+                         <p><strong>查找元素</strong>可以说是DOM最常见的应用了,取得元素的操作可以使用document对象的几个方法来完成,下面将介绍几种取得元素的方法:</p>
+                         <ul class="publicLiStyle">
+                           <li><p><strong>getElementById()</strong></p>
+                               <p>这方法接收一个参数: <strong>要取得的元素的ID</strong>,如果找到相应的元素则返回该元素,否则返回null,这里的ID必须与页面中元素的id特性严格匹配</p>
+                               <pre class="prettyprint linenums">  var div =document.getElementById("mydiv");//取得id为mydiv的元素</pre>
+                               <p>如果页面中多个元素的ID值相同,<em>getElementById()</em>只返回文档中第一次出现的元素.</p>
+                           </li>
+                           <li><p><strong>getElementsByTagName()</strong></p>
+                               <p>此方法接收一个参数,既要取得的元素的标签名,而返回的是包含零个或多个元素的NodeList,在HTML文档中,这个方法返回一个HTMLCollection对象,作为一个动态集合,该对象与NodeList类似,可以使用<strong>方括号或item()</strong>来访问HTMLCollection对象中的项,元素数量可以通过其<em>length</em>属性获取...</p>
+                               <p>HTMLCollection对象还有一个方法: <strong>namedItem()</strong>,使用这个方法可以通过元素的<em>name</em>属性取得集合中的项..</p>
+                               <pre class="prettyprint linenums">
+var imgs = document.getElementsByTagName('img');
+var myImg =imgs.namedItem("myimg");//取得imgs集合中名为myimg的元素
+                                </pre>
+                               <p>如果想要文档中所有元素,可以向<em>getElementsByTagName()</em>中传入"<strong>*</strong>".</p>
+                           </li>
+                           <li><p><strong>getElementsByName()</strong></p>
+                               <p>这是只有HTMLCollection类型才有的方法,这个方法会返回带有给定<em>name</em>特性的所有元素,最常见的是取得单选按钮<small>(为了确保发送给浏览器的值正确无误,所有单选按钮必须具有相同的<em>name</em>特性)</small></p>
+                           </li>
+                         </ul>
+                         <p>除了属性和方法,document对象还有一些特殊的集合,这些集合都是HTMLCollection对象:</p>
+                         <ul class="publicLiStyle">
+                           <li>
+                             <p><strong>document.anchors</strong>,包含文档中所有的带name特性的<em>a</em>元素</p>
+                           </li>
+                           <li>
+                             <p><strong>document.applets</strong>,包含文档中所有的&lt;applet&gt;元素</p>
+                           </li>
+                           <li>
+                             <p><strong>document.forms</strong>,包含文档中所有的&lt;form&gt;元素</p>
+                           </li>
+                           <li>
+                             <p><strong>document.images</strong>,包含文档中所有的&lt;img&gt;元素</p>
+                           </li>
+                           <li>
+                             <p><strong>document.links</strong>,包含文档中所有带href特性的&lt;a&gt;元素</p>
+                           </li>
+                         </ul>
+                         <p><strong>DOM一致性检测</strong>,由于DOM分为几个级别<small>(后面还提到DOM2,DOM3)</small>,也包含多个部分,检测浏览器实现了哪些部分功能很有必要...为此,<strong>document.implementation</strong>属性就是为此提供相应的信息和功能的对象,其有一个方法: <em>hasFeature()</em>,接收两个参数:要检测的DOM功能的名称及版本号,如果浏览器支持,返回<em>true</em></p>
+                         <p><strong>文档写入</strong>对象就是将输出流写入到网页中的能力,这个能力体现在下面的四个方法中:</p>
+                         <ul class="publicLiStyle">
+                           <li>
+                             <p><strong>write()</strong>,接收一个字符串参数,即要写入到输出流中的文本,其会原样写入..</p>
+                           </li>
+                           <li>
+                             <p><strong>writeln()</strong>其与<em>write()</em>方法一样,不过在字符串末尾添加了一个换行符</p>
+                             <p>在页面被加载的过程中,可以使用这两个方法向页面中动态的加入内容.包括动态地包含外部资源,不过得注意不能直接包含字符串"&lt;/script&gt;",因为这会导致该字符串被解释为脚本块的结束,所以得向下面的一样,如:</p>
+                             <pre class="prettyprint linenums">
+   &lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt; document&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+   &lt;script type="text/javascript"&gt;
+       document.write("&lt;script type=\"text/javascript\" src=\"file.js\"&gt;"+ "&lt;\/script&gt;");
+   &lt;/script&gt;
+   &lt;/body&gt;
+   &lt;/html&gt;       
+                             </pre>
+                           </li>
+                           <li>
+                             <p><strong>open()</strong>是用于打开网页的输出流</p>
+                           </li>
+                           <li>
+                             <p><strong>close()</strong>则是用来关闭网页的输出流</p>
+                           </li>
+                         </ul>
+                       </div>  <!-- document -->
+                       <div class="noneDisplay contentDiv">
+                         <p>除了<em>Document</em>类型外,<strong>Element</strong>类型就要是WEB编程中最常见的类型了,<em>Element</em>类型用于表现XML,HTML元素,提供了对元素的标签名,子节点,及特性的访问...</p>
+                         <p>Element节点具有以下特征:</p>
+                         <ul class="publicLiStyle">
+                           <li>
+                             <p><strong>nodeType</strong>的值为1</p>
+                           </li>
+                           <li>
+                             <p><strong>nodeName</strong>值为元素的标签名<small>(也可以使用<em>tagName</em>)</small></p>
+                           </li>
+                           <li>
+                             <p><strong>nodeValue</strong>的值为null</p>
+                           </li>
+                           <li>
+                             <p><strong>parentNode</strong>可能为Document或Element</p>
+                           </li>
+                           <li>
+                             <p><strong>其子节点</strong>可能为Element,Text,Comment,ProcessingInstruction,CDATASection或EntityReference</p>
+                           </li>
+                         </ul>
+                         <p><strong>HTML</strong>元素都是由<em>HTMLElement</em>类型表示,HTMLElement类型直接继承自Element并添加了一些属性:</p>
+                         <ul class="publicLiStyle">
+                           <li>
+                             <p><strong>id</strong>,元素在文档中的唯一标识符</p>
+                           </li>
+                           <li>
+                             <p><strong>title</strong>,有关元素的附加说明信息,一般通过工具条显示出来</p>
+                           </li>
+                           <li>
+                             <p><strong>lang</strong>,元素内容的语言代码</p>
+                           </li>
+                           <li>
+                             <p><strong>dir</strong>,语言的方向,值为"ltr"(从左至右),"rtl"(从右至左)</p>
+                           </li>
+                           <li>
+                             <p><strong>className</strong>,与元素的class特性对应,即为元素指定的CSS类</p>
+                           </li>
+                         </ul>
+                         <p><strong>取得特性</strong>,每一个元素都有一个或多个特性,操作特性的DOM方法主要有三个:</p>
+                         <ul class="publicLiStyle">
+                           <li>
+                             <p><strong>getAttribute()</strong>,接收一个参数,就是元素的特性名<small>(包括自定义特性)</small>,返回元素的相应特性值,如:</p>
+                             <pre class="prettyprint linenums"> var id = div.getAttribute("id");</pre>
+                             <p>不过有两类特殊的特性,一类是<em>style</em>,用于CSS为元素指定样式,在通过其访问时,返回的是style特性值中包含的CSS文本,而通过属性来访问则返回一个对象...</p>
+                             <p>第二类是<em>onclick</em>这样的事件处理程序,通过其访问时,返回的是相应代码字符串,而在访问<em>onclick</em>属性时,则返回一个javascript函数...</p>
+                             <p>在通过JavaScript以编程方式操作DOM时,经常不使用<em>getAttribute()</em>,而是只使用对象的属性,只在取得自定义属性时才使用此方法...</p>
+                           </li>
+                           <li>
+                             <p><strong>setAttribute()</strong>,这个方法是设置特性,其接收两个参数:要设置的特性名,以及值.如果特性存在,则以指定的值代替原来的值,如果不存在,创建该属性并设置相应的值</p>
+                             <pre class="prettyprint linenums">  div.setAttribute("id","someOtherId");</pre>
+                           </li>
+                           <li>
+                             <p><strong>removeAttribute()</strong>,这个方法用于彻底删除元素的特性,调用这个方法不仅会删除特性的值,而且会从元素中完全删除特性<small>(所以不会返回删除特性的值)</small>...</p>
+                           </li>
+                         </ul>
+                         <p>Element类型是使用<strong>attributes属性</strong>的唯一一个DOM节点类型,attributes属性中包含一个<em>NamedNodeMap</em>,与NodeList类似,是一个动态集合,而<em>namedNodeMap</em>对象拥有如下的方法:</p>
+                         <ul class="publicLiStyle">
+                           <li>
+                             <p><strong>getNamedItem()</strong>返回nodeName属性等于name的节点,也可以使用中括号的形式</p>
+                           </li>
+                           <li>
+                             <p><strong>removeNamedItem()</strong>从列表中移除nodeName属性等于name的节点</p>
+                           </li>
+                           <li>
+                             <p><strong>setNamedItem(node)</strong>向列表中添加节点,以节点的nodeName属性为索引</p>
+                           </li>
+                           <li>
+                             <p><strong>item()</strong>返回位于数字pos位置处的节点</p>
+                           </li>
+                         </ul>
+                         <p>attributes属性中包含一系列节点,每个节点的nodeName就是特性的名称,而节点的nodeValue就是特性的值,所以可以向下面一样取得元素的id特性</p>
+                         <pre class="prettyprint linenums">  var id = element.attributes.getNamedItem("id").nodeValue;</pre>
+                         <p><strong>创建元素</strong>,使用<strong>document.createElement()</strong>方法创建新元素,这个方法只接收一个参数,即要创建元素的标签名,并返回这个创建的元素...</p>
+                         <pre class="prettyprint linenums">  var div = document.createElement("div");</pre>
+                         <p>创建完后,就可以为新元素属性了,还可以为其添加更多子节点,最后得使用<em>appendChild()</em>方法将其加入到文档的某一个部分...</p>
+                       </div>
+                       <div class="noneDisplay contentDiv">
+                         <p>文本节点由<strong>Text类型</strong>表示,包含的是可以照字面解释的纯文本内容,Text节点具有以下的特征,以及操作节点中的文本的方法:</p>
+                         <ul class="publicLiStyle">
+                           <li>
+                             <p><strong>nodeType</strong>值为3</p>
+                           </li>
+                           <li>
+                             <p><strong>nodeName</strong>的值为"#text"</p>
+                           </li>
+                           <li>
+                             <p><strong>nodeValue</strong>的值为节点所包含的文本</p>
+                           </li>
+                           <li>
+                             <p><strong>parentNode</strong>是一个Element</p>
+                           </li>
+                           <li>
+                             <p><strong>不支持子节点</strong></p>
+                           </li>
+                           <li>
+                             <p><strong>appendData(text)</strong>:将text添加到节点末尾</p>
+                           </li>
+                           <li>
+                             <p><strong>deleteData(offset,count)</strong>:从offset指定位置开始删除count个字符</p>
+                           </li>
+                           <li>
+                             <p><strong>insertData(offset,text)</strong>:在offset指定位置插入text</p>
+                           </li>
+                           <li>
+                             <p><strong>replaceData(offset,count,text)</strong>:用text替换从offset指定位置到offset+count为止的文本</p>
+                           </li>
+                           <li>
+                             <p><strong>splitText(offset)</strong>:从offset指定位置将当前文本节点分为两个文本节点</p>
+                           </li>
+                           <li>
+                             <p><strong>substringData(offset,count)</strong>:提取从offset指定位置开始到offset+count为止处的字符串</p>
+                           </li>
+                         </ul>
+                         <p>创建文本节点可以使用<strong>document.createTextNode()</strong>,接收一个参数,即要插入的节点中的文本</p>
+                         <pre class="prettyprint linenums">  var textNode = document.createTextNode("&lt;strong&gt;hello&lt;/strong&gt;world!");</pre>
+                       </div>
+                       <div class="noneDisplay contentDiv">
+                         <p><strong>注释</strong>在DOM中通过<strong>Comment类型</strong>表示的,其具有如下特征:</p>
+                         <ul class="publicLiStyle">
+                           <li>
+                             <p><strong>nodeType</strong>:值为8</p>
+                           </li>
+                           <li>
+                             <p><strong>nodeName</strong>:值为"#comment"</p>
+                           </li>
+                           <li>
+                             <p><strong>nodeValue</strong>:值为注释的内容</p>
+                           </li>
+                           <li>
+                             <p><strong>parentNode</strong>:可能是Document或Element</p>
+                           </li>
+                           <li>
+                             <p><strong>不支持子节点</strong></p>
+                           </li>
+                         </ul>
+                         <p>使用<strong>document.createComment()</strong>并为其传递注释文本可以创建注释节点</p>
+                         <pre class="prettyprint linenums"> var comment = document.createComment("a comment");</pre>
+                       </div>
+                       <div class="noneDisplay contentDiv">
+                          <p><strong>CDATASection类型</strong>只针对基于XML的文档,表示的是CDATA区域,其继承自Text类型,具有下列特征</p>
+                          <ul class="publicLiStyle">
+                            <li>
+                              <p><strong>nodeType</strong>值为4</p>
+                            </li>
+                            <li>
+                              <p><strong>nodeName</strong>值为"#cdata-section"</p>
+                            </li>
+                            <li>
+                              <p><strong>nodeValue</strong>值为CDATA区域中的内容</p>
+                            </li>
+                            <li>
+                              <p><strong>parentNode</strong>可能是Document或Element</p>
+                            </li>
+                            <li>
+                              <p><strong>不支持子节点</strong></p>
+                            </li>
+                          </ul>
+                          <p>在真正的XML文档中,可以使用<strong>document.createCDataSection()</strong>创建CDATA区域</p>
+                       </div>
+                       <div class="noneDisplay contentDiv">
+                         <p>DocumentType包含着与文档的doctype有关的所有信息,具有下列特征:</p>
+                         <ul class="publicLiStyle">
+                            <li>
+                              <p><strong>nodeType</strong>值为10</p>
+                            </li>
+                            <li>
+                              <p><strong>nodeName</strong>值为doctype的名称</p>
+                            </li>
+                            <li>
+                              <p><strong>nodeValue</strong>null</p>
+                            </li>
+                            <li>
+                              <p><strong>parentNode</strong>是Document</p>
+                            </li>
+                            <li>
+                              <p><strong>不支持子节点</strong></p>
+                            </li>
+                          </ul>
+                          <p>其仅有Firefox,Safari,Opera支持,不能被动态创建,只能通过解析文档代码方式创建,在浏览器中并不常见</p>
+                       </div>
+                       <div class="noneDisplay contentDiv">
+                         <p>DOM规定文档片段(document fragment)是一种"轻量级"的文档,可以包含和控制节点,但不会像文档那样占用额外的资源,其具有下列特征:</p>
+                         <ul class="publicLiStyle">
+                            <li>
+                              <p><strong>nodeType</strong>值为11</p>
+                            </li>
+                            <li>
+                              <p><strong>nodeName</strong>值为"#document-fragment"</p>
+                            </li>
+                            <li>
+                              <p><strong>nodeValue</strong>null</p>
+                            </li>
+                            <li>
+                              <p><strong>parentNode</strong>是null</p>
+                            </li>
+                            <li>
+                              <p><strong>子节点</strong>可以是Element,ProcessingInstrction,Comment,Text,CDATASection或EntityReference</p>
+                            </li>
+                          </ul> 
+                          <p>虽然不能把文档片段直接添加到文档中,但可以将它作为一个"仓库"来使用即在里面保存将来可能会添加到文档中的节点,要创建文档片段,可以使用<strong>document.createDocumentFragment()</strong>方法,具体可以向下面一样,给一个id为"mtList"的ul添加3个列表项:</p>
+                          <pre class="prettyprint linenums">
+  var fragment =document.createDocumentFragment();
+  var ul = document.getElementById("myList");
+  var li =null;
+  for(var i=0;i &lt; 3;i++){
+     li = document.createElement('li');
+     li.appendChild(document.createTextNode("Item"+(i+1)));
+     fragment.appendChild(li);
+  }
+  ul.appendChild(fragment);
+                          </pre>
+                       </div>
+                       <div class="noneDisplay contentDiv">
+                         <p>元素的特性在DOM中以<strong>Attr类型</strong>来表示的,在所有浏览器中都可以访问Attr类型的构造函数和原型,其具有如下特征:</p>
+                         <ul class="publicLiStyle">
+                            <li>
+                              <p><strong>nodeType</strong>值为2</p>
+                            </li>
+                            <li>
+                              <p><strong>nodeName</strong>值为特性的名称</p>
+                            </li>
+                            <li>
+                              <p><strong>nodeValue</strong>特性的值</p>
+                            </li>
+                            <li>
+                              <p><strong>parentNode</strong>是null</p>
+                            </li>
+                            <li>
+                              <p><strong>在HTML中不支持子节点,在XML中可以是Text,EntityReference</strong></p>
+                            </li>
+                          </ul> 
+                       </div>
+                   </div>  <!-- class="content contentNine" -->
+                </div> <!-- class="container" dom -->
+              <a href="#" class="IntroBtn"><h5>DOM操作技术<span class="caret"></span></h5></a>
+              <div class="Intro">
+                <ul class="publicLiStyle">
+                  <li>
+                    <p><strong>动态脚本</strong></p>
+                    <p>这里讨论的动态脚本,指的是页面加载时不存在,但将来的某一时刻通过修改DOM动态添加的脚本创建动态脚本有两种方式:插入外部文件,直接插入JavaScript代码.</p>
+                    <p>我们可以向下面这样通过一个函数动态的加载外部脚本...</p>
+                    <pre class="prettyprint linenums">
+  function loadScript(url){
+     var script = document.createElement("script");
+     script.type = "text/javascript";
+     script.src = url;
+     document.body.appendChild(script);
+  }
+  //例如
+  loadScript("client.js");
+                    </pre>
+                    <p>这样就可以在页面中的其他地方使用这个脚本了,不过得判断脚本是否加载完,在后面的事件中,将会有所介绍..</p>
+                    <p>当然也可以直接插入代码到script标签中,向下面这样...</p>
+                    <pre class="prettyprint linenums">
+  function loadScriptString(code){
+    var script = document.createElement("script");
+    script.type = "javascript";
+    try{
+       script.appendChild(document.createTextNode(code));
+    }catch(ex){
+       script.text =code;
+    }
+    document.body.appendChild(script);
+  }
+  //例如
+  loadScriptString("function sayHi(){ alert('Hi');}");
+                    </pre>
+                  </li>
+                  <li>
+                    <p><strong>动态样式</strong></p>
+                    <p>与动态脚本类似,所谓动态样式是指在页面刚加载时不存在的样式,动态样式是在页面加载完成后添加到页面中的...</p>
+                    <p>也与动态脚本一样,动态样式也可以动态加载外部样式,不过得把样式添加到&lt;head&gt;,才能表现得和人意.</p>
+                    <pre class="prettyprint linenums">
+  function loadStyles(url){
+    var link = document.createElement("link");
+    link.rel ="stylesheet";
+    link.href =url;
+    var head = document.getElementsByTagName("head")[0];
+    head.appendChild(link);
+  }
+                    </pre>
+                    <p>而与script一样的结果,当用style来包含嵌入式CSS时,又得将IE与其他浏览器区别处理,如:</p>
+                    <pre class="prettyprint linenums">
+  function loadStyleString(css){
+     var style = document.createElement('style');
+     style.type = "text/css";
+     try{
+        style.appendChild(document.createTextNode(css));
+     }catch(ex){
+        style.styleSheet.cssText =css;
+     }
+     var head = document.getElementByTagName('head')[0];
+     head.appendChild(style);
+  }
+                    </pre>
+                  </li>
+                </ul>
+                <p>再一次说明一下前面提到的<em>NodeList</em>及其"近亲"<em>NamedNodeItem和HTMLCollection</em>这三个集合都是"动态"的每当文档发生变化时,它们都会更新,所以它们始终保存着最新,最准确的信息,如下面的代码将导致无限循环:</p>
+                <pre class="prettyprint linenums">
+    var divs = document.getElementsByTagName('div'),
+        i,
+        div;
+    for(i=0;i &lt; divs.length;i++){
+       div = document.createElement('div');
+       document.body.appendChild(div);
+    }    
+                </pre>
+                <p>所以在使用这三个集合操作时,得特别注意这一点!</p>
+                </div>  <!-- class Intro -->
+              </div>  <!-- 基本DOM -->
+              <div class="noneDisplay contentDiv">
+                <p>尽管DOM作为API已经非常完善了,但为了实现更多功能,仍然会有一些标准或专有的扩展...</p>
+                <div class="container" id="containerDOMextend">
+                   <div class="title titleFour">
+                    <ul>
+                      <li class="fourCrack selectedTitle titleLi" data-number="0"><strong>选择符API</strong><span class="caret"></span></li>
+                      <li class="fourCrack notSelectTitle titleLi" data-number="1"><strong>元素遍历</strong><span class="caret"></span></li>
+                      <li class="fourCrack notSelectTitle titleLi" data-number="2"><strong>HTML5</strong><span class="caret"></span></li>
+                      <li class="fourCrack notSelectTitle titleLi" data-number="3"><strong>专有扩展</strong><span class="caret"></span></li>
+                   </ul>
+                  </div>  <!-- class="title" dom -->
+                   <div class="content contentFour">
+                       <div class="blockDisplay contentDiv">
+                          <p>Selectors API 是由W3C发起制定的一个标准,致力于让浏览器原生支持CSS查询,下面将介绍三种CSS查询方法:</p>
+                          <ul class="publicLiStyle">
+                            <li>
+                              <p><strong>querySelector()</strong>方法接收一个CSS选择符,返回与该模式匹配的第一个元素,如果没有匹配的元素返回null,可以通过Document,Element类型的实例调用它们.</p>
+                              <pre class="prettyprint linenums">  
+var body = document.querySelector("body");
+var myDiv = document.querySelector("#myDiv");//取得ID为myDiv的元素
+var selected = document.querySelector(".selected");//取得类为selected的第一个元素</
+var img = document.body.querySelector("img.button");//取得类为button的第一个图像元素
+                                </pre>
+                            </li>
+                            <li>
+                              <p><strong>querySelectorAll()</strong>方法接收的参数与<em>querySelector()</em>方法一样,都是CSS选择符,但是返回的是所有匹配的元素而不仅仅是一个元素,返回的是一个NodeList实例.</p>
+                              <p>与querySelector()相似,能够调用querySelectorAll()方法的类型包括Document,DocumentFragment,Element,下面通过几个例子来说明这个方法的用法:</p>
+                              <pre class="prettyprint linenums">  
+var ems = document.getElementById('div').querySelectorAll('em');//取得某div中的所有&lt;em&gt;元素
+ var selecteds =document.querySelectorAll("selected");//取得类为selected的所有元素
+ var strongs =document.querySelectorAll("p strong");//取得&lt;p&gt;元素中所有&lt;strong&gt;元素
+ </pre>
+                            </li>
+                            <li>
+                              <p><strong>matchesSelector()</strong>方法接收一个参数,也是CSS选择符,如果调用元素与该选择符匹配,返回<em>true</em>,否则<em>false</em></p>
+                              <p>不过许多浏览器都没有直接对这个方法的支持,得加一些前缀,如IE9+通过加<em>msMatchesSelector()</em>来支持该方法,Firfox3.6+通过<em>mozMatchesSelector()</em>来支持,Safari5+,Chrome通过<em>webkitMatchesSelector()</em>支持此方法等...</p>
+                            </li>
+                          </ul>
+                       </div>
+                       <div class="noneDisplay contentDiv">
+                          <p>对于元素间的空格,IE9及以前的版本不会返回文本节点,而其他所有浏览器都会返回文本节点,这样就导致在使用<em>childNodes</em>和<em>firstChild</em>等属性时行为不一致,所以新定义了一组属性,主要都有如下几个:</p>
+                          <ul class="publicLiStyle">
+                            <li>
+                              <p><strong>childElementCount</strong>:返回子元素个数(不包括文本节点和注释)</p>
+                            </li>
+                            <li>
+                              <p><strong>firstElementChild</strong>:指向第一个子元素,firstChild的元素版</p>
+                            </li>
+                            <li>
+                              <p><strong>lastElementChild</strong>:指向最后一个子元素lastChild的元素版</p>
+                            </li>
+                            <li>
+                              <p><strong>previousElementSibling</strong>:指向前一个同辈元素,preiousSlbling的元素版</p>
+                            </li>
+                            <li>
+                              <p><strong>nextElementSibling</strong>:指向后一个同辈元素,nextSibling的元素版</p>
+                            </li>
+                          </ul>
+                       </div>
+                       <div class="noneDisplay contentDiv">
+                          <p>在这里介绍的是HTML5中定义的一些JavaScript API,来进一步指出DOM扩展</p>
+                          <ul class="publicLiStyle">
+                            <li>
+                              <p><strong>与类相关的扩充</strong></p>
+                              <p>第一个API就得是最受欢迎的方法之一了: <strong>getElementsByClassName()</strong>,接收一个参数,即一个包含一或多个类名的字符串,返回带有指定类所有元素的NodeList,传入多个类名时,类名的先后顺序不重要...</p>
+                              <pre class="prettyprint linenums">  var all = document.getElementsByClassName("username current");</pre>
+                              <p>其可以通过document对象和所有的HTML元素调用.只有位于元素树中的元素才会被返回...</p>
+                            </li>
+                            <li>
+                              <p><strong>classList属性</strong>:一种操作类名的方式,其有如下的方法:</p>
+                              <ul class="publicLiStyle">
+                                <li>
+                                  <p><strong>add(value)</strong>将给定的字符串添加到列表中,如果已经存在,就不添加了</p>
+                                  <pre class="prettyprint linenums">  div.classList.add("user");//给元素div添加类user</pre>
+                                </li>
+                                <li>
+                                  <p><strong>contains(value)</strong>表示列表中是否存在给定的值,如果存在返回true,否则返回false</p>
+                                  <pre class="prettyprint linenums">  div.classList.contains("user");//true</pre>
+                                </li>
+                                <li>
+                                  <p><strong>remove(value)</strong>从列表中删除给定的字符串</p>
+                                  <pre class="prettyprint linenums">  div.classList.remove("user");//删除user类</pre>
+                                </li>
+                                <li>
+                                  <p><strong>toggle(value)</strong>如果存在给定值,删除它,如果没有给定值,添加它</p>
+                                  <pre class="prettyprint linenums">  div.classList.toggle("user");//切换类user</pre>
+                                </li>
+                              </ul>
+                              <p></p>
+                            </li>
+                            <li>
+                              <p><strong>焦点管理</strong>,HTML5添加了辅助管理的DOM焦点管理,首先就是<strong>document.activeElement</strong>属性,这个属性始终会引用DOM中当前获得了焦点的元素</p>
+                              <p>默认情况下,在文档刚刚加载完成时,<em>document.activeElement</em>中保存的是<em>document.body</em>元素,文档加载期间,始终为null...</p>
+                              <p>另外一个新增了一个方法: <strong>document.hasFocus()</strong>,用于确定<strong>文档</strong>是否获得了焦点</p>
+                              <pre class="prettyprint linenums">
+  var button =document.querySelector("#button");
+  button.focus();
+  alert(document.activeElement == button); //true
+  alert(document.hasFocus()); //true
+                              </pre>
+                            </li>
+                            <li>
+                              <p><strong>HTMLDocument的变化</strong>,HTML5新增了一些属性,如:</p>
+                              <p><strong>readyState属性</strong>,其是Document的属性,有两个可能的值: <em>loading</em>,正在加载文档,<em>complete</em>,已经加载完文档</p>
+                              <p><strong>兼容模式</strong>,给document添加了一个<strong>compatMode属性</strong>,主要是为了知道浏览器采用哪种渲染模式,在标准模式下,其值等于: <em>CSS1Compat</em>,在混杂模式下,其值等于: <em>BackCompat</em></p>
+                              <p><strong>head属性</strong>,我们知道对<em>document.body</em>引用的是body元素,HTML5新增了<strong>document.head</strong>来引用head元素,所以要引用head元素,我们可以这样做;</p>
+                              <pre class="prettyprint linenums">  var head = document.head || document.getElementsByTagName("head")[0];</pre>
+                            </li>
+                            <li>
+                              <p><strong>字符集属性</strong>,<em>document.charset</em>来获取文档中实际使用的字符集</p>
+                              <p><em>document.defaultCharset</em>获取浏览器及操作系统的默认字符集</p>
+                            </li>
+                            <li>
+                              <p><strong>自定义属性</strong>,HTML5规定可以为元素添加非标准属性,但要加前缀<strong>data-</strong>,目的是为元素提供与渲染无关的信息</p>
+                              <p>除了使用前面的<em>getAttribute()</em>等方式来访问,设置自定义属性外,还可以通过元素的<em>dataset</em>属性来访问自定义属性的值,每一个<em>data-name</em>形式的值都有一个对应的属性,只不过没有前缀data.</p>
+                            </li>
+                            <li>
+                              <p><strong>插入标记</strong>,与前面的创建节点,然后一个个插入到文档中相比,使用插入标记来直接插入HTML字符串不仅简单,速度也更好...</p>
+                              <p>首先是<strong>innerHTML属性</strong>,在读模式下,innerHTML属性返回与调用元素的所有子节点(包括元素,注释,文本节点)对应的HTML标记,在写模式下,innerHTML会根据指定的值创建新的DOM树,然后用这个DOM树完全替换调用元素原先的所有子节点...</p>
+                              <p>不过使用innerHTML属性也有一些限制,在大多浏览器中,通过innerHTML插入&lt;script&gt;元素并不会执行其中的脚本,但都支持以直观的方式通过innerHTML插入&lt;style&gt;元素,如:</p>
+                              <pre class="prettyprint linenums">  div.innerHTML = "&lt;style type=\"text/css\"&gt;body{background-color: red;}&lt;/style&gt;";</pre>
+                              <p>并不是所有元素都支持innerHTML属性,不支持的元素有:&lt;col&gt;,&lt;colgroup&gt;,&lt;frameset&gt;,&lt;head&gt;,&lt;html&gt;,&lt;style&gt;,&lt;table&gt;,&lt;tbody&gt;,&lt;thead&gt;,&lt;tfoot&gt;,&lt;tr&gt;</p>
+                              <p>还有一个属性就是<strong>outerHTML</strong>,在读模式下,其返回调用它的元素及所有子节点的HTML标签,在写模式下,outerHTML会根据指定的HTML字符串创建新的DOM子树,然后用这个DOM树完全替换调用元素</p>
+                              <p>插入标记最后一个新增方式是<strong>insertAdjacentHTML()</strong>方法,其接收两个参数:插入的位置,要插入的HTML文本..</p>
+                              <p>第一个参数必须是下面值之一:</p>
+                              <ul class="publicLiStyle">
+                                <li>
+                                  <p><strong>beforebegin</strong>在当前元素之前插入一个紧邻的同辈元素</p>
+                                </li>
+                                <li>
+                                  <p><strong>afterbegin</strong>在当前元素之下插入一个新的子元素或在第一个子元素之前再插入新的子元素</p>
+                                </li>
+                                <li>
+                                  <p><strong>beforeend</strong>,在当前元素之下插入一个新的子元素或在最后一个子元素之后再插入新的子元素</p>
+                                </li>
+                                <li>
+                                  <p><strong>afterend</strong>在当前元素之后插入一个紧邻的同辈元素</p>
+                                </li>
+                              </ul>
+                              <p>虽然上面所说的三种插入方式很简单,方便,但是会导致浏览器内存占用问题,并且在使用这些方法之前,最好手动删除要被替换的元素的所有事件处理程序和JavaScript对象属性</p>
+                            </li>
+                            <li><p><strong>scrollIntoView()</strong>方法可以让开发人员更好的控制页面滚动,其可以在所有的HTML元素上调用,通过滚动浏览器窗口或某个容器元素,调用元素可以出现在视口中,如果给方式传入true作为参数或不传参数,那么窗口滚动之后会让调用元素的顶部与视口顶部尽可能平齐,如果传入false作为参数,调用元素尽可能全部出现在视口中(可能的话,调用元素的底部会与视口底部平齐)</p></li>
+                          </ul>
+                       </div>
+                       <div class="noneDisplay contentDiv">
+                          <p><strong>专有扩展</strong>,为了弥补功能上的不足,许多浏览器都有自己的专有扩展...</p>
+                          <p>其中的一个<strong>children属性</strong>,其中只包含元素中同样还是元素的子节点,这个属性是<em>HTMLCollection</em>的实例...</p>
+                          <p><strong>contains()方法</strong>,在开发中经常需要知道某个节点是不是另一个节点的后代,而调用这个方法就可以很方便的解决这个问题,调用这个方法的是<strong>祖先节点</strong>,也就是搜索开始的节点,其接收一个参数,即要检测的后代节点,如果被检测的节点是后代节点,该方法返回true,否则false</p>
+                          <pre class="prettyprint linenums">  document.documentElement.contains(document.body);//true</pre>
+                          <p><strong>插入文本</strong>,<em>innerText</em>属性可以操纵元素中包含的所有文本内容,包括子文档树的文本,在读值时,它会按照由浅入深的顺序,将文档树中所有文本拼接起来.在写入值时,结果会删除元素所有子节点,插入包含相应文本值得文本节点</p>
+                          <p>与之相对的另一个属性就是<em>outerText</em>,其与<em>innerText</em>属性作用一样,只不过作用范围扩大到了包含调用它的节点...</p>
+                          <p>支持这两个属性的浏览器有IE,Safari,Opera,Chrome...</p>
+                       </div>
+                       </div>
+                </div> <!-- containerDOMextend -->
+              </div> <!-- DOM扩展 -->
+              <div class="noneDisplay contentDiv">
+                <p>DOM1级主要定义的是HTML,XML文档的底层结构,DOM2,DOM3级则在这个结构的基础上引用了更多的交互能力,也支持了更高级的XML特性.其主要目的在于扩展DOM API,以满足操作XML的所有需求,同时提供更好的错误处理及特性检测能力...</p>
+                  <div class="container" id="containerDOM23">
+                   <div class="title titleFour">
+                    <ul>
+                      <li class="fourCrack selectedTitle titleLi" data-number="0"><strong>DOM的变化</strong><span class="caret"></span></li>
+                      <li class="fourCrack notSelectTitle titleLi" data-number="1"><strong>样式</strong><span class="caret"></span></li>
+                      <li class="fourCrack notSelectTitle titleLi" data-number="2"><strong>遍历</strong><span class="caret"></span></li>
+                      <li class="fourCrack notSelectTitle titleLi" data-number="3"><strong>范围</strong><span class="caret"></span></li>
+                   </ul>
+                  </div>  <!-- class="title" dom23 -->
+                   <div class="content contentFour">
+                       <div class="blockDisplay contentDiv">
+                          <p><strong>针对XML命名空间的变化</strong>,有了XML命名空间,不同的XML文档的元素就可以混在一起,共同构成格式良好的文档,而不要担心发生命名冲突...</p>
+                          <p><strong>其它方面的变化</strong></p>
+                          <p><strong>DocumentType类型的变化</strong>,新增了三个属性:<em>publicId,systemId,internalSubset</em>,其中前两个表示的是文档类型声明中的两个信息段,例如下面的这个声明:</p>
+                          <pre class="prettyprint linenums"> &lt;!DOCTYPE HTML PUBLIC "-// W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;</pre>
+                          <p>在这个声明中,publicId 是"-// W3C//DTD HTML 4.01//EN",而systemId是"http://www.w3.org/TR/html4/strict.dtd",通过这两个属性都可以直接访问到这些信息</p>
+                          <p><em>internalSubset</em>属性用于访问包含在文档类型声明中的额外定义.</p>
+                          <p><strong>Document类型的变化</strong>中唯一与命名空间无关的方法是<em>importNode()</em>,这个方法的用途是从一个文档中取得一个节点,然后将其导入到另一个文档,使其成为这个文档结构的一部分.其接收两个参数:要复制的节点,和表示是否复制子节点的布尔值,返回的结果是原来节点的副本,但能够在当前文档中使用...</p>
+                          <p><strong>DOM2级视图</strong>模块添加了一个<em>defaultView</em>属性,其中保存着一个指针,指向拥有给定文档的窗口或框架...但IE中提供的是<em>parentWindow</em>属性,都用来确定文档归属窗口.</p>
+                          <p><strong>Node类型的变化</strong>,Node类型中唯一与命名空间无关的变化,就是添加了<em>isSupported()</em>方法,用于确定当前节点具有什么能力,其接收两个两个参数:特性名,特性版本号,如果浏览器实现了相应特性,返回true,但由于不同实现在决定对什么特性返回true或false时不一致,这个方法同样存在与<em>hasFeature()</em>方法相同的问题,所以确定特性可用时,最好使用能力检测</p>
+                          <p><strong>框架的变化</strong>,框架和内嵌框架分别用<strong>HTMLFrameElement,HTMLIFrameElement</strong>表示,它们在DOM2级中都用一个新属性: <strong>contentDocument</strong>,这个属性包含一个指针,指向表示框架内容的文档对象,其是<em>Document</em>类型的实例.</p>
+                       </div>
+                       <div class="noneDisplay contentDiv">
+                          <p>在HTML中定义样式的方式有三种:通过&lt;link&gt;元素包含外部样式表文件,使用&lt;style&gt;元素定义嵌入式样式,以及使用style特性定义针对特定元素的样式.DOM2级样式模块围绕这三种应用样式机制提供了一套API,要确定浏览器是否支持DOM2级定义的CSS能力,可以使用如下的代码检测:</p>
+                          <pre class="prettyprint linenums">var support = document.implementation.hasFeature("CSS2","2.0");</pre>
+                          <p>任何支持style特性的HTML元素在JavaScript中都有一个对应的style属性,这个style对象是CSSStyleDeclaration的实例,包含着通过HTML的style特性指定的所有样式信息,但不包含与外部样式表或嵌套样式表经层叠而来的样式,在style特性中指定的任何CSS属性都将表现为这个style对象的相应属性,对于使用短划线的CSS属性,必须转换为<strong>驼峰大小写</strong>形式,才能通过JavaScript来访问...</p>
+                          <p>多数情况下,都可以通过简单地属性名的格式来实现转换,其中一个不能直接转换的CSS属性是<em>float</em>,由于float是JavaScript的保留字,所以不能作属性名,规定样式对象上相应的属性名应该是<em>cssFloat</em>,而IE支持的是<em>styleFloat</em></p>
+                          <p>DOM2级样式还为style对象定义了一些属性和方法,如下面介绍的一部分:</p>
+                          <ul class="publicLiStyle">
+                            <li>
+                              <p><strong>cssText</strong>,通过它能够访问到style特性中的CSS代码,读模式下,返回浏览器对style特性中的CSS代码内部表示,写模式下,赋给cssText的值会重写整个style特性的值</p>
+                            </li>
+                            <li>
+                              <p><strong>length</strong>;应用给元素的CSS属性数量</p>
+                            </li>
+                            <li>
+                              <p><strong>item(index)</strong>;返回给定位置的CSS属性名称</p>
+                            </li>
+                            <li>
+                              <p><strong>reomoveProperty(propertyName)</strong>;从样式中删除给定属性</p>
+                            </li>
+                            <li>
+                              <p>....</p>
+                            </li>
+                          </ul>
+                        <pre class="prettyprint linenums">  myDiv.style.cssText= "width:10px;height:10px;background-color:red";</pre>
+                        <p>style对象能够提供支持style特性的任何元素的样式信息,但不包含样式表示层叠而来的样式,所有DOM2级样式增强了<strong>document.defaultView</strong>,提供了<strong>getComputedStyle()方法</strong>,其接收两个参数,要取得计算样式的元素和一个伪元素字符串,如果不需要伪元素,第二个参数可以是null,其返回一个CSSStyleDeclaration对象,其中包含当前元素的所有计算的样式.</p>&
+                        <p>CSSStyleSheet类型继承自StyleSheet,其表示的是样式表,包括通过&lt;link&gt;元素包含的样式表和在&lt;style&gt;元素中定义的样式表其从Stylesheet接口继承而来的属性有许多,比如:</p>
+                        <ul class="publicLiStyle">
+                          <li>
+                            <p><strong>disabled</strong>,表示样式表是否被禁用的布尔值,true可以禁用样式表</p>
+                          </li>
+                          <li>
+                            <p><strong>type</strong>,表示样式表类型的字符串</p>
+                          </li>
+                          <li>
+                            <p><strong>href</strong>,如果样式表是通过&lt;link&gt;元素包含的,则是样式表的URL</p>
+                          </li>
+                          <li>
+                            <p><strong>cssRules</strong>:样式表中包含的样式规则的集合</p>
+                          </li>
+                          <li>
+                            ...
+                          </li>
+                        </ul>
+                        <p>应用于文档的所有样式表是通过<strong>document.styleSheets</strong>集合来表示的,通过这个集合的<em>length</em>属性可以获知文档中样式表的数量...</p>
+                        <p><strong>元素大小</strong></p>
+                        <p>首先介绍的属性是<strong>偏移量</strong>,包括元素在屏幕上占用的所有可见的空间,元素的可见大小由其高度,宽度决定,包括所有内边距,滚动条,边框大小,但不包括外边距,通过下面的4个属性可以取得元素的偏移量.</p>
+                        <ul class="publicLiStyle">
+                          <li>
+                            <p><strong>offsetHeight</strong>,元素在垂直方向上占用的空间大小,以像素计,包括元素高度,(可见的)水平滚动条的高度,上边框高度,下边框高度...</p>
+                          </li>
+                          <li>
+                            <p><strong>offsetWidth</strong>,元素在水平方向上占用的空间大小,以像素计,包括元素宽度,(可见的)垂直滚动条宽度,左边框宽度,右边框宽度...</p>
+                          </li>
+                          <li>
+                            <p><strong>offsetLeft</strong>,元素的左边外框至包含元素的左内边框之间的像素距离...</p>
+                          </li>
+                          <li>
+                            <p><strong>offsetTop</strong>,元素的上边外框至包含元素的上内边框的像素距离...</p>
+                          </li>
+                        </ul>
+                        <p>可以通过下面这个简图来进一步理解:</p>
+                        <img src="sources/offset.png" height="290" width="512" alt="loaging"/>
+                        <p>要想知道某个元素在页面上的偏移量,将这个元素的<em>offsetLeft,offsetTop</em>与其<em>offsetParent</em>的相同属性相加,就可以得到一个基本的准确值...</p>
+                        <p><strong>客户区大小</strong></p>
+                        <p>元素的客户区大小指的是元素内容及其内边距所占据的空间大小,有关客户区的属性有两个: <strong>clientWidth,clientHeight</strong>,其中<em>clientWidth</em>属性是元素内容区宽度加上左右内边距宽度;<em>clientHeight</em>属性是元素内容区高度加上上下内边距高度</p>
+                        <p>客户区大小就是元素内部空间大小,所以滚动条占用的空间不计算在内.</p>
+                        <p>滚动大小</p>
+                        <p>其指的是包含滚动内容的元素大小,以下是4个与滚动大小相关的属性</p>
+                        <ul class="publicLiStyle">
+                          <li>
+                            <p><strong>scrollHeight</strong>,在没有滚动条的情况下,元素内容的总高度.</p>
+                          </li>
+                          <li>
+                            <p><strong>scrollWidth</strong>,在没有滚动条下,元素内容的总宽度.</p>
+                          </li>
+                          <li>
+                            <p><strong>scrollLeft</strong>,被隐藏在内容区域左侧的像素数,通过设置这个属性可以改变元素的滚动位置.</p>
+                          </li>
+                          <li>
+                            <p><strong>scrollTop</strong>,被隐藏在内容区域上方的像素数,通过设置这个属性可以改变元素滚动位置.</p>
+                          </li>
+                        </ul>
+                        <p>通过下面简图进一步理解:</p>
+                        <img src="sources/scroll.png" height="270" width="459" alt="loading"/>
+                        <p><strong>确定元素大小</strong></p>
+                        <p>各浏览器都为每一个元素提供了一个<strong>getBoundingClientRect()</strong>方法,这个方法返回一个矩形对象,包含四个属性: <strong>left,top,right,bottom</strong>.这些属性给出了元素在页面中相对于视口的位置,但各浏览器都有些不同,建议用前面的方法来求.</p>
+
+                       </div>
+                       <div class="noneDisplay contentDiv">
+                          <p>元素遍历</p>
+                          <p>在DOM2级遍历模块中,定义了两个用于辅助遍历完成顺序遍历DOM结构的类型: <strong>NodeIterator和TreeWalker</strong>,这两个类型能够基于给定的起点对DOM结构执行深度优先,但IE不支持遍历(真TM无语),任何节点都可以作为遍历的根节点</p>
+                          <p>首先介绍<strong>NodeIterator</strong>类型,使用<strong>document.createNodeIterator()</strong>方法创建它的新实例,其接收4个参数:</p>
+                          <ul class="publicLiStyle">
+                            <li>
+                              <p><strong>root</strong>:想要作为搜索起点的树中的节点</p>
+                            </li>
+                            <li>
+                              <p><strong>whatToShow</strong>:表示要访问哪些节点的<a class="IntroBtn" href="#">数字代码</a></p>
+                              <div class="Intro">
+                                <ul class="publicLiStyle">
+                                  <li>NodeFilter.SHOW_ALL : 显示所有类型节点</li>
+                                  <li>NodeFilter.SHOW_ELEMENT :显示元素节点</li>
+                                  <li>NodeFilter.SHOW_DOCUMENT : 显示文档节点</li>
+                                  <li>NodeFilter.SHOW_TEXT : 显示文本节点</li>
+                                  <li>...</li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li>
+                              <p><strong>filter</strong>:是一个NodeFilter对象,或者一个表示应该接受还是拒绝某种特定节点的函数</p>
+                            </li>
+                            <li>
+                              <p><strong>entityReferenceExpansion</strong>:布尔值,表示是否要扩展实体引用,这个参数在HTML中没有用,因为其中实体不能扩展.</p>
+                            </li>
+                          </ul>
+                         <p>如下面的例子,只需要遍历某个DIV元素中的&lt;li&gt;元素,我们可以这样:</p>
+                         <pre class="prettyprint linenums">
+ var div =document.querySelector('div');
+ var filter = function(node){
+    return node.tagName.toLowerCase() == 'li' ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+ };
+ var iterator = document.createNodeIterator(div,NodeFilter.SHOW_ELEMENT,filter,false);
+ var node =iterator.nextNode();
+ while(node !=null){
+    alert(node.tagName);
+    node = iterator.nextNode();
+ }
+                         </pre> 
+                         <p><strong>TreeWalker</strong></p>
+                         <p>TreeWalker是NodeIterator的一个更高级版本,除了包括<em>nextNode()和previousNode()</em>在内的功能外,还提供了如下的方法:</p>
+                         <ul class="publicLiStyle">
+                           <li>
+                             <p><strong>parentNode()</strong>,遍历到当前节点的父节点.</p>
+                           </li>
+                           <li>
+                             <p><strong>firstChild()</strong>遍历到当前节点的第一个子节点.</p>
+                           </li>
+                           <li>
+                             <p><strong>lastChild()</strong>遍历到当前节点的最后一个子节点.</p>
+                           </li>
+                           <li>
+                             <p><strong>nextSibling()</strong>遍历到当前节点的下一个同辈节点.</p>
+                           </li>
+                           <li>
+                             <p><strong>previousSibling</strong>遍历到当前节点的上一个同辈节点.</p>
+                           </li>
+                         </ul>
+                         <p>使用其时也要使用<strong>document.createTreeWalker()</strong>方法,这个方法接受4个参数:作为遍历起点的根节点,要显示的节点类型,过滤器和一个是否扩展实体的引用布尔值.与NodeIterator的参数相同.</p>
+                       </div>
+                       <div class="noneDisplay contentDiv">
+                          <p>为了让开发人员更方便的控制页面,DOM2级模块定义了范围接口,通过范围可以选择文档的一个区域,而不必考虑节点的界限,在常规的DOM操作不能更有效地修改文档时,使用范围往往可以达到目的.除了IE外,其它四大主浏览器都支持DOM范围,IE以专有方式实现了自己的范围...</p>
+                          <p>DOM2级在Document类型中定义了<strong>createRange()</strong>来创建DOM范围.这个方法属于document对象.与节点类似,新创建的范围也直接与创建它的文档关联在一起.每一个范围由一个Range类型的实例表示,这个实例拥有许多属性与方法,如:</p>
+                          <ul class="publicLiStyle">
+                            <li>
+                              <p><strong>startContainer</strong>:包含范围的起点的节点(选区中第一个节点的父节点)</p>
+                            </li>
+                            <li>
+                              <p><strong>startOffset</strong>范围在startContainer中起点的偏移量,如果startContainer是文本节点,注释,CDATA节点,那么startOffset就是范围起点前跳过的字符数量,否则就是范围中第一个子节点的索引<small>就是其在父节点中的位置</small></p>
+                            </li>
+                            <li>
+                              <p><strong>endContainer</strong>:包含范围终点的节点(选区中最后一个节点的父节点)</p>
+                            </li>
+                            <li>
+                              <p><strong>endOffset</strong>:范围在endContainer中终点的偏移量</p>
+                            </li>
+                            <li>
+                             ...
+                            </li>
+                          </ul>
+                          <p>要使用范围来选择文档中的一部分,最简的方式就是使用<strong>selectNode()或selectNodeContents()</strong>,都接收一个参数,即一个DOM节点,然后使用该节点中信息来填充范围,其中selectNode()方法选择整个节点,包括其子节点,而另一个方法则只选择节点的子节点.</p>
+                          <p>要创建复杂的范围就使用<strong>setStart()好setEnd()</strong>方法,这两个方法都接收两个参数:一个参照节点,一个偏移量值,对<em>setStart()</em>来说,参照节点会变成<em>startcontainer</em>,而偏移量值会变成<em>startOffset</em>,对于<em>setEnd()</em>来说,参照节点会变成<em>endContainer</em>,而偏移量会变成<em>endOffset</em>.显然,要选择这个节点,就必须确定当前节点在其父节点的<em>childNodes</em>集合中的索引</p>
+                          <p>在创建范围后,内部会为这个范围创建一个文档片段,范围所属的全部节点都被添加到了这个文档片段中,范围内容的格式必须正确有效,有时可能选取的范围开始和结束与两个文本节点内部,所以格式不是完整的,但范围自身可以重新构建有效的DOM结构...</p>
+                          <p>这样创建好范围后,就可以使用各种方法对范围的内容进行操作了.其中有一个方法: <strong>deleteContents()</strong>,这个方法能够从文档中删除范围所包含的内容...</p>
+                          <p>还有一个方法是<strong>extractContents()</strong>也会从文档中移除范围选区,但其可以返回范围文本片段,利用这个返回值可以将范围内容插入到文档的其它地方...</p>
+                          <p>说了这么多,通过下面这个例子来进一步理解吧!</p>
+                          <pre class="prettyprint linenums">
+//假如有这样一个文档:
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;body&gt;
+     &lt;p id="p1"&gt;&lt;b&gt;Hello&lt;/b&gt; world!&lt;/p&gt;
+&lt;script&gt;
+var p1 = document.getElementById('p1'),
+    hello =p1.firstChild.firstChild,
+    world = p1.lastChild,
+    range1 = document.createRange(),
+    range2 = document.createRange(),
+    range = document.createRange();
+//其范围如下图左:
+range1.selectNode(p1);
+range2.selectNodeContents(p1);
+//范围以及p1元素结果后的内容如下图右
+range.setStart(hello,2);
+range.setEnd(world,3);
+range.deleteContents();
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;   
+                          </pre>
+                          <img src="sources/range.png" height="220" width="750" alt="loading"/>
+                          <p>利用范围,可以删除或复制内容,使用<strong>insertNode()</strong>方法可以向范围选区的开始处插入一个节点,而方法<strong>surroundContents()</strong>可以环绕范围插入内容,其接收一个参数,即环绕范围内容的节点,其依次执行下面这些步骤</p>
+                          <ol>
+                            <li>提取范围中的内容</li>
+                            <li>将给定节点插入到文档中原来范围所在的位置</li>
+                            <li>将文档片段(即第一步提取的范围内容)添加到给定节点中</li>
+                          </ol>
+                          <p>可以使用这种技术来突出显示网页中某些词句</p>   
+                       </div> <!-- 范围 -->
+                   </div><!-- content contentFour dom23 -->
+                </div> <!-- containerDOM23 -->
+              </div>  <!-- dom23 -->
+           </div> <!-- class="rightContent"  dom-->
+      </div> <!-- leftTitleRightContent dom-->
+       <p>更多详细的内容,可以到<a href="https://developer.mozilla.org/en-US/">mozilla网站</a>上仔细阅读.</p>
+      </div> <!-- class="section" dom-->
+		</div> <!-- class="sections" dom-->
+	</li> <!-- id="section-6" dom-->
+</ul>
+</div>  <!-- main -->
+<script src="JS/homejQuery.js"></script>
+<script src="JS/homeJS.js"></script>
+<script src="JS/prettify.js"></script>
+</body>
+</html>

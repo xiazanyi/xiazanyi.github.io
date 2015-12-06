@@ -1,0 +1,275 @@
+body{
+	background-image:url(../sources/bodyIMG.png);
+	/*background-color: grey;*/
+}
+img{
+	border-radius:5px;
+
+}
+#menu{
+	position: absolute;
+	top:0px;
+	height:60px;
+	margin-right: auto;
+	margin-left: auto;
+	z-index: 2;
+}
+#main{
+	margin-top: 75px;
+}
+#imgDIV{
+	width:256px;
+    position: absolute;
+    left: 0px;
+    top:0px;
+    z-index: 2;
+}
+#leftDIV{
+	top:10px;
+    width:40px;
+    height:60px;
+    position: absolute;
+    left:197px;
+    border: 1px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    z-index: 2;
+}
+#rightDIV{
+	top:10px;
+	width:40px;
+	height: 60px;
+	position: absolute;
+	left:196px;
+	cursor: pointer;
+	z-index: 2;
+}
+#menuDIV{
+	top:10px;
+	width:0px;
+	position: absolute;
+	height:60px;
+	/*background-color:grey; */
+	overflow: hidden;
+	z-index: 2;
+}
+#menuDIV>ul{
+	list-style-type:none;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+}
+#menuDIV ul li{
+    float: left;
+    width:25%;
+    height:50px;
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+.menuContent{
+	width:820px;
+	position: absolute;
+	/*display: none;*/
+	height:0px;
+	top:70px;
+	left:282px;
+	overflow: hidden;
+	background-color: #FFFFFF;
+	border-left: 1px solid grey;
+	border-right: 1px solid grey;
+	border-bottom: 1px solid grey;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	z-index: 2;
+}
+.menuContent ul{
+	list-style-type: none;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+}
+.menuContent li{
+	float: left;
+	margin-left: 4px;
+	margin-top: 2px;
+}
+
+.sections{
+	position: relative;
+	width:800px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+	padding:5px;
+	background: #FFFFFF;
+	border-radius: 10px;
+	/*overflow: hidden;*/
+}
+#main>ul{
+	list-style-type: none;
+}
+#Intro{
+   width:60%;
+}
+#imgJS{
+	position: absolute;
+	right: 79px;
+	top:100px;
+}
+.publicLiStyle{
+	list-style-type:none;
+}
+.noneLiStyle{
+	list-style: none;
+}
+table{
+   width: 700px;
+   text-align: center;
+   padding: 3px;
+   margin-left: auto;
+   margin-right: auto;	
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+.tableTwo{
+	width:500px;
+}
+.tableCode{
+	text-align: left;
+	padding: 5px;
+}
+th{
+	text-align: center;
+	border: 1px solid grey;
+	border-radius: 5px;
+}
+td{
+	border: 1px solid grey;
+	border-radius: 5px;
+}
+td:hover{
+	background-color: #d1c7b7;
+}
+.container{
+	width:800px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.container>ul{
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+.title{
+	width:680px;
+	height:30px;
+}
+.title>ul{
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+.titleNine{
+	width:765px;
+}
+.titleFour{
+   width:760px;
+}
+.titleThree{
+	width:780px;
+}
+.titleLi{
+	float: left;
+    text-align: center;
+    border: 5px solid #FFFFFF;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	cursor: pointer;
+	color: green;
+}
+.threeCrack{
+	width:260px;
+}
+.fourCrack{
+	width:190px;
+}
+.fiveCrack{	
+	width:130px;	
+}
+.nineCrack{	
+	width:85px;
+}
+/*tabs的内容框*/
+.content{
+	margin-right: auto;
+	margin-left: 0px;
+	margin-top: 0px;
+	padding: 5px;
+	background-color: #FFFFFF;
+	border: 3px solid #FFFFFF;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+ /*tabs 的内容框width*/
+.contentFive{
+	width:650px;
+}
+.contentThree{
+	width:780px;
+}
+.contentFour{
+	width:760px;
+}
+.contentNine{
+    width:765px;
+}
+.blockDisplay{
+	display: block;
+}
+.noneDisplay{
+	display: none;
+}
+.selectedTitle{
+	background-color: #FFFFFF;
+}
+.notSelectTitle{
+	background-color:#d1c7b7; 
+}
+/*左右布局*/
+.leftTitleRightContent{
+   width:800px;
+}
+.leftTitle{
+	width:80px;
+	position:absolute;
+	left:-85px;
+	top:22px;
+	z-index: 2;
+}
+.leftTitle>ul{
+	list-style-type: none;
+	position: absolute;
+	left:-40px;
+}
+.leftTitle li{
+	float: left;
+	width:70px;
+	height:50px;
+	margin-top: 7px;
+	margin-left: 5px;
+	border: 2px solid #FFFFFF;
+	text-align: center;
+	border-radius: 10px;
+	padding-top: 10px;
+	cursor: pointer;
+}
+.rightContent{
+	width:790px;
+	border-top: 1px solid #FFFFFF;
+	padding-top: 10px;
+}
